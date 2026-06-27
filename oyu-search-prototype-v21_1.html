@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>お湯から、探す。— 日本の温泉データベース</title>
+<title>お湯から探す。— 日本の温泉データベース</title>
 <!-- PWA(ホーム画面に追加) -->
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#ffffff">
@@ -469,7 +469,7 @@ footer{border-top:1px solid var(--line);padding:34px 32px;text-align:center;font
 
 
 /* ---------- personal onsen map ---------- */
-.pmap-card{background:linear-gradient(160deg,#0E1320 0%,#1A2236 100%);border-radius:24px;padding:30px 30px 24px;max-width:680px;margin:0 auto;color:#fff;box-shadow:0 20px 60px rgba(0,0,0,.18)}
+.pmap-card{background:linear-gradient(160deg,#101012 0%,#1f1f22 100%);border-radius:24px;padding:30px 30px 24px;max-width:680px;margin:0 auto;color:#fff;box-shadow:0 20px 60px rgba(0,0,0,.22)}
 .pmap-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:6px}
 .pmap-ttl{font-size:1.32rem;font-weight:700;letter-spacing:.04em}
 .pmap-sub{font-size:.74rem;color:rgba(255,255,255,.6);margin-top:5px;line-height:1.7;font-weight:500}
@@ -494,7 +494,7 @@ footer{border-top:1px solid var(--line);padding:34px 32px;text-align:center;font
 .pm-cname{font-size:.56rem;color:rgba(255,255,255,.7);letter-spacing:.04em;font-weight:500}
 .pm-regions{display:flex;flex-wrap:wrap;gap:7px}
 .pm-region{font-size:.74rem;font-weight:600;padding:5px 13px;border-radius:999px;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.4);transition:all .3s}
-.pm-region.on{background:rgba(255,255,255,.95);color:#152036;border-color:transparent}
+.pm-region.on{background:rgba(255,255,255,.95);color:#1f1f22;border-color:transparent}
 .pmap-brand{text-align:center;font-size:.62rem;letter-spacing:.34em;color:rgba(255,255,255,.4);margin-top:22px;font-weight:600}
 .pmap-actions{display:flex;justify-content:center;margin:20px auto 8px}
 @media(max-width:640px){.pmap-card{padding:22px 20px 20px}.pmap-ttl{font-size:1.12rem}.pmap-count b{font-size:1.5rem}}
@@ -536,7 +536,7 @@ a.rec-btn{display:inline-flex;align-items:center;justify-content:center;text-dec
 <body>
 
 <header>
-  <div class="h-row"><div class="logo" style="text-align:center">お湯から、探す。<small>YU — JAPAN ONSEN DATABASE</small></div></div>
+  <div class="h-row"><div class="logo" style="text-align:center">お湯から探す。<small>YU — JAPAN ONSEN DATABASE</small></div></div>
   <nav class="main-tabs" aria-label="Main">
     <button id="nv-mood" class="active" onclick="setMain('mood')">
       <svg class="tabicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s5 5.5 5 9a5 5 0 0 1-10 0c0-3.5 5-9 5-9z"/></svg>
@@ -2355,35 +2355,35 @@ Object.assign(I18N.en, {
 /* mood → filter logic + Mitama's voice. Each picks by scoring ONSEN. */
 const MOODS = [
   { id:"tired",  emo:"へとへと", en:"Drained",
-    ja:{label:"今日はもう、がんばらない", line:"なら、ぬるい湯に何時間でも。何もしない時間を肯定しよう。"},
+    ja:{label:"今日はもうがんばらない", line:"なら、ぬるい湯に何時間でも。何もしない時間を肯定しよう。"},
     enx:{label:"Done trying for today", line:"Then sink into lukewarm water for hours. Doing nothing is allowed."},
     score:o=>(o.temp==='nuru'?3:0)+(o.purpose.includes('toji')?2:0)+(o.tags.includes('kakenagashi')?1:0) },
   { id:"skin",   emo:"うるおい", en:"Skin",
-    ja:{label:"肌だけは、諦めたくない", line:"とろとろの美肌の湯においで。すべすべになって帰ろう。"},
+    ja:{label:"肌だけは諦めたくない", line:"とろとろの美肌の湯においで。すべすべになって帰ろう。"},
     enx:{label:"Won't give up on my skin", line:"Come to the silky beautiful-skin waters. You'll leave smooth."},
     score:o=>(o.quality.includes('bicarb')?3:0)+(o.ph>=8.5?2:0)+(o.quality.includes('sulfate')?1:0) },
   { id:"sharp",  emo:"シャキッ", en:"Sharpen",
-    ja:{label:"気合だけで、生きてる", line:"ピリッと効く酸性の湯で、しゃきっと目を覚ましておいで。"},
+    ja:{label:"気合だけで生きてる", line:"ピリッと効く酸性の湯で、しゃきっと目を覚ましておいで。"},
     enx:{label:"Running on willpower alone", line:"A sharp acidic spring will snap you awake."},
     score:o=>(o.quality.includes('acid')?3:0)+(o.temp==='atsu'?2:0)+(o.color==='milky'?1:0) },
   { id:"alone",  emo:"ひとりに", en:"Solitude",
-    ja:{label:"ひとりを、満喫したい", line:"山の奥の、誰もいない湯がある。湯けむりに隠れておいで。"},
+    ja:{label:"ひとりを満喫したい", line:"山の奥の、誰もいない湯がある。湯けむりに隠れておいで。"},
     enx:{label:"Savor being alone", line:"There's a spring deep in the hills with no one around. Hide in the steam."},
     score:o=>(o.purpose.includes('hito')?3:0)+(o.tags.includes('jisui')?1:0)+(/車|徒歩|時間/.test(o.ja.access)?1:0) },
   { id:"warm",   emo:"あったまる", en:"Warm up",
-    ja:{label:"末端まで、冷たい人間です", line:"塩の湯がいい。湯あがりもずっとぽかぽかが続くよ。"},
+    ja:{label:"末端まで冷たい人間です", line:"塩の湯がいい。湯あがりもずっとぽかぽかが続くよ。"},
     enx:{label:"Cold to my fingertips", line:"Go for a salt spring — the warmth lingers long after."},
     score:o=>(o.quality.includes('chloride')?3:0)+(o.temp==='atsu'?1:0)+(o.tags.includes('kaihin')?1:0) },
   { id:"play",   emo:"はしゃぐ", en:"Play",
-    ja:{label:"とりあえず、誰かと騒ぎたい", line:"外湯めぐりやお湯の街がいいね。下駄を鳴らして歩こう。"},
-    enx:{label:"Just want to make some noise", line:"A bath-hopping town suits you. Clatter through it in geta."},
+    ja:{label:"誰かと旅したい", line:"気の合う人と、湯の街をのんびり歩こう。外湯をめぐって。"},
+    enx:{label:"A trip with someone", line:"Wander an onsen town together, in no hurry."},
     score:o=>(o.purpose.includes('day')?2:0)+(o.tags.includes('free')?2:0)+(o.purpose.includes('ashiyu')?1:0) },
   { id:"history",emo:"歴史にひたる", en:"History",
-    ja:{label:"現実から、すこし外れたい", line:"湯けむりの向こうは、もう別世界。少し現実を置いておいで。"},
+    ja:{label:"現実からすこし外れたい", line:"湯けむりの向こうは、もう別世界。少し現実を置いておいで。"},
     enx:{label:"Slip out of reality a bit", line:"Beyond the steam is another world. Leave the real one a while."},
     score:o=>(o.yukari?3:0)+(o.castle?2:0)+(o.color==='gold'||o.color==='emerald'?1:0) },
   { id:"wild",   emo:"自然のなかで", en:"Into nature",
-    ja:{label:"スマホの電波、切りたい", line:"川の音、空の下。露天で大きく息をしておいで。"},
+    ja:{label:"スマホの電波を切りたい", line:"川の音、空の下。露天で大きく息をしておいで。"},
     enx:{label:"Cut the signal off", line:"River sounds, open sky. Breathe deep in an open-air bath."},
     score:o=>(o.purpose.includes('roten')?3:0)+(o.color==='emerald'||o.color==='cobalt'?1:0)+(o.tags.includes('kakenagashi')?1:0) }
 ];
@@ -2535,7 +2535,7 @@ const SHINDAN_TYPES = {
   umarekawari: {label:"さっぱり生まれ変わりたい", en:'"Reborn, refreshed"',  line:"湯上がりは、つるんと別人。日本一の強酸性へ。",   lineEn:"Step out brand-new. Japan's most acidic spring.", match:{quality_any:["acid"],ph_max:2}},
   nikomi:      {label:"じっくり煮込まれたい",     en:'"Simmer me slowly"',   line:"熱くて濃い湯で、芯まで火を通す。",            lineEn:"Hot, thick water cooks you to the core.",         match:{temp_any:["atsu"],color_any:["milky","gold"]}},
   solo:        {label:"ひとりを満喫したい",       en:'"Savor solitude"',     line:"静かな一軒宿で、自分だけの湯。",              lineEn:"A quiet lone inn, a bath all your own.",           match:{purpose_any:["hito"],tags_none:["konyoku"]}},
-  torokeru:    {label:"とろっと、とろけたい",     en:'"Melt away"',          line:"とろとろの美肌湯に、心ごと溶かす。",          lineEn:"Silky beauty water melts you, heart and all.",     match:{quality_any:["bicarb"],ph_min:8.5}},
+  torokeru:    {label:"とろっととろけたい",       en:'"Melt away"',          line:"とろとろの美肌湯に、心ごと溶かす。",          lineEn:"Silky beauty water melts you, heart and all.",     match:{quality_any:["bicarb"],ph_min:8.5}},
   toumin:      {label:"冬眠したい",             en:'"Hibernate"',          line:"雪を眺めて、春までぬくもる。",                lineEn:"Watch the snow, stay warm till spring.",           match:{quality_any:["chloride","sulfur"],temp_any:["atsu","teki"]}},
   charge:      {label:"フル充電したい",          en:'"Full recharge"',      line:"ガツンと効く湯で、一気に回復。",              lineEn:"A strong spring recharges you fast.",             match:{quality_any:["sulfur","acid"],temp_any:["atsu"]}},
   tobou:       {label:"電波の届かない所へ",       en:'"Off the grid"',       line:"山奥の露天で、世界から少し消える。",          lineEn:"An open-air bath deep in the hills; vanish a while.", match:{purpose_any:["hito","roten"]}}
@@ -2681,7 +2681,7 @@ function renderPMap(){
           <div class="pm-regions">${regionDots}</div>
         </div>
       </div>
-      <div class="pmap-brand">お湯から、探す。 — YU</div>
+      <div class="pmap-brand">お湯から探す。 — YU</div>
     </div>
     <div class="pmap-actions">
       <button class="rec-btn" onclick="sharePMap()">${t.pmShare}</button>
@@ -2720,7 +2720,7 @@ async function sharePMap(){
     const scale=2, W=760, H=840;
     const cv = document.createElement('canvas'); cv.width=W*scale; cv.height=H*scale;
     const cx = cv.getContext('2d'); cx.scale(scale,scale);
-    cx.fillStyle = '#0E1320'; cx.fillRect(0,0,W,H);
+    cx.fillStyle = '#101012'; cx.fillRect(0,0,W,H);
     cx.drawImage(img,0,0,W,H);
     const a=document.createElement('a'); a.download=(I18N[lang].pmShotName)+'.png'; a.href=cv.toDataURL('image/png'); a.click();
   }catch(e){ console.error('share failed', e); toast(I18N[lang].pmShotName); }
