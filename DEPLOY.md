@@ -21,7 +21,8 @@
 ### B. Cloudflare Pages(ホスティング)— 5分
 1. https://dash.cloudflare.com で無料アカウント作成
 2. このプロジェクトを GitHub に置く(後述のC)→ **Workers & Pages → Create → Pages → Connect to Git**
-3. ビルド設定:**フレームワークなし / ビルドコマンドなし / 出力ディレクトリ = `/`(ルート)**
+3. ビルド設定:**フレームワークなし / Build command = `node build-site.mjs` / 出力ディレクトリ = `public`**
+   - `build-site.mjs` が公開して良いアセットだけ(index.html・写真・設定)を `public/` に組み立てる。開発ファイル(scripts/・node_modules・設計md・*.bak)は配信されない。
 4. デプロイ完了で `https://xxxx.pages.dev` が発行される(独自ドメインも後で割当可)
 
 ### C. GitHub(任意だが推奨 / 自動デプロイ用)
@@ -36,7 +37,8 @@
 
 ## こちらでやること(コード)
 
-- [ ] デプロイ用エントリ(`index.html`)の用意とパス確認
+- [x] デプロイ用エントリ(`index.html`)の用意とパス確認 ← `build-site.mjs` で `public/` に組立済み・動作確認済み
+- [x] git 初期化・`.gitignore`・`app-config.js`(キーの口)を配置済み
 - [ ] Supabase クライアント読込＋設定(キーは `app-config.js` に分離)
 - [ ] 既存のデモ認証 → 本物のSupabase認証(Magic Link / SNS)に差し替え
 - [ ] 湯録・チェックインの保存を `window.storage`(端末内)→ Supabase(クラウド同期)へ
