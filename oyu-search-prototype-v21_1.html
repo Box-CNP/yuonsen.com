@@ -52,6 +52,16 @@ header{
 .main-tabs button:hover{color:var(--ink)}
 .main-tabs button.active{color:var(--ink);font-weight:700;border-bottom-color:var(--ink)}
 .main-tabs button:focus-visible{outline:2px solid var(--ink);outline-offset:-2px}
+.tabicon{display:none}
+@media(max-width:640px){
+  body{padding-bottom:calc(62px + env(safe-area-inset-bottom))}
+  /* header の backdrop-filter は position:fixed の包含ブロックを作ってしまうため、モバイルでは外す(下部バーをビューポート基準に固定するため)*/
+  header{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(255,255,255,.95)}
+  .main-tabs{position:fixed;left:0;right:0;bottom:0;max-width:none;margin:0;border-top:1px solid var(--line);background:rgba(255,255,255,.96);backdrop-filter:blur(14px);z-index:60;padding-bottom:env(safe-area-inset-bottom)}
+  .main-tabs button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:7px 4px 6px;font-size:.6rem;letter-spacing:.04em;border-bottom:none}
+  .main-tabs button.active{border-bottom-color:transparent}
+  .tabicon{display:block;width:23px;height:23px}
+}
 .logo{font-weight:700;font-size:1.02rem;letter-spacing:.16em}
 .logo small{display:block;font-weight:500;font-size:.56rem;letter-spacing:.34em;color:var(--ink-soft);margin-top:3px}
 .lang-switch{display:flex;border:1px solid var(--line-strong);border-radius:999px;overflow:hidden}
@@ -528,10 +538,18 @@ a.rec-btn{display:inline-flex;align-items:center;justify-content:center;text-dec
 <header>
   <div class="h-row"><div class="logo" style="text-align:center">お湯から、探す。<small>YU — JAPAN ONSEN DATABASE</small></div></div>
   <nav class="main-tabs" aria-label="Main">
-    <button id="nv-mood" class="active" onclick="setMain('mood')" data-i18n="nvMood">きょうの湯</button>
-    <button id="nv-search" onclick="setMain('search')" data-i18n="nvSearch">さがす</button>
-    <button id="nv-read" onclick="setMain('read')" data-i18n="nvRead">読みもの</button>
-    <button id="nv-yuroku" onclick="setMain('yuroku')" data-i18n="nvYuroku">湯録</button>
+    <button id="nv-mood" class="active" onclick="setMain('mood')">
+      <svg class="tabicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s5 5.5 5 9a5 5 0 0 1-10 0c0-3.5 5-9 5-9z"/></svg>
+      <span data-i18n="nvMood">きょうの湯</span></button>
+    <button id="nv-search" onclick="setMain('search')">
+      <svg class="tabicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <span data-i18n="nvSearch">さがす</span></button>
+    <button id="nv-read" onclick="setMain('read')">
+      <svg class="tabicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6c-2-1.4-5-1.4-7.5 0v12c2.5-1.4 5.5-1.4 7.5 0 2-1.4 5-1.4 7.5 0V6c-2.5-1.4-5.5-1.4-7.5 0z"/><path d="M12 6v12"/></svg>
+      <span data-i18n="nvRead">読みもの</span></button>
+    <button id="nv-yuroku" onclick="setMain('yuroku')">
+      <svg class="tabicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6-5.4-6-10a6 6 0 0 1 12 0c0 4.6-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg>
+      <span data-i18n="nvYuroku">湯録</span></button>
   </nav>
 </header>
 
