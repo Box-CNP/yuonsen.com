@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>お湯から探す。— 日本の温泉データベース</title>
+<title>お湯から探す — 日本の温泉データベース</title>
 <!-- PWA(ホーム画面に追加) -->
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#ffffff">
@@ -537,7 +537,7 @@ a.rec-btn{display:inline-flex;align-items:center;justify-content:center;text-dec
 <body>
 
 <header>
-  <div class="h-row"><div class="logo" style="text-align:center">お湯から探す。<small>YU — JAPAN ONSEN DATABASE</small></div></div>
+  <div class="h-row"><div class="logo" style="text-align:center">お湯から探す<small>YU — JAPAN ONSEN DATABASE</small></div></div>
   <nav class="main-tabs" aria-label="Main">
     <button id="nv-mood" class="active" onclick="setMain('mood')">
       <svg class="tabicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s5 5.5 5 9a5 5 0 0 1-10 0c0-3.5 5-9 5-9z"/></svg>
@@ -586,6 +586,10 @@ a.rec-btn{display:inline-flex;align-items:center;justify-content:center;text-dec
   <div class="f-group">
     <div class="f-label" data-i18n="fPurpose">目的</div>
     <div class="chips" id="purpose-chips"></div>
+  </div>
+  <div class="f-group">
+    <div class="f-label" data-i18n="fTags">こだわり</div>
+    <div class="chips" id="tag-chips"></div>
   </div>
   <div class="f-group">
     <div class="f-label" data-i18n="fFrom">ここから探す</div>
@@ -688,7 +692,7 @@ a.rec-btn{display:inline-flex;align-items:center;justify-content:center;text-dec
 
 <footer>
   <span data-i18n="footer">掲載データは各施設の温泉分析書・公開情報をもとにした参考値です。</span>
-  <button class="lang-mini" onclick="setLang(lang==='ja'?'en':'ja')">EN / 日本語</button>
+  <button class="lang-mini" id="lang-btn" onclick="setLang(lang==='ja'?'en':'ja')">English</button>
 </footer>
 
 <!-- 実画像データ(自動生成: onsen-photos/scripts/05_site_adapter.mjs)。未生成なら未定義 → 線画フォールバック。 -->
@@ -703,7 +707,7 @@ const I18N = {
   ja: {
     heroTitle:"泉質と湯色で、<br>お湯を選ぶ。",
     heroLead:"泉質・湯色・温度・目的——全国のお湯を、お湯そのもののデータで検索できます。湯治の長期滞在から、ふらりと寄る足湯まで。",
-    fPurpose:"目的", fInd:"適応症から", fColor:"湯色", fQuality:"泉質", fTemp:"湯温",
+    fPurpose:"目的", fTags:"こだわり", fInd:"適応症から", fColor:"湯色", fQuality:"泉質", fTemp:"湯温",
     indCaption:"環境省「泉質別適応症」の区分に基づく参考情報です。効果を保証するものではありません。",
     fFrom:"ここから探す", fArea:"エリア",
     fromCaption:"現在地からの直線距離をもとにした、おおよその所要時間です。",
@@ -747,7 +751,7 @@ const I18N = {
   en: {
     heroTitle:"Choose by spring quality<br>and water color.",
     heroLead:"Spring quality, water color, temperature, purpose — explore Japan's hot springs through the water itself. From long-stay toji therapy to a quick footbath.",
-    fPurpose:"PURPOSE", fInd:"BY INDICATION", fColor:"WATER COLOR", fQuality:"SPRING QUALITY", fTemp:"TEMPERATURE",
+    fPurpose:"PURPOSE", fTags:"FEATURES", fInd:"BY INDICATION", fColor:"WATER COLOR", fQuality:"SPRING QUALITY", fTemp:"TEMPERATURE",
     indCaption:"Reference categories from Japan's Ministry of the Environment spring-quality indications. Effects are not guaranteed.",
     fFrom:"FROM HERE", fArea:"REGION",
     fromCaption:"Approximate travel time based on straight-line distance.",
@@ -1169,7 +1173,7 @@ const ONSEN = [
 ];
 
 /* ---------------- state ---------------- */
-const state = { purpose:new Set(), ind:new Set(), color:null, quality:new Set(), temp:null, view:'list', region:null, origin:null, mode:'transit', tmax:null };
+const state = { purpose:new Set(), tags:new Set(), ind:new Set(), color:null, quality:new Set(), temp:null, view:'list', region:null, origin:null, mode:'transit', tmax:null };
 
 const HUBS = [
   {id:'tokyo', lat:35.681, lng:139.767, n:{ja:"東京",en:"Tokyo"}},
@@ -1255,6 +1259,7 @@ function jalanKw(kw){return SJIS_KW[kw]||encodeURIComponent(kw);}
 const PURPOSES = ["toji","hito","day","roten","ashiyu","castle","ijin"];
 const COLORS = ["milky","cobalt","emerald","gold","rust","black","clear"];
 const QUALITIES = ["simple","chloride","bicarb","sulfate","co2","iron","acid","iodine","sulfur","radio"];
+const TAGS = ["konyoku","kakenagashi","insen","jisui","mushi","kaihin","free","tattoo"];
 const TEMPS = ["nuru","teki","atsu"];
 
 /* ---------------- Japan map (stylized dot-matrix) ---------------- */
@@ -1399,6 +1404,8 @@ function renderFilters(){
   const t = I18N[lang];
   document.getElementById('purpose-chips').innerHTML =
     PURPOSES.map(p=>`<button class="chip ${state.purpose.has(p)?'active':''}" onclick="togglePurpose('${p}')">${t.purposes[p]}</button>`).join('');
+  document.getElementById('tag-chips').innerHTML =
+    TAGS.map(tg=>`<button class="chip ${state.tags.has(tg)?'active':''}" onclick="toggleTag('${tg}')">${t.tags[tg]}</button>`).join('');
   document.getElementById('from-chips').innerHTML =
     HUBS.map(h=>`<button class="chip ${state.origin&&state.origin.id===h.id?'active':''}" onclick="setOrigin('${h.id}')">${h.n[lang]}</button>`).join('') +
     `<button class="chip ${state.origin&&state.origin.id==='geo'?'active':''}" onclick="setGeoOrigin()">${t.geo}</button>`;
@@ -1417,6 +1424,7 @@ function renderFilters(){
     TEMPS.map(x=>`<button class="chip ${state.temp===x?'active':''}" onclick="setTemp('${x}')">${t.temps[x]}</button>`).join('');
 }
 function togglePurpose(p){ state.purpose.has(p)?state.purpose.delete(p):state.purpose.add(p); update(); }
+function toggleTag(tg){ state.tags.has(tg)?state.tags.delete(tg):state.tags.add(tg); update(); }
 function setColor(c){ state.color = state.color===c?null:c; update(); }
 function toggleQuality(q){ state.quality.has(q)?state.quality.delete(q):state.quality.add(q); update(); }
 function toggleInd(k){ state.ind.has(k)?state.ind.delete(k):state.ind.add(k); update(); }
@@ -1447,7 +1455,7 @@ function setGeoOrigin(){
 function setMode(m){ state.mode = m; update(); }
 function setTmax(h){ state.tmax = state.tmax===h?null:h; update(); }
 function setTemp(x){ state.temp = state.temp===x?null:x; update(); }
-function resetAll(){ state.purpose.clear(); state.ind.clear(); state.color=null; state.quality.clear(); state.temp=null; state.region=null; state.origin=null; state.tmax=null; update(); }
+function resetAll(){ state.purpose.clear(); state.tags.clear(); state.ind.clear(); state.color=null; state.quality.clear(); state.temp=null; state.region=null; state.origin=null; state.tmax=null; update(); }
 
 function matches(o){
   for(const p of state.purpose){
@@ -1455,6 +1463,7 @@ function matches(o){
     else if(p==='ijin'){ if(!o.yukari) return false; }
     else if(!o.purpose.includes(p)) return false;
   }
+  for(const tg of state.tags){ if(!o.tags.includes(tg)) return false; }
   if(state.region && onsenRegion(o)!==state.region) return false;
   if(state.origin && state.tmax!==null){ if(estHours(o) > state.tmax) return false; }
   if(state.ind.size){ const oi = onsenInds(o); if(![...state.ind].some(k=>oi.has(k))) return false; }
@@ -1612,6 +1621,11 @@ function setLang(l){
     if(I18N[l][key]) el.innerHTML = I18N[l][key];
   });
   update();
+  /* 動的描画の各ビューも切り替える(これが無いと きょうの湯/読みもの/湯録 が変わらない) */
+  if(typeof renderMood==='function') renderMood();
+  if(typeof renderRead==='function') renderRead();
+  if(typeof renderYuroku==='function') renderYuroku();
+  const lb=document.getElementById('lang-btn'); if(lb) lb.textContent = (l==='ja'?'English':'日本語');
 }
 function update(){
   renderFilters(); renderCards();
@@ -1977,6 +1991,95 @@ const COLUMNS = [
 "The people of Edo ranked their hot springs too. Modeled on the rankings of sumo, a printed sheet known as the onsen banzuke (Shokoku Onsen Kōnō Kagami) divided the springs of the land into east and west, where they vied for rank like wrestlers. In the east, Kusatsu held the title of ōzeki; in the west, Arima. The very highest rank, yokozuna, was not yet in common use, and so it is said that ōzeki was the summit one could reach.",
 "What charms most is that this was not a scholar's grading but a culture born of common folk at play. Virtues and popularity were made visible on a single sheet, to be compared and enjoyed at leisure. Even a distant spring one had never seen became a familiar rival within the grid of the ranking. To lay out the famous waters beyond the rising steam, side by side in the squares of a printed sheet — there was, truly, a shape of travel-dreaming in that.",
 "The banzuke was, in its way, a map of springs drawn by the travelers of Edo. Kusatsu in the east, Arima in the west: those names have not faded, and the waters still rise today. You might trace the old squares of that printed sheet by visiting the eastern and western summits yourself. This site's 'Classics and springs' tag will quietly guide you onward, into the rest of that journey upon paper."]}}
+,
+ {id:"r_tohoku", min:4,
+  ja:{tag:"地方をめぐる", title:"雪の奥、湯けむりの東北",
+    body:[
+"pH1.2、日本一の強酸性。秋田の山あいに湧く玉川温泉の湯は、肌を刺すほどに鋭い。けれどその岩盤の上に体を横たえれば、地の熱が静かに芯までしみてくる。岩盤浴の聖地と呼ばれるこの湯に、人々は古くから長い滞在の支度をして通った。東北は、そういう湯治の文化が今も息づく土地である。",
+"山を越えれば、湯の表情はまるで変わる。青森の酸ヶ湯は、ヒバの香りに満ちた千人風呂で知られ、秋田の乳頭温泉郷では、ブナ林に抱かれた白濁の湯がいくつも湧く。その一つ「鶴の湯」は、秋田藩主・佐竹氏の湯治本陣であったと伝わる。さらに南へ下れば、山形の銀山温泉。大正ロマンの木造旅館がガス灯に照らされ、雪のなかに浮かび上がる景色は、まるで時を巻き戻したようだ。",
+"宮城の鳴子、山形の蔵王や肘折——豪雪に閉ざされる土地ほど、自炊で長く逗留する湯が点として散らばっている。寒さと湯。東北の人々は、その二つを抱き合わせて冬を越えてきたのだろう。一日では到底まわりきれない。だからこのサイトの「エリア」で地方をたどり、「偉人の湯」で殿様が癒した湯を探し、湯から湯へと、雪の奥を旅するように巡ってほしい。"]},
+  en:{tag:"A JOURNEY THROUGH TŌHOKU", title:"Deep in the Snow, the Steam of Tōhoku",
+    body:[
+"pH 1.2, the most acidic spring in Japan. The waters of Tamagawa Onsen, welling up in the mountains of Akita, are sharp enough to sting the skin. Yet lie down upon the warm bedrock there, and the earth's heat seeps quietly to the core. People have long come to this place, said to be a sanctuary of stone-bed bathing, prepared for a long stay. Tōhoku is a land where this culture of healing baths still breathes.",
+"Cross the mountains and the springs change their face entirely. Aoyama's Sukayu is known for its thousand-person bath fragrant with hiba cedar, while in Akita's Nyūtō hot spring villages, cloudy white waters rise among the beech forests. One of them, Tsuru-no-yu, is said to have been the healing retreat of the Satake lords of the Akita domain. Further south lies Ginzan Onsen in Yamagata, where wooden inns in the Taishō-era style glow under gas lamps, rising from the snow as if time had been turned back.",
+"Naruko in Miyagi, Zaō and Hijiori in Yamagata — the deeper the snow, the more these self-catering baths are scattered like points across the map, places to settle in for many days. Cold and warm water, held together. So the people of Tōhoku passed their winters. One day could never be enough. Follow the regions through this site's Area pages, seek out the springs where lords once eased their weariness in Baths of the Great, and travel from one bath to the next, deep into the snow."]}},
+ {id:"r_minamikyushu", min:4,
+  ja:{tag:"地方をめぐる", title:"火と維新の湯——南九州をめぐる",
+    body:[
+"霧島連山の麓に、湯けむりがいくつも立っている。鹿児島の霧島温泉郷は、火を噴いた山がそのまま恵みに変わった土地だ。坂本龍馬は新婚の妻を連れてこの地を歩き、高千穂峰に登ったと伝わる。日本で最初の新婚旅行とも言われるその道行きの先に、湯があった。",
+"南九州の湯は、火山の熱だけでできているのではない。指宿の海岸では、温められた砂に体をうずめる砂むし温泉が今も人を待つ。鰻、日当山、塩浸、川内高城——これらの湯には、西郷隆盛や龍馬ら維新に生きた人々が疲れを癒したという話が残る。湯に浸かりながら、彼らは次の時代をどんな顔で思い描いていたのだろう。妙見や京町など、霧島のまわりにも湯は静かに点在している。",
+"だから旅程はこう組むといい。火山の恵みを朝に味わい、夕には維新の人々が浸かった湯に身を沈める。このサイトでは、エリアから南九州をたどることも、龍馬や西郷の足跡を「偉人の湯」から結ぶこともできる。山が噴いた熱と、幕末の記憶。そのふたつが重なる一日を、あなた自身の足で。"]},
+  en:{tag:"A JOURNEY THROUGH SOUTHERN KYŪSHŪ", title:"Springs of Fire and Revolution: Touring Southern Kyūshū",
+    body:[
+"Plumes of steam rise here and there at the foot of the Kirishima range. Kagoshima's Kirishima hot spring district is a land where erupting mountains turned, somehow, into blessing. Sakamoto Ryōma is said to have walked this country with his new wife and climbed Mount Takachiho-no-mine. At the end of that journey — remembered by some as Japan's first honeymoon — there was a hot spring waiting.",
+"The springs of southern Kyūshū are not made of volcanic heat alone. On the shore at Ibusuki, the famous sunamushi sand baths still wait, where you lie buried in naturally warmed sand. At Unagi, Hinatayama, Shiobitashi, and Sendai-Takaki, stories linger of revolutionaries like Saigō Takamori and Ryōma soaking away their weariness. Soaking there, what kind of faces did they wear as they imagined the age to come? Around Kirishima, too, quiet springs are scattered — Myōken, Kyōmachi, and more.",
+"So plan it this way: taste the volcano's gift by morning, and by dusk sink into the same waters the revolutionaries once knew. On this site you can trace southern Kyūshū by area, or follow the footsteps of Ryōma and Saigō through the Springs of Great Figures. The heat the mountains breathed out, and the memory of the closing days of the shogunate — let the two overlap in a single day, walked on your own two feet."]}},
+ {id:"r_shinshu", min:4,
+  ja:{tag:"地方をめぐる", title:"信州、山と城と外湯の国",
+    body:[
+"別所温泉の石湯は、真田幸村が傷を癒した「隠しの湯」と伝わる。湯は上田城の城下にあり、殿様の戦と湯けむりは、もともと同じ一日のなかにあったのだろう。信州は、そんなふうに山と城と湯が近しく寄り添う国だ。坂を下りれば湯があり、湯から見上げれば山がある。",
+"松本城の圏内には、乳白の湯で知られる白骨温泉がある。色も香りも里の湯とはちがって、谷深くに身を沈める静けさがある。北へ向かえば野沢温泉、ここでは十三の外湯を「湯仲間」と呼ばれる人々が今も守り継いでいるという。湯は誰かのものではなく、町みんなで分け合うもの——その温かさが、戸を開けるたびに伝わってくる。",
+"渋・湯田中の近く、地獄谷野猿公苑では、雪のなかで湯に浸かる猿の姿が知られる。人も獣も、寒い国では同じ湯を恋しがるのかもしれない。高峰のような山の湯も多く、ひと汗かいた登山の果てに湯が待つ。このサイトでは、城とめぐる湯や偉人の湯、エリアからの旅を辿れる。昼は山か城、夕は湯。信州の一日を、そんなふうに結んでみてほしい。"]},
+  en:{tag:"A JOURNEY THROUGH SHINSHŪ", title:"Shinshū: A Land of Mountains, Castles, and Open Baths",
+    body:[
+"The Ishiyu bath at Bessho Onsen is said to be the \"hidden spring\" where Sanada Yukimura healed his wounds. The spring lies below Ueda Castle, and a lord's battles and his bathwater steam must once have belonged to the same single day. Shinshū is a land like that, where mountains, castles, and springs lean close together. Walk down the slope and there is a bath; look up from the bath and there is a mountain.",
+"Within reach of Matsumoto Castle lies Shirahone Onsen, famous for its milky-white water. Its color and scent are unlike the springs of the lowlands, with the quiet of sinking deep into a valley. Travel north to Nozawa Onsen, where thirteen open baths are still kept, it is said, by townsfolk known as the \"yunakama,\" the spring-keepers. The water belongs to no one person but is shared by the whole town, and that warmth greets you each time a door slides open.",
+"Near Shibu and Yudanaka, at the Jigokudani Monkey Park, the snow monkeys are known for bathing in the hot springs amid the snow. Perhaps in a cold country, both people and beasts long for the same warm water. Mountain springs abound too, like those near Takamine, where a bath waits at the end of a sweat-soaked climb. On this site you can follow baths paired with castles, the springs of famous figures, or journeys traced by region. Mountain or castle by day, bath by dusk: try weaving a Shinshū day together just so."]}},
+ {id:"r_oita", min:4,
+  ja:{tag:"地方をめぐる", title:"湯けむりの国、大分をめぐる",
+    body:[
+"朝、別府の町は湯けむりに包まれて目を覚ます。源泉数も湧出量も日本一というこの土地では、湯は観光ではなく暮らしの一部だ。坂を上れば赤や青に色づく地獄が湯気を上げ、鉄輪では地の熱で蒸した料理が、明礬では藁葺きの小屋の下でゆっくりと湯の花が育つ。別府八湯と呼ばれる湯の群れが、ひとつの町にいくつもの表情を与えている。",
+"別府から山あいへ入れば、由布岳の麓に由布院がある。端正な山を仰ぎながら浸かる湯は、別府の賑わいとはまた違う、静かな心地よさをくれる。さらに足をのばした竹田の長湯温泉は、世界でも有数の炭酸泉として知られ、肌に細かな泡がまとわりつく。与謝野鉄幹・晶子もこの湯を訪れたといい、かつては岡藩主・中川氏の入湯場でもあったと伝わる。",
+"大分の湯は、どれもひとつながりの旅にできる。海辺の地獄から山の炭酸泉まで、湯けむりをたどって県を横切る一日を組んでみてほしい。このサイトでは、エリアから気ままにさがすのも、城とめぐる道を選ぶのも、与謝野夫妻のような偉人の湯を訪ねるのも自由だ。湯けむりがそっと暮らしに溶け込むこの国を、あなたの好きな入口から歩き出せばいい。"]},
+  en:{tag:"A JOURNEY THROUGH ŌITA", title:"Ōita, the Land of Rising Steam",
+    body:[
+"Each morning the town of Beppu wakes wrapped in drifting steam. In a place that ranks first in Japan for both the number of springs and the volume of water that pours from them, the bath is not sightseeing but daily life. Climb the slopes and you find the \"hells\" glowing red and blue as they breathe out vapor; at Kannawa the earth's heat steams the food, and at Myōban the delicate yu-no-hana mineral flower grows slowly beneath thatched huts. The cluster of springs known as the Beppu Hattō gives a single town many faces.",
+"Head inland from Beppu and you reach Yufuin at the foot of Mount Yufu. Soaking while gazing up at that shapely peak offers a quiet ease, different from Beppu's lively bustle. Travel a little further to Nagayu in Taketa, known as one of the world's great carbonated springs, where fine bubbles cling to the skin. Yosano Tekkan and Akiko are said to have visited these waters, which are told to have once been the bathing place of Nakagawa, lord of the Oka domain.",
+"The springs of Ōita all fold into one continuous journey. From the seaside hells to the carbonated waters in the hills, try planning a single day that crosses the prefecture by following the steam. On this site you are free to wander by area, to choose a route that pairs castles with baths, or to seek out the springs of notable figures like the Yosano couple. In this land where steam quietly dissolves into everyday life, simply set out from whichever doorway you like best."]}},
+ {id:"r_hokkaido", min:4,
+  ja:{tag:"地方をめぐる", title:"火山と原野のあいだに、湯が点る",
+    body:[
+"登別の地獄谷では、白い湯けむりが今も岩肌のあいだから立ちのぼっている。火口の跡から多彩な泉質が湧くこの湯は、北の大地の力をそのまま掬い取ったような名湯と言ってよい。北海道の湯は、まずこの火山の鼓動から始まる。広い島のあちこちで、地の底の熱が静かに地表へと顔を出しているのだ。",
+"山へ向かえば、湯の表情はまた変わる。ニセコ五色温泉は羊蹄山やニセコ連峰の山あいにあり、稜線を望みながら身を沈める湯だという。川湯温泉は強酸性の硫黄泉で、肌を刺すような鋭さに大地の正直さがにじむ。豊富温泉は油分を含む珍しい湯として知られ、ここまで湯の個性が違うのかと驚かされる。火山と原野のあいだに、ひとつとして同じでない湯が点っている。",
+"湖のほとりにも、湯はある。阿寒湖温泉は湖畔に開けた地で、古くからのアイヌ文化が今も息づく土地と伝わる。湖を眺め、森の声を聞きながら浸かる時間は、北海道という土地の大きさそのものだ。広大な自然のなかに散らばるこれらの湯を、このサイトでは「さがす」や「エリア」からたどって、自分だけの旅程を編むことができる。地獄谷の湯けむりから、湖畔の静けさへ。北の湯めぐりは、そのまま大地をめぐる旅になる。"]},
+  en:{tag:"A JOURNEY THROUGH HOKKAIDŌ", title:"Springs Scattered Between Volcano and Wild Plain",
+    body:[
+"At Noboribetsu's Jigokudani, white steam still rises from between the bare rocks. From the crater's traces a wealth of spring types wells up, a famous bath that seems to scoop the raw power of the northern earth straight from the ground. Hokkaidō's hot springs begin here, with this volcanic pulse. Across the wide island, the heat of the deep quietly surfaces in place after place.",
+"Turn toward the mountains and the springs change their face. Niseko Goshiki Onsen lies in the folds of Mount Yōtei and the Niseko range, a bath where you sink into the water while the ridgelines look on. Kawayu Onsen is a strongly acidic sulfur spring, its sharpness on the skin a kind of honesty from the earth. Toyotomi Onsen is known as a rare bath that carries oil within it; one is astonished that springs can differ so completely. Between volcano and wild plain, no two waters are alike.",
+"By the lake, too, there is a spring. Akanko Onsen opens onto the lakeshore, a land where the old Ainu culture is said to live on. To bathe while watching the water and listening to the voice of the forest is to feel the very vastness of Hokkaidō. On this site you can trace these scattered springs through Search or by Area, and weave a journey of your own. From the steam of Jigokudani to the stillness of the lakeshore, a tour of the northern baths becomes, quite simply, a journey across the land."]}},
+ {id:"r_kansai", min:4,
+  ja:{tag:"地方をめぐる", title:"千年の湯に分け入る ― 関西の古湯をめぐる",
+    body:[
+"有馬の湯から立ちのぼる湯気は、赤い。鉄分を含んだ「金泉」が、空気に触れて錆色に染まるのだという。この湯を愛したのは豊臣秀吉で、人はそれを「太閤の湯」と呼んだ。透きとおった「銀泉」とあわせ、二つの湯が湧くこの古湯は、清少納言の『枕草子』にも記されたと伝わる。関西の温泉は、こうして古典と信仰のなかに静かに横たわっている。",
+"北へ向かえば、城崎温泉がある。志賀直哉が『城の崎にて』を書いた町で、浴衣の裾を鳴らしながら外湯をめぐる夜が、今も変わらず続いている。さらに紀州、和歌山の山あいへ分け入れば、湯の峰温泉にたどり着く。熊野詣の旅人がここで身を清めた湯垢離場であり、その「つぼ湯」は、入浴できる温泉としては世界でも稀な世界遺産に登録されている。同じ紀州には、徳川家の御殿湯であった龍神温泉も湧く。",
+"名のある湯には、たいてい誰かの物語が積もっている。秀吉が浸かり、文豪が筆をとり、巡礼者が祈り、殿様が骨を休めた ― 千年の時が、湯のなかに沈んでいるのだ。だからこの地方は、ひとつの湯で終わらせるには惜しい。城とめぐり、偉人の湯を訪ね、エリアから次の一湯をたぐり寄せる。そうやって関西の古湯を結んでいけば、旅はそのまま、長い物語を読み継ぐことになる。"]},
+  en:{tag:"A JOURNEY THROUGH KANSAI", title:"Into Springs a Thousand Years Old: A Journey Through Kansai's Ancient Waters",
+    body:[
+"The steam rising from Arima is red. Its iron-rich \"kinsen,\" or golden spring, turns the color of rust the moment it meets the air. Toyotomi Hideyoshi is said to have loved this water, and people came to call it the Taikō no Yu, the regent's bath. Together with the clear \"ginsen,\" or silver spring, this ancient source is said to appear even in Sei Shōnagon's Pillow Book. Here in Kansai, the hot springs lie quietly within the old world of classics and faith.",
+"Travel north and you reach Kinosaki, the town where Shiga Naoya wrote At Kinosaki. To this day, guests drift from one public bath to the next, the hems of their yukata rustling through the evening. Press deeper, into the mountains of Wakayama, and you come to Yunomine, where pilgrims on the Kumano road once purified themselves. Its Tsubo-yu is among the rare hot springs in the world you may actually bathe in that carry a World Heritage listing. Nearby flows Ryūjin, once the private bath of the Tokugawa lords of Kishū.",
+"A spring with a name usually carries someone's story settled within it. Hideyoshi soaked here, a novelist took up his pen, pilgrims prayed, a lord rested his bones — a thousand years lie sunk in the water. So this region is too rich to end at a single bath. Pair the springs with castles, seek out the baths of great figures, and let one area lead you to the next. Trace Kansai's ancient waters this way, and the journey becomes its own long story, read on and on."]}},
+ {id:"r_gunma", min:4,
+  ja:{tag:"地方をめぐる", title:"湯けむりの国、群馬をめぐる",
+    body:[
+"白い湯けむりの中で、人々が長い板を手に湯をかき混ぜている。草津温泉の湯もみは、熱くて強い酸性の湯を、水で薄めずに冷ますための作法と伝わる。日本一とされる自然湧出量、肌を刺すほどの強酸性、そして「時間湯」と呼ばれる入浴の作法。江戸の温泉番付では、東の大関に据えられたという。群馬の湯旅は、この一番の名湯から始めたい。",
+"山を下りれば、湯の表情は静かに変わってゆく。伊香保の石段街は、両側に宿と店を抱いて坂をのぼり、画家の竹久夢二がこの地に縁を結んだと伝わる。四万の湯は青く澄み、万座は高い山の上で硫黄の香りを濃くたたえる。そして山あいの法師温泉には、川端康成も愛したという一軒宿が、今もひっそりと湯をたたえている。",
+"強い湯、優しい湯、青い湯、硫黄の湯。群馬は、ひとつの県の中にこれだけの色を持つ。だから一度の旅で巡りきろうとせず、湯ごとに違う一日を重ねてゆくのがいい。このサイトでは「さがす」から湯の質で選び、「エリア」から土地を辿り、「偉人の湯」から夢二や康成の足あとをなぞることもできる。あなただけの群馬の湯めぐりを、ここから組み立ててほしい。"]},
+  en:{tag:"A JOURNEY THROUGH GUNMA", title:"Gunma, a Country of Rising Steam",
+    body:[
+"In the white steam, people stir the water with long wooden boards. This is yumomi, the custom of Kusatsu, said to cool the fiercely hot, strongly acidic water without diluting it. Kusatsu is known for what is called the largest natural flow of hot water in Japan, its strong acidity, and the bathing practice known as jikan-yu. In the hot spring rankings of the Edo period, it was placed as the ozeki of the east. A journey through Gunma's springs is best begun here, at its finest.",
+"Come down from the mountains, and the springs quietly change their faces. Ikaho's stone-step street climbs the slope with inns and shops on either side, a place said to be tied to the painter Takehisa Yumeji. The waters of Shima run clear and blue, while Manza, high on its mountain, holds the deep scent of sulphur. And in a mountain fold, the single inn of Hōshi, said to have been beloved by the novelist Kawabata Yasunari, still quietly holds its waters today.",
+"Fierce water, gentle water, blue water, water of sulphur. Within one prefecture, Gunma holds all these colours. So rather than trying to see it all in a single trip, let each spring become a different day. On this site you can choose by the quality of the water under Search, follow the land through Areas, or trace the footsteps of Yumeji and Kawabata through the Springs of Great Figures. From here, build the Gunma bath journey that is yours alone."]}},
+ {id:"r_sanin", min:4,
+  ja:{tag:"地方をめぐる", title:"山陰山陽、古湯をたどる旅",
+    body:[
+"清少納言は『枕草子』に、湯のよきものとして有馬、榊原と並べて、島根の玉造をしるしたという。その玉造温泉は、いまも肌をなめらかにする美肌の古湯として知られ、松江城の城下に湯気を立てている。城を見あげて歩いた一日の終わりに、その湯に身を沈める。山陰の旅は、こうしてはじめるのがいい。",
+"峠を越えて鳥取に入れば、三朝温泉が待っている。ここは世界でも有数のラジウム（ラドン）の湧く湯として伝えられ、湯につかるだけでなく、その気を吸うことに意味があるという。さらに足をのばせば、皆生は海辺に湯が湧く。山あいの古湯と、潮の香る湯。同じ地方のなかに、これほど違う湯があるのもめずらしい。",
+"岡山に下れば、湯原温泉の砂湯がある。ダムの下、川底からこんこんと湧く無料の混浴露天で、かつて全国の露天番付に西の横綱と据えられたと伝わる。山陰山陽の湯は、城の麓に、海のそばに、川の底に、それぞれの土地の顔をして待っている。このサイトの「エリア」や「城とめぐる」をたどれば、あなたの一日に合う湯が、きっと見つかるはずだ。"]},
+  en:{tag:"A JOURNEY THROUGH SAN'IN AND SAN'YŌ", title:"Old Springs of the San'in and San'yō Coast",
+    body:[
+"In The Pillow Book, Sei Shōnagon is said to have ranked Tamatsukuri in Shimane among the finest springs, beside Arima and Sakuragi. To this day Tamatsukuri is known as an ancient spring that smooths the skin, steaming quietly in the castle town below Matsue Castle. After a day spent gazing up at the keep, you lower yourself into its water. This is how a journey through San'in ought to begin.",
+"Cross the pass into Tottori and Misasa waits for you. It is said to be one of the world's rare radium, or radon, springs, where the point is not only to soak but to breathe in what rises from the water. Go a little farther and Kaike bubbles up at the edge of the sea. An old mountain spring and a salt-scented coastal one, so unalike within a single region, are a rare thing indeed.",
+"Drop down into Okayama and you find the Sunayu of Yubara. Below a dam, welling up free of charge from the riverbed itself, this open-air mixed bath was once ranked the western yokozuna among the country's outdoor springs. The waters of San'in and San'yō wait each with the face of their own land: at a castle's foot, beside the sea, at the bottom of a river. Follow this site's Area or Tour with Castles, and you will surely find the spring that suits your day."]}}
 ];
 
 /* ---------------- main view switching ---------------- */
@@ -2002,14 +2105,16 @@ const GENRES = [
   {id:'faith',   ja:'信仰', en:'Faith'},
   {id:'nature',  ja:'自然', en:'Nature'},
   {id:'culture', ja:'文化', en:'Culture'},
-  {id:'toji',    ja:'湯治', en:'Toji'}
+  {id:'toji',    ja:'湯治', en:'Toji'},
+  {id:'region',  ja:'地方', en:'Regions'}
 ];
 const GENRE_OF = {
   toji:'toji', color:'nature', saigo:'figures',
   castle:'history', bushou:'history', yama:'nature',
   bunjin:'figures', sou:'faith', meisen:'history', goten:'history', kumano:'faith',
   konyoku:'culture', kakenagashi:'nature', yukimi:'nature', insen:'culture', jikan:'culture',
-  beppu:'history', ph:'nature', kazan:'nature', jisui:'toji', yuatari:'toji', ashiyu:'culture', sunamushi:'culture', sotoyu:'culture', doubutsu:'culture', umi:'nature', basho:'figures', banzuke:'history'
+  beppu:'history', ph:'nature', kazan:'nature', jisui:'toji', yuatari:'toji', ashiyu:'culture', sunamushi:'culture', sotoyu:'culture', doubutsu:'culture', umi:'nature', basho:'figures', banzuke:'history',
+  r_tohoku:'region', r_minamikyushu:'region', r_shinshu:'region', r_oita:'region', r_hokkaido:'region', r_kansai:'region', r_gunma:'region', r_sanin:'region'
 };
 let readGenre = null;
 function setReadGenre(g){ readGenre = g; renderRead(); }
@@ -2654,38 +2759,46 @@ Object.assign(I18N.en, {
 
 /* mood → filter logic + Mitama's voice. Each picks by scoring ONSEN. */
 const MOODS = [
-  { id:"tired",  emo:"へとへと", en:"Drained",
-    ja:{label:"今日はもうがんばらない", line:"なら、ぬるい湯に何時間でも。何もしない時間を肯定しよう。"},
-    enx:{label:"Done trying for today", line:"Then sink into lukewarm water for hours. Doing nothing is allowed."},
+  { id:"yukkuri", emo:"ゆっくり", en:"Slow down",
+    ja:{label:"ゆっくりしたい", line:"ぬるい湯に、何時間でも。急がなくていいよ。"},
+    enx:{label:"I want to slow down", line:"Lukewarm water, for as long as you like. No need to hurry."},
     score:o=>(o.temp==='nuru'?3:0)+(o.purpose.includes('toji')?2:0)+(o.tags.includes('kakenagashi')?1:0) },
-  { id:"skin",   emo:"うるおい", en:"Skin",
-    ja:{label:"肌だけは諦めたくない", line:"とろとろの美肌の湯においで。すべすべになって帰ろう。"},
-    enx:{label:"Won't give up on my skin", line:"Come to the silky beautiful-skin waters. You'll leave smooth."},
+  { id:"genki", emo:"元気に", en:"Recharge",
+    ja:{label:"元気になりたい", line:"ガツンと効く湯で、いっきに目を覚まそう。"},
+    enx:{label:"I want my energy back", line:"A strong spring to snap you wide awake."},
+    score:o=>(o.quality.includes('acid')?2:0)+(o.temp==='atsu'?2:0)+(o.quality.includes('sulfur')?1:0) },
+  { id:"kizu", emo:"癒したい", en:"Heal",
+    ja:{label:"傷を癒したい", line:"古くから療養に使われた湯で、ゆっくり治していこう。"},
+    enx:{label:"I want to heal", line:"Waters long used for recovery. Mend, slowly."},
+    score:o=>(o.purpose.includes('toji')?2:0)+(o.quality.includes('sulfur')?1:0)+(o.quality.includes('acid')?1:0)+(o.tags.includes('insen')?1:0) },
+  { id:"cocoro", emo:"心が冷えて", en:"Cold heart",
+    ja:{label:"心が冷えている", line:"にごり湯にそっと包まれよう。心からほどけていくよ。"},
+    enx:{label:"My heart feels cold", line:"Let a milky bath hold you. You'll unknot from the heart."},
+    score:o=>(o.color==='milky'?3:0)+(o.quality.includes('chloride')?1:0)+(o.tags.includes('kakenagashi')?1:0) },
+  { id:"hada", emo:"お肌", en:"Skin",
+    ja:{label:"お肌を磨きたい", line:"とろとろの美肌の湯へ。すべすべになって帰ろう。"},
+    enx:{label:"I want to polish my skin", line:"To the silky beauty waters. Leave smooth."},
     score:o=>(o.quality.includes('bicarb')?3:0)+(o.ph>=8.5?2:0)+(o.quality.includes('sulfate')?1:0) },
-  { id:"sharp",  emo:"シャキッ", en:"Sharpen",
-    ja:{label:"気合だけで生きてる", line:"ピリッと効く酸性の湯で、しゃきっと目を覚ましておいで。"},
-    enx:{label:"Running on willpower alone", line:"A sharp acidic spring will snap you awake."},
-    score:o=>(o.quality.includes('acid')?3:0)+(o.temp==='atsu'?2:0)+(o.color==='milky'?1:0) },
-  { id:"alone",  emo:"ひとりに", en:"Solitude",
-    ja:{label:"ひとりを満喫したい", line:"山の奥の、誰もいない湯がある。湯けむりに隠れておいで。"},
-    enx:{label:"Savor being alone", line:"There's a spring deep in the hills with no one around. Hide in the steam."},
-    score:o=>(o.purpose.includes('hito')?3:0)+(o.tags.includes('jisui')?1:0)+(/車|徒歩|時間/.test(o.ja.access)?1:0) },
-  { id:"warm",   emo:"あったまる", en:"Warm up",
-    ja:{label:"末端まで冷たい人間です", line:"塩の湯がいい。湯あがりもずっとぽかぽかが続くよ。"},
-    enx:{label:"Cold to my fingertips", line:"Go for a salt spring — the warmth lingers long after."},
-    score:o=>(o.quality.includes('chloride')?3:0)+(o.temp==='atsu'?1:0)+(o.tags.includes('kaihin')?1:0) },
-  { id:"play",   emo:"はしゃぐ", en:"Play",
+  { id:"ase", emo:"汗をかく", en:"Sweat",
+    ja:{label:"汗をかきたい", line:"熱い湯と蒸し湯で、どっと汗を流そう。"},
+    enx:{label:"I want to sweat", line:"Hot water and steam baths for a good, deep sweat."},
+    score:o=>(o.temp==='atsu'?3:0)+(o.tags.includes('mushi')?2:0)+(o.quality.includes('acid')?1:0) },
+  { id:"genjitsu", emo:"現実から", en:"Escape",
+    ja:{label:"現実から離れたい", line:"山の奥の、別世界の湯へ。今日は帰ってこなくていい。"},
+    enx:{label:"I want to leave reality", line:"To another world deep in the hills. No need to return today."},
+    score:o=>(o.purpose.includes('hito')?3:0)+(o.color==='gold'||o.color==='emerald'?1:0)+(o.purpose.includes('roten')?1:0) },
+  { id:"digital", emo:"電波を切る", en:"Off the grid",
+    ja:{label:"デジタルデトックスしたい", line:"電波の届かない露天で、通知から消えよう。"},
+    enx:{label:"Digital detox", line:"An open-air bath off the grid. Vanish from your notifications."},
+    score:o=>(o.purpose.includes('roten')?2:0)+(o.purpose.includes('hito')?2:0)+(o.tags.includes('kakenagashi')?1:0) },
+  { id:"tabi", emo:"誰かと旅", en:"A trip",
     ja:{label:"誰かと旅したい", line:"気の合う人と、湯の街をのんびり歩こう。外湯をめぐって。"},
     enx:{label:"A trip with someone", line:"Wander an onsen town together, in no hurry."},
-    score:o=>(o.purpose.includes('day')?2:0)+(o.tags.includes('free')?2:0)+(o.purpose.includes('ashiyu')?1:0) },
-  { id:"history",emo:"歴史にひたる", en:"History",
-    ja:{label:"現実からすこし外れたい", line:"湯けむりの向こうは、もう別世界。少し現実を置いておいで。"},
-    enx:{label:"Slip out of reality a bit", line:"Beyond the steam is another world. Leave the real one a while."},
-    score:o=>(o.yukari?3:0)+(o.castle?2:0)+(o.color==='gold'||o.color==='emerald'?1:0) },
-  { id:"wild",   emo:"自然のなかで", en:"Into nature",
-    ja:{label:"スマホの電波を切りたい", line:"川の音、空の下。露天で大きく息をしておいで。"},
-    enx:{label:"Cut the signal off", line:"River sounds, open sky. Breathe deep in an open-air bath."},
-    score:o=>(o.purpose.includes('roten')?3:0)+(o.color==='emerald'||o.color==='cobalt'?1:0)+(o.tags.includes('kakenagashi')?1:0) }
+    score:o=>(o.purpose.includes('day')?2:0)+(o.tags.includes('free')?1:0)+(o.purpose.includes('ashiyu')?1:0) },
+  { id:"gohoubi", emo:"ご褒美", en:"Treat myself",
+    ja:{label:"自分にご褒美", line:"とろける湯と絶景で、今日は自分を甘やかそう。"},
+    enx:{label:"Treat myself", line:"Melt in fine water with a view. Spoil yourself today."},
+    score:o=>(o.quality.includes('bicarb')?2:0)+(o.purpose.includes('roten')?1:0)+(o.ph>=8?1:0)+(o.color==='gold'?1:0) }
 ];
 
 function moodPick(scoreFn, n=3){
@@ -2795,14 +2908,16 @@ function moodToList(){
 
 /* --- demo "AI" by words: keyword → mood scorer (stand-in for Claude call) --- */
 const WORD_HINTS = [
-  {k:["疲","へと","しんど","drained","tired","exhaust"], id:"tired"},
-  {k:["肌","美肌","すべすべ","skin"], id:"skin"},
-  {k:["気合","シャキ","目を覚","sharp","wake","focus"], id:"sharp"},
-  {k:["ひとり","一人","静か","alone","quiet","solitud"], id:"alone"},
-  {k:["冷え","温ま","あったま","warm","cold"], id:"warm"},
-  {k:["楽し","わいわい","はしゃ","fun","play"], id:"play"},
-  {k:["歴史","物語","昔","history","story"], id:"history"},
-  {k:["自然","露天","外","nature","outdoor","open"], id:"wild"}
+  {k:["ゆっくり","のんびり","休","だらだら","疲","へと","relax","slow","rest","tired"], id:"yukkuri"},
+  {k:["元気","気合","目を覚","シャキ","energy","wake","refresh"], id:"genki"},
+  {k:["傷","癒","療養","治し","heal","recover","wound"], id:"kizu"},
+  {k:["心","さみし","寂し","落ち込","lonely","cold heart","down"], id:"cocoro"},
+  {k:["肌","美肌","すべすべ","skin","beauty"], id:"hada"},
+  {k:["汗","熱い","蒸し","サウナ","sweat","hot"], id:"ase"},
+  {k:["現実","離れ","逃げ","別世界","escape","reality","getaway"], id:"genjitsu"},
+  {k:["スマホ","電波","デジタル","通知","デトックス","digital","signal","disconnect"], id:"digital"},
+  {k:["旅","誰か","一緒","町","travel","together","trip"], id:"tabi"},
+  {k:["ご褒美","贅沢","甘やか","reward","treat","luxury","pamper"], id:"gohoubi"}
 ];
 async function askMitamaWords(){
   const t = I18N[lang];
@@ -2814,7 +2929,7 @@ async function askMitamaWords(){
   await new Promise(r=>setTimeout(r, 700));
   const low = txt.toLowerCase();
   let hit = WORD_HINTS.find(h=>h.k.some(k=>low.includes(k.toLowerCase())));
-  const m = MOODS.find(x=>x.id===(hit?hit.id:'tired'));
+  const m = MOODS.find(x=>x.id===(hit?hit.id:'yukkuri'));
   moodActiveId = m.id;
   moodPicks = moodPick(m.score);
   moodLine = (lang==='ja'?m.ja.line:m.enx.line);
@@ -2981,7 +3096,7 @@ function renderPMap(){
           <div class="pm-regions">${regionDots}</div>
         </div>
       </div>
-      <div class="pmap-brand">お湯から探す。 — YU</div>
+      <div class="pmap-brand">お湯から探す — YU</div>
     </div>
     <div class="pmap-actions">
       <button class="rec-btn" onclick="sharePMap()">${t.pmShare}</button>
