@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>お湯から、探す。— 温泉検索プロトタイプ v21</title>
+<title>お湯から、探す。— 日本の温泉データベース</title>
 <!-- PWA(ホーム画面に追加) -->
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#ffffff">
@@ -572,7 +572,7 @@ a.rec-btn{display:inline-flex;align-items:center;justify-content:center;text-dec
     <div class="f-label" data-i18n="fFrom">ここから探す</div>
     <div class="chips" id="from-chips"></div>
     <div class="chips" id="from-opts" style="margin-top:9px"></div>
-    <div class="f-caption" data-i18n="fromCaption">直線距離からの概算デモです。実装時は経路検索APIによる実所要時間に置き換わります。</div>
+    <div class="f-caption" data-i18n="fromCaption">現在地からの直線距離をもとにした、おおよその所要時間です。</div>
   </div>
   <div class="f-group">
     <div class="f-label" data-i18n="fArea">エリア</div>
@@ -643,7 +643,7 @@ a.rec-btn{display:inline-flex;align-items:center;justify-content:center;text-dec
         <label class="rec-check" for="rec-contrib">
           <input type="checkbox" id="rec-contrib">
           <span><span class="ct" data-i18n="recContrib">分析書・掲示の写真を撮影した</span><br>
-          <span class="cs" data-i18n="recContribNote">本実装では写真をアップロードするとAIが読み取り、確認後にデータベースへ反映されます。源泉の初記録者として名前が残ります。</span></span>
+          <span class="cs" data-i18n="recContribNote">温泉分析書や掲示の写真を撮影した方はチェックを。源泉データの確認に役立て、初記録者としてお名前を残せるようにしていきます。</span></span>
         </label>
       </div>
     </div>
@@ -667,7 +667,7 @@ a.rec-btn{display:inline-flex;align-items:center;justify-content:center;text-dec
 </div>
 
 <footer>
-  <span data-i18n="footer">プロトタイプ — 掲載データはデモ用の参考値です。実装時は各施設の温泉分析書に基づきます。</span>
+  <span data-i18n="footer">掲載データは各施設の温泉分析書・公開情報をもとにした参考値です。</span>
   <button class="lang-mini" onclick="setLang(lang==='ja'?'en':'ja')">EN / 日本語</button>
 </footer>
 
@@ -686,8 +686,11 @@ const I18N = {
     fPurpose:"目的", fInd:"適応症から", fColor:"湯色", fQuality:"泉質", fTemp:"湯温",
     indCaption:"環境省「泉質別適応症」の区分に基づく参考情報です。効果を保証するものではありません。",
     fFrom:"ここから探す", fArea:"エリア",
-    fromCaption:"直線距離からの概算デモです。実装時は経路検索APIによる実所要時間に置き換わります。",
+    fromCaption:"現在地からの直線距離をもとにした、おおよその所要時間です。",
     geo:"現在地", geoFail:"現在地を取得できませんでした",
+    geoDenied:"位置情報の利用が許可されていません。ブラウザ/端末の設定で許可してください。",
+    geoUnavail:"位置情報を取得できませんでした。端末の位置情報サービスがオンか確認してください。",
+    geoTimeout:"位置情報の取得がタイムアウトしました。もう一度お試しください。",
     modes:{transit:"電車・バス",car:"車"},
     fromWord:"から", aboutWord:"約",
     regions:{hokkaido:"北海道",tohoku:"東北",kanto:"関東",chubu:"中部",kinki:"近畿",chugoku:"中国",shikoku:"四国",kyushu:"九州",okinawa:"沖縄"},
@@ -711,7 +714,7 @@ const I18N = {
     kPh:"pH", kTemp:"源泉", kBath:"浴槽", kColor:"湯色",
     dIndications:"泉質別適応症", dCastle:"城とめぐる", dAbout:"このお湯について", dAccess:"アクセス", dLocation:"位置",
     dYukari:"ゆかりの人物", dBook:"宿を探す",
-    bookNote:"※ 外部の予約サイトが開きます(デモリンク)。実装時は施設IDに紐づく直リンクになります。",
+    bookNote:"※ 外部の予約・宿泊サイトが開きます。",
     yukariSuffix:"ゆかり",
     disclaimer:"※ 環境省「泉質別適応症」の区分に基づく参考情報です。温泉分析書の掲示内容をもとに表示しており、効果を保証するものではありません。一般的適応症(疲労回復、健康増進など)は全ての療養泉に共通です。",
     generalNote:"すべての療養泉に共通する一般的適応症:筋肉や関節の慢性的な痛み・こわばり、冷え性、疲労回復、健康増進 ほか",
@@ -727,8 +730,11 @@ const I18N = {
     fPurpose:"PURPOSE", fInd:"BY INDICATION", fColor:"WATER COLOR", fQuality:"SPRING QUALITY", fTemp:"TEMPERATURE",
     indCaption:"Reference categories from Japan's Ministry of the Environment spring-quality indications. Effects are not guaranteed.",
     fFrom:"FROM HERE", fArea:"REGION",
-    fromCaption:"Demo estimate from straight-line distance. Production will use real routing APIs.",
+    fromCaption:"Approximate travel time based on straight-line distance.",
     geo:"My location", geoFail:"Could not get your location",
+    geoDenied:"Location access is blocked. Allow it in your browser/device settings.",
+    geoUnavail:"Couldn't get your location. Check that location services are on.",
+    geoTimeout:"Location request timed out. Please try again.",
     modes:{transit:"Transit",car:"Car"},
     fromWord:"from", aboutWord:"~",
     regions:{hokkaido:"Hokkaidō",tohoku:"Tōhoku",kanto:"Kantō",chubu:"Chūbu",kinki:"Kansai",chugoku:"Chūgoku",shikoku:"Shikoku",kyushu:"Kyūshū",okinawa:"Okinawa"},
@@ -752,7 +758,7 @@ const I18N = {
     kPh:"pH", kTemp:"SOURCE", kBath:"BATH", kColor:"COLOR",
     dIndications:"INDICATIONS BY SPRING QUALITY", dCastle:"PAIR WITH A CASTLE", dAbout:"ABOUT THIS WATER", dAccess:"ACCESS", dLocation:"LOCATION",
     dYukari:"HISTORIC FIGURES", dBook:"FIND A STAY",
-    bookNote:"※ Opens an external booking site (demo link). Production links will point directly to each property.",
+    bookNote:"※ Opens an external booking or travel site.",
     yukariSuffix:"",
     disclaimer:"※ Reference information based on Japan's Ministry of the Environment spring-quality indication categories, as posted on each facility's official water analysis certificate. Effects are not guaranteed. General indications (fatigue recovery, wellness, etc.) apply to all therapeutic springs.",
     generalNote:"Common to all therapeutic springs: chronic muscle/joint pain and stiffness, sensitivity to cold, fatigue recovery, general wellness, and more.",
@@ -1401,12 +1407,21 @@ function setOrigin(id){
   state.origin = {id:h.id, lat:h.lat, lng:h.lng, n:h.n};
   update();
 }
+function geoErrMsg(err){
+  const t = I18N[lang];
+  if(err && err.code===1) return t.geoDenied;   /* PERMISSION_DENIED */
+  if(err && err.code===2) return t.geoUnavail;  /* POSITION_UNAVAILABLE */
+  if(err && err.code===3) return t.geoTimeout;  /* TIMEOUT */
+  return t.geoFail;
+}
 function setGeoOrigin(){
   if(state.origin && state.origin.id==='geo'){ state.origin=null; state.tmax=null; update(); return; }
-  if(!navigator.geolocation){ toast(I18N[lang].geoFail); return; }
+  if(!navigator.geolocation){ toast(I18N[lang].geoUnavail); return; }
+  toast(I18N[lang].geo + '…');
   navigator.geolocation.getCurrentPosition(
     p => { state.origin = {id:'geo', lat:p.coords.latitude, lng:p.coords.longitude, n:{ja:I18N.ja.geo,en:I18N.en.geo}}; update(); },
-    () => toast(I18N[lang].geoFail)
+    err => toast(geoErrMsg(err)),
+    { enableHighAccuracy:true, timeout:12000, maximumAge:60000 }
   );
 }
 function setMode(m){ state.mode = m; update(); }
@@ -1601,7 +1616,7 @@ Object.assign(I18N.ja, {
   recDate:"入湯日", recColor:"今日の湯色", recSmell:"におい", recFeel:"肌ざわり",
   recWord:"ひとこと(任意・60字)",
   recContrib:"分析書・掲示の写真を撮影した",
-  recContribNote:"本実装では写真をアップロードするとAIが読み取り、確認後にデータベースへ反映されます。源泉の初記録者として名前が残ります。",
+  recContribNote:"温泉分析書や掲示の写真を撮影した方はチェックを。源泉データの確認に役立て、初記録者としてお名前を残せるようにしていきます。",
   recSave:"湯録に押す", recCancel:"やめる",
   toastSaved:"湯録に押しました",
   mkContrib:"記録", mkCastle:"城", mkYukari:"人",
@@ -1621,7 +1636,7 @@ Object.assign(I18N.en, {
   recDate:"DATE", recColor:"TODAY'S WATER COLOR", recSmell:"SMELL", recFeel:"TEXTURE",
   recWord:"A WORD (OPTIONAL)",
   recContrib:"I photographed the analysis certificate / posted notice",
-  recContribNote:"In production, your photo is read by AI, reviewed, and added to the database. First recorders are credited on the source page.",
+  recContribNote:"Took a photo of the spring's analysis sheet? Check this — we use it to verify source data and credit first recorders.",
   recSave:"Stamp it", recCancel:"Cancel",
   toastSaved:"Stamped to your Yuroku",
   mkContrib:"REC", mkCastle:"CASTLE", mkYukari:"FIGURE",
@@ -1738,8 +1753,8 @@ async function yuLoad(){
     const r = await window.storage.get('yu-site-logs');
     if(r && r.value){ yuLogs = JSON.parse(r.value); yuStorageOk = true; renderYuroku(); return; }
   }catch(e){}
-  /* seed a few demo visits so the map shows its potential on first open */
-  yuLogs = DEMO_LOGS.slice();
+  /* 初回は空(0/96)から始める */
+  yuLogs = [];
   try{ await window.storage.set('yu-site-logs', JSON.stringify(yuLogs)); yuStorageOk = true; }
   catch(e){ yuStorageOk = false; }
   renderYuroku();
@@ -1802,7 +1817,7 @@ function checkIn(oid){
       const ds = d<10 ? (Math.round(d*10)/10)+'km' : Math.round(d)+'km';
       toast(t.checkinFar.replace('{d}', ds));
     }
-  }, ()=> toast(t.checkinFail), { enableHighAccuracy:true, timeout:10000, maximumAge:60000 });
+  }, err=> toast(geoErrMsg(err)), { enableHighAccuracy:true, timeout:12000, maximumAge:60000 });
 }
 
 /* ---------------- record modal ---------------- */
@@ -1884,14 +1899,14 @@ yuLoad();
 /* ================= v9 additions: hero media (demo photos + illustration fallback) ================= */
 
 Object.assign(I18N.ja, {
-  creditFacility:"写真提供:施設(デモ)",
-  creditUser:"写真:ユーザー投稿より採用(デモ)",
+  creditFacility:"イメージ",
+  creditUser:"イメージ",
   illusCaption:"写真収集中 — 描き起こしイラスト",
   imageNote:"※写真はイメージです"
 });
 Object.assign(I18N.en, {
-  creditFacility:"Photo: facility (demo)",
-  creditUser:"Photo: from contributors (demo)",
+  creditFacility:"Image",
+  creditUser:"Image",
   illusCaption:"Photos coming — original illustration",
   imageNote:"Image for illustration"
 });
@@ -2299,7 +2314,7 @@ Object.assign(I18N.ja, {
   moodResultLead:"きみの今日には、この湯がいい。",
   moodComment:"ミタマのひとこと",
   moodErr:"うまく見つくろえませんでした。気分タイルから選んでみて。",
-  aiNote:"※ ことばで話す機能は、本実装ではAIが応答します。このデモではキーワードから簡易応答します。"
+  aiNote:"※ 入力した言葉に近い気分を読み取って、お湯をご案内します。"
 });
 Object.assign(I18N.en, {
   nvMood:"Today's Bath",
@@ -2316,7 +2331,7 @@ Object.assign(I18N.en, {
   moodResultLead:"For a day like yours — this water.",
   moodComment:"Mitama says",
   moodErr:"Couldn't find a match. Try a mood tile instead.",
-  aiNote:"※ In production the 'tell in words' feature is answered by AI. This demo responds from keywords."
+  aiNote:"※ We read the mood closest to your words and suggest a spring."
 });
 
 /* mood → filter logic + Mitama's voice. Each picks by scoring ONSEN. */
