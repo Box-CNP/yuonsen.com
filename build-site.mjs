@@ -24,6 +24,10 @@ console.log('public/ を組み立て中…');
 copy(path.join(ROOT, 'oyu-search-prototype-v21_1.html'), path.join(OUT, 'index.html'));
 // 公開設定(Supabaseキー)
 copy(path.join(ROOT, 'app-config.js'), path.join(OUT, 'app-config.js'));
+// PWA(ホーム画面に追加 / オフライン殻)
+copy(path.join(ROOT, 'manifest.json'), path.join(OUT, 'manifest.json'));
+copy(path.join(ROOT, 'sw.js'), path.join(OUT, 'sw.js'));
+copy(path.join(ROOT, 'icons'), path.join(OUT, 'icons'));
 // ページが <script src> で読む生成物(写真・プレースホルダ)
 copy(path.join(ROOT, 'onsen-photos/db/site_photos.js'), path.join(OUT, 'onsen-photos/db/site_photos.js'));
 copy(path.join(ROOT, 'onsen-photos/db/placeholders.js'), path.join(OUT, 'onsen-photos/db/placeholders.js'));
