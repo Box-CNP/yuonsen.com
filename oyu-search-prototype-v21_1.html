@@ -300,6 +300,7 @@ footer{border-top:1px solid var(--line);padding:34px 32px;text-align:center;font
 
 /* ---------- columns ---------- */
 .col-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
+.read-genres{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 22px}
 .col-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px 26px;cursor:pointer;text-align:left;font-family:inherit;color:var(--ink);transition:transform .18s,box-shadow .18s,border-color .18s;display:flex;flex-direction:column;gap:13px}
 .col-card:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(0,0,0,.07);border-color:var(--line-strong)}
 .col-card:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
@@ -624,6 +625,7 @@ a.rec-btn{display:inline-flex;align-items:center;justify-content:center;text-dec
 <section class="main-pane" id="main-read">
   <h2 class="pane-title" data-i18n="readTitle">読みもの</h2>
   <p class="pane-lead" data-i18n="readLead">お湯の科学、湯治の作法、湯にまつわる人の話。検索の合間に、ゆっくりどうぞ。</p>
+  <div class="read-genres" id="read-genres"></div>
   <div class="col-grid" id="col-grid"></div>
 </section>
 
@@ -1638,7 +1640,7 @@ Object.assign(I18N.ja, {
   recSave:"湯録に押す", recCancel:"やめる",
   toastSaved:"湯録に押しました",
   mkContrib:"記録", mkCastle:"城", mkYukari:"人",
-  readMin:"分", readBy:"編集部"
+  readMin:"分", readBy:"編集部", readAll:"すべて"
 });
 Object.assign(I18N.en, {
   nvSearch:"Search", nvRead:"Reads", nvYuroku:"Yuroku",
@@ -1658,7 +1660,7 @@ Object.assign(I18N.en, {
   recSave:"Stamp it", recCancel:"Cancel",
   toastSaved:"Stamped to your Yuroku",
   mkContrib:"REC", mkCastle:"CASTLE", mkYukari:"FIGURE",
-  readMin:"min", readBy:"Editorial"
+  readMin:"min", readBy:"Editorial", readAll:"All"
 });
 
 const SMELLS = {sulfur:{ja:"硫黄",en:"Sulfur"},iron:{ja:"金気",en:"Iron"},shio:{ja:"塩",en:"Salt"},abura:{ja:"油",en:"Oil"},mold:{ja:"モール",en:"Moor"},none:{ja:"無臭",en:"None"}};
@@ -1787,7 +1789,62 @@ const COLUMNS = [
     body:[
 "Yunomine in Wakayama is said to hold eighteen centuries of history. Pilgrims to the three grand shrines of Kumano first cleansed themselves in this water — a rite called yugori. Tsubo-yu, the only bathable hot spring on the World Heritage list, is said to change its color seven times a day.",
 "Here lives a story of resurrection. In the sermon-ballad Oguri Hangan, the poisoned, dying Oguri is brought back to life by soaking in this spring. Kumano is a land of death and rebirth, and the water has long been told as the very instrument of that return.",
-"The path of faith and the path of water have long run together. Walk the Kumano Kodō, work up a sweat, and sink into the spring — in the same order as a pilgrim a thousand years ago. A bath you reach on foot carries a weight that a roadside stop never will."]}}
+"The path of faith and the path of water have long run together. Walk the Kumano Kodō, work up a sweat, and sink into the spring — in the same order as a pilgrim a thousand years ago. A bath you reach on foot carries a weight that a roadside stop never will."]}},
+ {id:"kakenagashi", min:3,
+  ja:{tag:"湯の科学", title:"源泉かけ流し、という贅沢",
+    body:[
+"「源泉かけ流し」とは、湧き出たままの湯を浴槽に注ぎ、あふれた分を惜しみなく捨てる使い方だ。湯を再利用しない。だから常に新鮮で、塩素もほとんど要らない。湯口に手を当てると、地球の温度がそのまま伝わってくる。",
+"対するのが循環式。限られた湯を濾過して回す方式で、湯量の事情から避けられないこともある。優劣というより、源泉の力と量の問題だ。日本にこれだけかけ流しが多いのは、それだけ豊かに湯が湧く土地だから。",
+"かけ流しの湯には「鮮度」がある。朝いちばん、湯口から落ちる湯は、まだ誰も触れていない地下からの便りだ。このサイトでは多くの湯に「源泉かけ流し」の印がある。湯の鮮度を、指先で確かめてほしい。"]},
+  en:{tag:"WATER SCIENCE", title:"Free-flowing source water, a quiet luxury",
+    body:[
+"Kakenagashi means pouring spring water straight from the source into the bath and letting the overflow simply spill away — never reused. The water stays fresh, and little or no chlorine is needed. Hold your hand to the spout and the temperature of the earth itself comes through.",
+"The alternative is recirculation: a limited volume filtered and run in a loop, sometimes unavoidable given how much water a spring yields. It is less a matter of better or worse than of the source's strength and abundance. Japan has so much free-flowing water because the land gives it so freely.",
+"Free-flowing water has freshness. The water falling from the spout at first light is news from underground that no one has yet touched. Many springs on this site carry the 'free-flowing' mark. Check that freshness with your fingertips."]}},
+ {id:"yukimi", min:3,
+  ja:{tag:"湯の科学", title:"雪見風呂は、なぜこんなにいいのか",
+    body:[
+"雪の降る露天で、首まで湯に沈む。頬は冷たく、体は熱い。この極端な温度差こそ、雪見風呂が忘れがたい理由だ。寒ければ寒いほど、湯のありがたみは増す。冬の温泉は、夏とはまるで別の生き物になる。",
+"雪の似合う湯は、東北と北の山に多い。山形の銀山温泉はガス灯と雪のあわい、青森の酸ヶ湯は豪雪の底の千人風呂、秋田の乳頭はブナ林の白い露天。雪が音を吸い、湯けむりだけが立ちのぼる静けさは、ここにしかない。",
+"ただし寒暖差は体にこたえる。のぼせる前に上がり、湯冷めしないうちに部屋へ戻るのが作法だ。それでも人は雪の湯に通う。寒さと温かさを、同じ肌で同時に味わうという、冬だけの贅沢のために。"]},
+  en:{tag:"WATER SCIENCE", title:"Why a snow-viewing bath feels so good",
+    body:[
+"Snow falling on an open-air bath, and you sunk to the neck. Cheeks cold, body hot. That sharp contrast is exactly why a snow bath is unforgettable — the colder it is, the more the water means. A winter onsen is a different creature from a summer one.",
+"Springs that suit snow cluster in Tōhoku and the northern mountains: Ginzan in Yamagata between gas-lamps and snowfall, Sukayu in Aomori with its thousand-person bath at the bottom of deep snow, Nyūtō in Akita, a white open-air bath among beech trees. Snow swallows sound; only the steam rises.",
+"But the contrast taxes the body. Get out before you overheat, return to your room before you chill — that is the etiquette. Still people make the trip, for a luxury only winter allows: cold and warmth at once, on the same skin."]}},
+ {id:"konyoku", min:4,
+  ja:{tag:"湯の文化", title:"混浴という、古い作法",
+    body:[
+"かつて日本の湯は、男も女も一緒に入るのが当たり前だった。江戸を訪れた外国人は驚いたが、人々にとって湯は裸で混じり合う共同の場。明治政府は風紀を理由に何度も禁じたが、地方の湯にはその文化が静かに残った。",
+"いま混浴は数えるほどになった。秋田の乳頭・鶴の湯、群馬の法師温泉のように、秘湯の大きな湯舟にその名残がある。多くは湯あみ着や女性専用の時間帯を設けて、誰もが入りやすいよう整えられている。",
+"混浴の本質は、色めいたものではなく「分け隔てなく湯を分かち合う」ことにある。身分も性別も、湯の中では平らになる——そんな思想が日本の湯にはずっと流れてきた。このサイトの「混浴」タグから、その文化の残る湯へ。"]},
+  en:{tag:"BATH CULTURE", title:"Konyoku: an old etiquette of sharing",
+    body:[
+"Once, Japanese baths were simply mixed — men and women together. Visitors from abroad were startled, but to locals the bath was a communal place where everyone mingled, bare. The Meiji government banned mixed bathing again and again on grounds of decency, yet the custom lingered quietly in country springs.",
+"Today konyoku is rare. A trace survives in the great pools of secluded inns — Tsuru-no-yu in the Nyūtō springs of Akita, Hōshi Onsen in Gunma. Most now offer bathing wear or women-only hours so that anyone can step in comfortably.",
+"The heart of konyoku was never the erotic; it was sharing the water without distinction. In the bath, rank and gender go level — a quiet idea that has long run through Japan's springs. Reach the springs that keep the custom through the 'mixed bathing' tag."]}},
+ {id:"insen", min:3,
+  ja:{tag:"湯の文化", title:"飲む温泉、という習慣",
+    body:[
+"温泉は、浸かるだけのものではない。「飲泉(いんせん)」といって、湯を飲む習慣が古くからある。胃腸に効くとされ、ヨーロッパの湯治場でも温泉水を飲むのは普通のことだ。ただし飲めるのは、保健所の許可を得た「飲泉場」の湯だけ。",
+"鉄分の多い湯は鉄の味、炭酸の湯はしゅわりと舌をさす。成分がそのまま味になるから、飲泉は湯の「もう一つの顔」を教えてくれる。湯口の脇に柄杓と「飲泉できます」の札があれば、ひとくち試す価値がある。",
+"飲みすぎは禁物で、一日の目安量が掲示されている。それを守れば、温泉は外からも内からも体に届く。このサイトの「飲泉」タグは、湯を飲める湯への入口だ。浸かって、飲んで、二重に湯を味わおう。"]},
+  en:{tag:"BATH CULTURE", title:"Drinking the spring",
+    body:[
+"A hot spring is not only for soaking. There is an old practice called insen — drinking the water. It is held to aid the stomach, and at European spa towns drinking the water is ordinary too. But you may drink only from a licensed 'drinking spring,' approved by the health authorities.",
+"Iron-rich water tastes of iron; carbonated water pricks the tongue. Because the minerals become flavor, drinking reveals the spring's other face. If a dipper and a 'drinkable' sign sit beside the spout, a mouthful is worth trying.",
+"Don't overdo it — a daily amount is posted. Keep to it, and the spring reaches the body from without and within. This site's 'drinking spring' tag is your door to springs you can taste. Soak, sip, and take the water twice over."]}},
+ {id:"jikan", min:4,
+  ja:{tag:"湯の文化", title:"草津の「時間湯」と、湯もみ",
+    body:[
+"草津の湯は、日本一の自然湧出量を誇り、そして熱くて強い。摂氏五十度を超える源泉も珍しくない。この猛烈な湯と付き合うために生まれたのが「時間湯(じかんゆ)」という作法だ。",
+"まずは「湯もみ」。長い板で湯をかき混ぜ、水を足さずに温度を下げる。草津節に合わせて板を操る湯もみは、いまも名物として受け継がれている。そして湯長(ゆちょう)の号令のもと、決められた短い時間だけ、一斉に湯に浸かる。熱い湯を、規律で乗りこなす知恵だ。",
+"強酸性の湯は殺菌力が高く、古くから皮膚の湯治に使われてきた。「恋の病以外は治す」とまで言われた草津。荒々しい湯を、人の作法が名湯に変えてきた。時間湯は、湯と人が長い時間をかけて結んだ約束のかたちである。"]},
+  en:{tag:"BATH CULTURE", title:"Kusatsu's 'time bath' and the water-stirring",
+    body:[
+"Kusatsu's water boasts the greatest natural outflow in Japan — and it is hot and fierce, sources above fifty degrees Celsius being nothing unusual. To live with such ferocity, a practice called jikan-yu, the 'time bath,' was born.",
+"First the yumomi: long boards stir the water to cool it without adding any, the stirring set to a Kusatsu folk song, still a celebrated sight today. Then, at the call of the yuchō, the bath-master, everyone enters at once for a fixed, short time. It is the wisdom of riding a scalding spring by discipline.",
+"Strongly acidic water is powerfully antiseptic and has long served skin cures. Kusatsu, they said, 'cures all but lovesickness.' Human ritual turned a violent spring into a great one. The time bath is the shape of a promise that water and people made over centuries."]}}
 ];
 
 /* ---------------- main view switching ---------------- */
@@ -1806,15 +1863,37 @@ function setMain(v){
 }
 
 /* ---------------- columns render ---------------- */
+/* 記事のジャンル(増えても探しやすいよう絞り込みに使う)*/
+const GENRES = [
+  {id:'history', ja:'歴史', en:'History'},
+  {id:'figures', ja:'偉人', en:'Figures'},
+  {id:'faith',   ja:'信仰', en:'Faith'},
+  {id:'nature',  ja:'自然', en:'Nature'},
+  {id:'culture', ja:'文化', en:'Culture'},
+  {id:'toji',    ja:'湯治', en:'Toji'}
+];
+const GENRE_OF = {
+  toji:'toji', color:'nature', saigo:'figures',
+  castle:'history', bushou:'history', yama:'nature',
+  bunjin:'figures', sou:'faith', meisen:'history', goten:'history', kumano:'faith',
+  konyoku:'culture', kakenagashi:'nature', yukimi:'nature', insen:'culture', jikan:'culture'
+};
+let readGenre = null;
+function setReadGenre(g){ readGenre = g; renderRead(); }
 function renderRead(){
   const t = I18N[lang];
-  document.getElementById('col-grid').innerHTML = COLUMNS.map(c=>{
+  const present = GENRES.filter(g=>COLUMNS.some(c=>GENRE_OF[c.id]===g.id));
+  document.getElementById('read-genres').innerHTML =
+    `<button class="chip ${!readGenre?'active':''}" onclick="setReadGenre(null)">${t.readAll}</button>` +
+    present.map(g=>`<button class="chip ${readGenre===g.id?'active':''}" onclick="setReadGenre('${g.id}')">${lang==='ja'?g.ja:g.en}</button>`).join('');
+  const list = COLUMNS.filter(c=> !readGenre || GENRE_OF[c.id]===readGenre);
+  document.getElementById('col-grid').innerHTML = list.map(c=>{
     const L = c[lang];
     return `<button class="col-card" onclick="openArticle('${c.id}')">
       <span class="col-tag">${L.tag}</span>
       <h3>${L.title}</h3>
       <p>${L.body[0].slice(0, lang==='ja'?64:130)}…</p>
-      <span class="col-meta">${c.min} ${t.readMin} ・ ${t.readBy}</span>
+      <span class="col-meta">${t.readBy}</span>
     </button>`;
   }).join('');
 }
@@ -1827,7 +1906,7 @@ function openArticle(id){
     <div class="article">
       <span class="col-tag">${L.tag}</span>
       <h2>${L.title}</h2>
-      <div class="col-meta">${c.min} ${t.readMin} ・ ${t.readBy}</div>
+      <div class="col-meta">${t.readBy}</div>
       <div class="body">${L.body.map(p=>`<p>${p}</p>`).join('')}</div>
     </div>`;
   artLastFocus = document.activeElement;
