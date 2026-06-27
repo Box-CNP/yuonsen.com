@@ -1,0 +1,22 @@
+{
+  "name": "onsen-photos",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "お湯から、探す。 — 規約準拠フォトインジェスト・パイプライン(設計書 v1.0)",
+  "scripts": {
+    "validate": "node scripts/01_validate.mjs",
+    "process": "node scripts/02_process.mjs",
+    "register": "node scripts/03_register.mjs",
+    "report": "node scripts/04_report.mjs",
+    "site": "node scripts/05_site_adapter.mjs",
+    "placeholders": "node scripts/06_placeholders.mjs",
+    "gen-sources": "node scripts/gen_sources_from_csv.mjs",
+    "all": "node scripts/gen_sources_from_csv.mjs && node scripts/01_validate.mjs && node scripts/02_process.mjs && node scripts/03_register.mjs && node scripts/04_report.mjs && node scripts/05_site_adapter.mjs && node scripts/06_placeholders.mjs"
+  },
+  "dependencies": {
+    "blurhash": "^2.0.5",
+    "js-yaml": "^4.1.0",
+    "sharp": "^0.33.5"
+  }
+}

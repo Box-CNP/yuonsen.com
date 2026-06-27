@@ -1,0 +1,5 @@
+# 自動生成: scripts/gen_sources_from_csv.mjs(photoac_shopping_list.csv の「取得状況=済」から生成)
+# このファイルは手で編集しない。CSV を直して再生成すること。
+# 手書きの登録は manifest/sources.yaml 側に書く(両方マージして読まれる)。
+
+[]

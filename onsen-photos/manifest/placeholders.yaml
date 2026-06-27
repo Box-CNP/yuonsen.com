@@ -1,0 +1,34 @@
+# プレースホルダ(イメージ画像)台帳
+# ---------------------------------------------------------------------------
+# 実写真がまだ無い湯に出す「※写真はイメージです」用の画像。全96湯で使い回す。
+# CC0/フリー素材を カテゴリ別に inbox/_placeholders/<file> に置き、
+# 出典とライセンスを必ずここに記録する(本プロジェクトのライセンス管理方針)。
+#
+# カテゴリ(プロトタイプの判定と一致):
+#   sea      … 海辺の湯(tags に kaihin)
+#   mountain … 山・秘湯(purpose に hito / toji)
+#   town     … それ以外(温泉街・里の湯)
+#
+# 取得方法と「本物のCC0」の探し方は CC0_PLACEHOLDER_GUIDE.md を参照。
+# 反映: 画像を置いて `npm run placeholders`(または `npm run all`)→ ページ再読み込み。
+
+sea:
+  file: sea.jpg
+  source_name: ""        # 例: Openverse / Wikimedia Commons
+  source_url: ""         # 取得元ページURL(後で確認できるように)
+  license: CC0           # 実際のライセンスを記録(CC0 / CC-BY / Unsplash License 等)
+  credit: ""             # CC-BY 等で表示義務がある場合のみ記入。CC0 は空
+
+mountain:
+  file: mountain.jpg
+  source_name: ""
+  source_url: ""
+  license: CC0
+  credit: ""
+
+town:
+  file: town.jpg
+  source_name: ""
+  source_url: ""
+  license: CC0
+  credit: ""

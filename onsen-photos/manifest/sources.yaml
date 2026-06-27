@@ -1,0 +1,74 @@
+# onsen-photos マニフェスト(人が手で記入する唯一のファイル)
+# スキーマ: manifest/sources.schema.md / 設計書 §3
+#
+# 使い方:
+#   1. 規約に沿って人手で取得(DLボタン/申請)した原本を inbox/<ライブラリー名>/ に置く
+#   2. 1画像 = 1エントリで、下の「記入例」に倣ってこのファイルに追記する
+#   3. `node scripts/01_validate.mjs` で整合チェック → 02 → 03 → 04 の順に実行
+#      (まとめて `npm run all`)。サイト結線データは `npm run site` で生成
+#
+# トップレベルは「エントリの配列」。現在は空(記入例は下にコメントとして掲載)。
+# 実データを追記する際は、この行の下に `- file: ...` を続ける。
+
+[]
+
+# ============================================================================
+# 記入例(コメント)— 実際に使うときは下記をコピーし、先頭の `# ` を外して使う
+# ============================================================================
+#
+# --- Aランク例: 旅東北(申請不要・クレジット不要) ---
+# - file: 旅東北/銀山温泉_雪夜.jpg
+#   onsen_id: 43
+#   role: hero
+#   source_type: library
+#   source_name: 旅東北
+#   source_url: https://www.tohokukanko.jp/photos/...
+#   terms_url: https://www.tohokukanko.jp/photos/index.html
+#   terms_rank: A
+#   credit_required: false
+#   acquired_by: download
+#   acquired_at: 2026-07-01
+#
+# --- Aランク例: Amazing AOMORI(青森・同意のみ) ---
+# - file: 青森/酸ヶ湯_千人風呂.jpg
+#   onsen_id: 2
+#   role: card
+#   source_type: library
+#   source_name: Amazing AOMORI
+#   source_url: https://amazing-aomori.example/photos/...
+#   terms_url: https://amazing-aomori.example/terms
+#   terms_rank: A
+#   credit_required: false
+#   acquired_by: download
+#   acquired_at: 2026-07-01
+#
+# --- Bランク例: 霧島市ライブラリー(クレジット要 → DBに記録しUI表示) ---
+# - file: 霧島市/霧島温泉郷_噴気.jpg
+#   onsen_id: 31
+#   role: scene
+#   source_type: library
+#   source_name: 霧島市ライブラリー
+#   source_url: https://kirishima.example/library/...
+#   terms_url: https://kirishima.example/library/terms
+#   terms_rank: B
+#   credit_required: true
+#   credit_text: 写真提供:霧島市          # 省略すると 03_register が source_name から補完
+#   license_note: 市PR目的。販売商品への利用不可。トリミング等は可
+#   acquired_by: download
+#   acquired_at: 2026-07-01
+#
+# --- Cランク例(申請制): applied_no が必須 ---
+# - file: 佐賀/嬉野温泉_朝霧.jpg
+#   onsen_id: 10
+#   role: scene
+#   source_type: library
+#   source_name: あそぼーさが
+#   source_url: https://asobo-saga.example/photo/...
+#   terms_url: https://asobo-saga.example/terms
+#   terms_rank: C
+#   credit_required: true
+#   credit_text: 写真提供:佐賀県観光連盟
+#   license_note: 申請制(最大10点)。掲載現物提供要
+#   acquired_by: application
+#   acquired_at: 2026-07-05
+#   applied_no: SAGA-2026-0042

@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(node -e ' *)",
+      "Bash(npm install *)",
+      "Bash(node scripts/01_validate.mjs)",
+      "Bash(echo \"exit=$?\")",
+      "Bash(node --input-type=module -e ' *)",
+      "Bash(npm run *)",
+      "Bash(grep -v '^$')",
+      "Bash(cat)",
+      "Bash(cp manifest/sources.yaml /tmp/real_sources.yaml)",
+      "Bash(cp /tmp/test_sources.yaml manifest/sources.yaml)",
+      "Bash(cp /tmp/real_sources.yaml manifest/sources.yaml)",
+      "Bash(node -e 'const p=require\\(\"./db/photos.json\"\\); console.log\\(JSON.stringify\\(p[0],null,2\\)\\); console.log\\(\"...total\",p.length,\"entries; ids:\",p.map\\(x=>x.id\\).join\\(\", \"\\)\\)')",
+      "Bash(PHOTO_BASE=onsen-photos/dist node scripts/05_site_adapter.mjs)",
+      "Bash(node -e 'const f=require\\(\"./db/site_photos.json\"\\); console.log\\(JSON.stringify\\(f,null,1\\)\\)')",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(sed -n '1,40p' report.md)",
+      "Bash(node -e 'const r=require\\(\"./db/onsen_roster.json\"\\); console.log\\(r.count,\"湯 / 例:\", Object.entries\\(r.names\\).slice\\(0,3\\).map\\(\\([k,v]\\)=>k+\":\"+v\\).join\\(\", \"\\)\\)')",
+      "Bash(mkdir -p inbox/_placeholders)",
+      "Bash(PHOTO_BASE=onsen-photos/dist node scripts/06_placeholders.mjs)",
+      "Bash(node --input-type=module -e 'import sharp from \"sharp\"; const m=await sharp\\(\"dist/_placeholders/sea.webp\"\\).metadata\\(\\); console.log\\(\"sea.webp width\",m.width,\"exif:\",m.exif?m.exif.length+\"B\":\"なし\"\\);')",
+      "Bash(rm -f inbox/_placeholders/*.jpg dist/_placeholders/*.webp)",
+      "Bash(node scripts/06_placeholders.mjs)",
+      "Bash(cp manifest/photoac_shopping_list.csv /tmp/photoac.csv.bak)",
+      "Bash(PHOTO_BASE=onsen-photos/dist npm run all)",
+      "Bash(node -e 'const p=require\\(\"./db/photos.json\"\\); const e=p.find\\(x=>x.onsen_id===1\\); console.log\\(JSON.stringify\\(e,null,1\\)\\)')",
+      "Bash(node --input-type=module -e 'import sharp from \"sharp\"; const p=require\\(\"./db/photos.json\"\\).find\\(x=>x.onsen_id===1\\); const f=\"dist\"+p.webp_path.replace\\(\"/photos\",\"\"\\); const m=await sharp\\(f\\).metadata\\(\\); console.log\\(f.split\\(\"/\"\\).pop\\(\\),\"width\",m.width,\"exif:\",m.exif?\"残\":\"なし\"\\);')",
+      "Bash(cd /Users/fujinonaomi/Desktop/onsen/onsen-photos *)",
+      "Bash(cd /Users/fujinonaomi/.claude/projects/-Users-fujinonaomi-Desktop-onsen/memory *)",
+      "mcp__visualize__read_me",
+      "mcp__visualize__show_widget",
+      "Bash(node -e 'const d=require\\(\"./mood-shindan.json\"\\); const types=new Set\\(d.shindanTypes.map\\(t=>t.id\\)\\); const res=Object.values\\(d.shindanQuiz.result\\); const combos=Object.keys\\(d.shindanQuiz.result\\); *)",
+      "Bash(node build-site.mjs)",
+      "Bash(git init *)",
+      "Bash(git add *)"
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "_about": "きょうの湯(気分8コピー)と 温泉診断(8タイプ)の確定文言＋当てる湯の条件。前向きチューニング版。match はオンセンの属性(quality[]/color/ph/temp/purpose[]/tags[])に対する述語で、指定キーは AND、配列内は OR で評価する。example は確認用の代表例。",
+  "matchSchema": {
+    "quality_any": "quality[] にいずれか含む",
+    "color_any": "color がいずれか",
+    "temp_any": "temp がいずれか (atsu/teki/nuru)",
+    "ph_min": "ph >= 値",
+    "ph_max": "ph <= 値",
+    "purpose_any": "purpose[] にいずれか含む",
+    "tags_any": "tags[] にいずれか含む",
+    "tags_none": "tags[] にいずれも含まない"
+  },
+
+  "moods": [
+    { "id": "yameru", "label": "今日はもう、がんばらない", "lead": "なら、ぬるい湯で何時間でも。",
+      "match": { "purpose_any": ["toji"], "temp_any": ["nuru", "teki"] } },
+    { "id": "hada", "label": "肌だけは、諦めたくない", "lead": "とろみのある湯が、いちばんの味方。",
+      "match": { "quality_any": ["bicarb", "sulfur"], "ph_min": 8.0 } },
+    { "id": "kiai", "label": "気合だけで、生きてる", "lead": "ピリッと効く、玄人の湯を一発。",
+      "match": { "quality_any": ["acid"], "ph_max": 3 } },
+    { "id": "hitori", "label": "ひとりを、満喫したい", "lead": "誰もいない湯に、ただ沈む。",
+      "match": { "purpose_any": ["hito"], "tags_none": ["konyoku"] } },
+    { "id": "hienai", "label": "末端まで、冷たい人間です", "lead": "塩の湯で、芯から温め直す。",
+      "match": { "quality_any": ["chloride", "iron"], "temp_any": ["atsu"] } },
+    { "id": "sawagu", "label": "とりあえず、誰かと騒ぎたい", "lead": "外湯をはしごできる、にぎやかな町へ。",
+      "match": { "purpose_any": ["day"], "tags_any": ["insen", "mushi"] } },
+    { "id": "hazureru", "label": "現実から、すこし外れたい", "lead": "湯けむりの向こうは、もう別世界。",
+      "match": { "purpose_any": ["toji", "hito"], "color_any": ["milky", "gold", "emerald"] } },
+    { "id": "denpa", "label": "スマホの電波、切りたい", "lead": "山奥の露天で、通知から消える。",
+      "match": { "purpose_any": ["hito", "roten"] } }
+  ],
+
+  "shindanTypes": [
+    { "id": "neko", "label": "猫になりたい", "tag": "ナマケモノ系", "example": "微温湯温泉",
+      "line": "ぬるい湯で、何もしない時間を肯定。",
+      "match": { "temp_any": ["nuru"], "purpose_any": ["toji"] } },
+    { "id": "umarekawari", "label": "さっぱり生まれ変わりたい", "tag": "リセット系", "example": "玉川温泉",
+      "line": "湯上がりは、つるんと別人。日本一の強酸性へ。",
+      "match": { "quality_any": ["acid"], "ph_max": 2 } },
+    { "id": "nikomi", "label": "じっくり煮込まれたい", "tag": "とろ火系", "example": "鉄輪温泉",
+      "line": "熱くて濃い湯で、芯まで火を通す。",
+      "match": { "temp_any": ["atsu"], "color_any": ["milky", "gold"] } },
+    { "id": "solo", "label": "ひとりを満喫したい", "tag": "ソロ充系", "example": "乳頭温泉郷 鶴の湯",
+      "line": "静かな一軒宿で、自分だけの湯。",
+      "match": { "purpose_any": ["hito"], "tags_none": ["konyoku"] } },
+    { "id": "torokeru", "label": "とろっと、とろけたい", "tag": "美肌貪欲系", "example": "嬉野温泉",
+      "line": "とろとろの美肌湯に、心ごと溶かす。",
+      "match": { "quality_any": ["bicarb"], "ph_min": 8.5 } },
+    { "id": "toumin", "label": "冬眠したい", "tag": "省エネ系", "example": "銀山温泉",
+      "line": "雪を眺めて、春までぬくもる。",
+      "match": { "quality_any": ["chloride", "sulfur"], "temp_any": ["atsu", "teki"] } },
+    { "id": "charge", "label": "フル充電したい", "tag": "燃え尽き系", "example": "草津温泉",
+      "line": "ガツンと効く湯で、一気に回復。",
+      "match": { "quality_any": ["sulfur", "acid"], "temp_any": ["atsu"] } },
+    { "id": "tobou", "label": "電波の届かない所へ", "tag": "逃避行系", "example": "蔦温泉",
+      "line": "山奥の露天で、世界から少し消える。",
+      "match": { "purpose_any": ["hito", "roten"] } }
+  ],
+
+  "shindanQuiz": {
+    "_about": "3問(各2択)の答え key を energy-water-distance の順で連結し、result でタイプ id に引く。8通り=8タイプに1対1対応。",
+    "questions": [
+      { "id": "energy", "q": "いまの体力、正直どれ?", "options": [
+        { "key": "G", "label": "まだ動ける" },
+        { "key": "D", "label": "もう電池切れ" } ] },
+      { "id": "water", "q": "入りたいのは、どんなお湯?", "options": [
+        { "key": "K", "label": "ガツンと効くやつ" },
+        { "key": "H", "label": "とろりと包むやつ" } ] },
+      { "id": "distance", "q": "今日は、どこまで行ける?", "options": [
+        { "key": "N", "label": "近場でサクッと" },
+        { "key": "F", "label": "遠くへ、逃げたい" } ] }
+    ],
+    "result": {
+      "G-K-N": "charge",
+      "G-K-F": "umarekawari",
+      "G-H-N": "torokeru",
+      "G-H-F": "solo",
+      "D-K-N": "nikomi",
+      "D-K-F": "tobou",
+      "D-H-N": "neko",
+      "D-H-F": "toumin"
+    }
+  }
+}
