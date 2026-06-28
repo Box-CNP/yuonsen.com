@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>お湯から探す — 日本の温泉データベース</title>
+<title>YU — 日本の温泉データベース</title>
 <!-- PWA(ホーム画面に追加) -->
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#ffffff">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="お湯から探す">
+<meta name="apple-mobile-web-app-title" content="YU">
 <link rel="apple-touch-icon" href="/icons/icon-180.png">
 <script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){});});}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -537,7 +537,7 @@ a.rec-btn{display:inline-flex;align-items:center;justify-content:center;text-dec
 <body>
 
 <header>
-  <div class="h-row"><div class="logo" style="text-align:center">お湯から探す<small>YU — JAPAN ONSEN DATABASE</small></div></div>
+  <div class="h-row"><div class="logo" style="text-align:center">YU<small>JAPAN ONSEN DATABASE</small></div></div>
   <nav class="main-tabs" aria-label="Main">
     <button id="nv-mood" class="active" onclick="setMain('mood')">
       <svg class="tabicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s5 5.5 5 9a5 5 0 0 1-10 0c0-3.5 5-9 5-9z"/></svg>
@@ -2837,7 +2837,7 @@ function renderMood(){
       </div>
       <p class="mood-rlead">${lang==='ja'?ty.line:ty.lineEn}</p>
       <div class="mood-results">${moodCard(shindanOnsen)}</div>
-      <div style="text-align:center;font-size:.72rem;letter-spacing:.08em;color:#a8a49b;margin:.2rem 0 1.1rem;">${lang==='ja'?'#お湯から探す で結果をシェア':'Share with #yu_onsen'}</div>
+      <div style="text-align:center;font-size:.72rem;letter-spacing:.08em;color:#a8a49b;margin:.2rem 0 1.1rem;">${lang==='ja'?'#YU温泉 で結果をシェア':'Share with #YU温泉'}</div>
       <div class="mood-actions">
         <button class="rec-btn ghost" onclick="startShindan()">${lang==='ja'?'もう一度':'Again'}</button>
         <button class="rec-btn" onclick="openDetail(${shindanOnsen.id})">${lang==='ja'?'この湯を見る':'See this onsen'}</button>
@@ -3096,7 +3096,7 @@ function renderPMap(){
           <div class="pm-regions">${regionDots}</div>
         </div>
       </div>
-      <div class="pmap-brand">お湯から探す — YU</div>
+      <div class="pmap-brand">YU — JAPAN ONSEN DATABASE</div>
     </div>
     <div class="pmap-actions">
       <button class="rec-btn" onclick="sharePMap()">${t.pmShare}</button>
@@ -3150,7 +3150,7 @@ Object.assign(I18N.ja, {
   wallFirst:"初記録",
   wallPost:"Xで湯録を投稿",
   wallAdd:"投稿のURLを貼る",
-  wallShareText:(n)=>`${n}に行ってきました ♨\n#お湯から探す #湯けむり帳`,
+  wallShareText:(n)=>`${n}に行ってきました ♨\n#YU温泉 #湯けむり帳`,
   wallPasteTitle:"湯録をのこす",
   wallPasteLead:"Xに写真付きで投稿したら、そのURLをここに貼ってください。地図にあなたの分身が灯ります。",
   wallUrl:"Xの投稿URL", wallUrlPh:"https://x.com/.../status/...",
