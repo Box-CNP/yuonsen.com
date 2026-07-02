@@ -26,6 +26,8 @@ copy(path.join(ROOT, 'oyu-search-prototype-v21_1.html'), path.join(OUT, 'index.h
 copy(path.join(ROOT, 'app-config.js'), path.join(OUT, 'app-config.js'));
 // ベース層(Wikidata全国温泉データ)
 copy(path.join(ROOT, 'onsen-base.js'), path.join(OUT, 'onsen-base.js'));
+// OGP画像(X/SNSでのリンク展開用)
+copy(path.join(ROOT, 'og-image.png'), path.join(OUT, 'og-image.png'));
 // PWA(ホーム画面に追加 / オフライン殻)
 copy(path.join(ROOT, 'manifest.json'), path.join(OUT, 'manifest.json'));
 copy(path.join(ROOT, 'sw.js'), path.join(OUT, 'sw.js'));

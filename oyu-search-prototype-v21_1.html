@@ -4,6 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>YU — 日本の温泉データベース</title>
+<meta name="description" content="気分から、泉質から、現在地から。全国1,457湯の温泉データベース。GPSチェックインで湯録スタンプを集めよう。">
+<!-- OGP / X card -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="YU">
+<meta property="og:title" content="YU — 日本の温泉データベース">
+<meta property="og:description" content="気分から、泉質から、現在地から。全国1,457湯の温泉データベース。">
+<meta property="og:url" content="https://oyu-onsen.fujino-090.workers.dev/">
+<meta property="og:image" content="https://oyu-onsen.fujino-090.workers.dev/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="YU — 日本の温泉データベース">
+<meta name="twitter:description" content="気分から、泉質から、現在地から。全国1,457湯の温泉データベース。">
+<meta name="twitter:image" content="https://oyu-onsen.fujino-090.workers.dev/og-image.png">
 <!-- PWA(ホーム画面に追加) -->
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#ffffff">
@@ -2985,8 +2999,9 @@ function renderMood(){
       <div class="mood-results">${moodCard(shindanOnsen)}</div>
       <div style="text-align:center;font-size:.72rem;letter-spacing:.08em;color:#a8a49b;margin:.2rem 0 1.1rem;">${lang==='ja'?'#YU温泉 で結果をシェア':'Share with #YU温泉'}</div>
       <div class="mood-actions">
+        <button class="rec-btn" onclick="shindanShare()">${lang==='ja'?'結果を画像でシェア':'Share as image'}</button>
+        <button class="rec-btn ghost" onclick="openDetail(${shindanOnsen.id})">${lang==='ja'?'この湯を見る':'See this onsen'}</button>
         <button class="rec-btn ghost" onclick="startShindan()">${lang==='ja'?'もう一度':'Again'}</button>
-        <button class="rec-btn" onclick="openDetail(${shindanOnsen.id})">${lang==='ja'?'この湯を見る':'See this onsen'}</button>
       </div>`;
     return;
   }
@@ -3129,6 +3144,67 @@ function shindanMatch(m){
   });
 }
 function startShindan(){ shindanStep=0; shindanAnswers=[]; shindanTypeId=null; moodPhase='quiz'; renderMood(); window.scrollTo({top:0,behavior:'smooth'}); }
+
+/* 診断結果をシェア画像(1200x630 canvas)にして共有/保存 */
+function wrapText(cx, text, maxW){
+  const lines=[]; let cur='';
+  for(const ch of text){ if(cx.measureText(cur+ch).width>maxW && cur){ lines.push(cur); cur=ch; } else cur+=ch; }
+  if(cur) lines.push(cur);
+  return lines;
+}
+async function shindanShare(){
+  if(!shindanTypeId || !shindanOnsen) return;
+  const ty = SHINDAN_TYPES[shindanTypeId], o = shindanOnsen;
+  const ja = lang==='ja';
+  const W=1200, H=630, PANEL=420;
+  const cv=document.createElement('canvas'); cv.width=W; cv.height=H;
+  const cx=cv.getContext('2d');
+  cx.fillStyle='#F7F4EF'; cx.fillRect(0,0,W,H);
+  cx.fillStyle='#ECE6D6'; cx.fillRect(W-PANEL,0,PANEL,H);
+  cx.fillStyle='#1D1D1F'; cx.fillRect(0,0,W,8);
+  /* ミタマ */
+  try{
+    const img=new Image();
+    await new Promise((res,rej)=>{img.onload=res;img.onerror=rej;img.src=MITAMA_SRC;});
+    const ih=350, iw=ih*img.width/img.height;
+    cx.drawImage(img,(W-PANEL)+(PANEL-iw)/2,120,iw,ih);
+  }catch(e){}
+  cx.textAlign='center';
+  cx.fillStyle='#9C8A5F'; cx.font='500 22px "Hiragino Sans",sans-serif';
+  cx.fillText(ja?'3問でわかる 温泉診断':'The 3-question onsen quiz',(W-PANEL)+PANEL/2,540);
+  /* 左面 */
+  cx.textAlign='left';
+  cx.fillStyle='#B08A3A'; cx.font='600 24px "Hiragino Sans",sans-serif';
+  cx.fillText(ja?'温 泉 診 断':'ONSEN QUIZ',96,108);
+  cx.fillStyle='#6E6E73'; cx.font='26px "Hiragino Sans",sans-serif';
+  cx.fillText(ja?'あなたは、':'You are…',96,178);
+  cx.fillStyle='#1D1D1F'; cx.font='700 54px "Hiragino Mincho ProN","Hiragino Sans",serif';
+  const label = ja ? `「${ty.label}」タイプ` : ty.en+' type';
+  const lines = wrapText(cx,label,620);
+  let y=246; for(const l of lines){ cx.fillText(l,96,y); y+=74; }
+  cx.fillStyle='#6E6E73'; cx.font='25px "Hiragino Sans",sans-serif';
+  const line2 = wrapText(cx,'→ '+(ja?ty.line:ty.lineEn),620);
+  y+=6; for(const l of line2){ cx.fillText(l,96,y); y+=38; }
+  /* おすすめの湯 */
+  const oy=H-140;
+  cx.fillStyle='#1D1D1F'; cx.font='600 36px "Hiragino Mincho ProN","Hiragino Sans",serif';
+  cx.fillText(o[lang].name,96,oy);
+  cx.fillStyle='#6E6E73'; cx.font='22px "Hiragino Sans",sans-serif';
+  const chips=[o[lang].area, o.ph?('pH '+o.ph):null].filter(Boolean).join('   ');
+  cx.fillText(chips,96,oy+38);
+  cx.fillStyle='#A8A49B'; cx.font='20px "Hiragino Sans",sans-serif';
+  cx.fillText('#YU温泉  ・  oyu-onsen.fujino-090.workers.dev',96,H-42);
+  /* 共有(モバイル)or 保存 */
+  cv.toBlob(async (blob)=>{
+    if(!blob) return;
+    const file = new File([blob],'yu-shindan.png',{type:'image/png'});
+    if(navigator.canShare && navigator.canShare({files:[file]})){
+      try{ await navigator.share({files:[file], text:(ja?`あなたは「${ty.label}」タイプ ♨ #YU温泉 `:`I'm the ${ty.en} type ♨ #YU温泉 `)+'https://oyu-onsen.fujino-090.workers.dev/'}); return; }catch(e){ if(e && e.name==='AbortError') return; }
+    }
+    const a=document.createElement('a'); a.download='yu-shindan.png'; a.href=cv.toDataURL('image/png'); a.click();
+    toast(ja?'画像を保存しました。Xに貼ってシェア♨':'Image saved — attach it to your post ♨');
+  },'image/png');
+}
 function answerShindan(key){
   shindanAnswers[shindanStep]=key; shindanStep++;
   if(shindanStep>=SHINDAN_QUIZ.questions.length){
