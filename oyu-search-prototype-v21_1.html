@@ -189,6 +189,8 @@ header{
 }
 .map-frame svg{display:block;width:100%;height:auto}
 .jp-dot{fill:#DBDBDF}
+.base-dot{fill:#C4C4CA;cursor:pointer;transition:fill .15s}
+.base-dot:hover{fill:#8E8E96}
 .onsen-dot{cursor:pointer;transition:opacity .2s}
 .onsen-dot.dim{opacity:.12;pointer-events:none}
 .onsen-dot circle.ring{fill:none;stroke:var(--ink);stroke-width:0;transition:stroke-width .12s}
@@ -707,6 +709,8 @@ a.rec-btn{display:inline-flex;align-items:center;justify-content:center;text-dec
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 <script src="onsen-photos/db/site_photos.js"></script>
 <script src="onsen-photos/db/placeholders.js"></script>
+<!-- ベース層: Wikidata(CC0)由来の全国温泉データ。無くても特集96湯で動作 -->
+<script src="onsen-base.js"></script>
 <script>
 /* ---------------- i18n ---------------- */
 const I18N = {
@@ -1368,8 +1372,14 @@ function renderMarkers(){
   const zoomed = !!state.region;
   const g = document.getElementById('markers');
   const matched = new Set(ONSEN.filter(matches).map(o=>o.id));
+  /* ベース層(Wikidata全国の湯): 小さな灰色ドット。タップで簡易詳細 */
+  const br = Math.max(1.4, Math.min(3.2, 4.5/f));
+  const baseDots = (window.ONSEN_BASE||[]).map(b=>{
+    const [bx,by]=proj(b.lat,b.lng);
+    return `<circle class="base-dot" data-q="${b.qid}" cx="${bx.toFixed(1)}" cy="${by.toFixed(1)}" r="${br.toFixed(1)}"><title>${b.name}</title></circle>`;
+  }).join('');
   let li = 0;
-  g.innerHTML = ONSEN.map(o=>{
+  g.innerHTML = '<g id="base-layer">'+baseDots+'</g>' + ONSEN.map(o=>{
     const [x,y]=proj(o.lat,o.lng);
     const dim = matched.has(o.id)?'':'dim';
     const showLabel = zoomed && !dim;
@@ -1381,6 +1391,11 @@ function renderMarkers(){
       ${label}
     </g>`;
   }).join('');
+  const bl = document.getElementById('base-layer');
+  if(bl) bl.addEventListener('click', e=>{
+    const q = e.target && e.target.dataset && e.target.dataset.q;
+    if(q) openBaseDetail(q);
+  });
   g.querySelectorAll('.onsen-dot').forEach(el=>{
     const id = +el.dataset.id;
     el.addEventListener('click',()=>openDetail(id));
@@ -1391,7 +1406,8 @@ function renderMarkers(){
   /* legend */
   const t=I18N[lang];
   document.getElementById('map-legend').innerHTML =
-    COLORS.map(c=>`<span><i style="background:radial-gradient(circle at 35% 30%, ${POOL_SVG[c][0]}, ${POOL_SVG[c][1]})"></i>${t.colors[c]}</span>`).join('');
+    COLORS.map(c=>`<span><i style="background:radial-gradient(circle at 35% 30%, ${POOL_SVG[c][0]}, ${POOL_SVG[c][1]})"></i>${t.colors[c]}</span>`).join('') +
+    ((window.ONSEN_BASE&&ONSEN_BASE.length)?`<span><i style="background:#C9C9CE"></i>${lang==='ja'?`全国の湯 ${ONSEN_BASE.length}`:`${ONSEN_BASE.length} base springs`}</span>`:'');
 }
 function showTip(id,el){
   const o = ONSEN.find(o=>o.id===id);
@@ -2281,9 +2297,9 @@ function renderYuroku(){
   const t = I18N[lang];
   document.getElementById('ys-logs').textContent = yuLogs.length;
   document.getElementById('ys-q').innerHTML =
-    [...new Set(yuLogs.flatMap(x=>{const o=ONSEN.find(o=>o.id===x.oid);return o?o.quality:[];}))].length + '<small>/10</small>';
+    [...new Set(yuLogs.flatMap(x=>{const o=anyOnsen(x.oid);return o?o.quality:[];}))].length + '<small>/10</small>';
   document.getElementById('ys-p').textContent =
-    [...new Set(yuLogs.map(x=>{const o=ONSEN.find(o=>o.id===x.oid);return o?pref(o):null;}).filter(Boolean))].length;
+    [...new Set(yuLogs.map(x=>{const o=anyOnsen(x.oid);return o?pref(o):null;}).filter(Boolean))].length;
   const wrap = document.getElementById('yu-stamps');
   if(!yuLogs.length){
     wrap.innerHTML = `<div class="yu-empty"><b>${t.yuEmptyTitle}</b>${t.yuEmptyLead}</div>`;
@@ -2291,7 +2307,7 @@ function renderYuroku(){
   }
   const sorted = [...yuLogs].sort((a,b)=>b.date.localeCompare(a.date));
   wrap.innerHTML = '<div class="stamps">' + sorted.map(x=>{
-    const o = ONSEN.find(o=>o.id===x.oid); if(!o) return '';
+    const o = anyOnsen(x.oid); if(!o) return '';
     const short = o.ja.name.replace(/温泉.*/,'').replace(/\s.*/,'').slice(0,4);
     const marks = [x.verified?t.mkVerified:null, x.contrib?t.mkContrib:null, o.castle?t.mkCastle:null, o.yukari?t.mkYukari:null].filter(Boolean).join(' ・ ');
     const c = x.color || o.color;
@@ -2303,10 +2319,52 @@ function renderYuroku(){
   }).join('') + '</div>';
 }
 
+/* ---------------- ベース層(Wikidata 全国温泉)ヘルパー ---------------- */
+/* ベース湯の oid = 1000000 + QID番号(数値のまま Supabase onsen_id に保存できる) */
+const BASE_OID = 1000000;
+function baseOid(b){ return BASE_OID + parseInt(b.qid.slice(1), 10); }
+function baseByOid(oid){
+  if(oid < BASE_OID) return null;
+  const q = 'Q' + (oid - BASE_OID);
+  return (window.ONSEN_BASE||[]).find(b=>b.qid===q) || null;
+}
+/* 特集96湯・ベース層のどちらでも、湯録/チェックイン/地図が使える形で返す */
+function anyOnsen(oid){
+  const o = ONSEN.find(o=>o.id===oid); if(o) return o;
+  const b = baseByOid(oid); if(!b) return null;
+  return { id:oid, base:true, lat:b.lat, lng:b.lng, bk:b.name, color:'clear',
+    quality:[], purpose:[], tags:[], wiki:b.wiki||null,
+    ja:{name:b.name, area:b.pref||''}, en:{name:b.en||b.name, area:b.pref||''}, kana:'' };
+}
+
+/* ベース湯の簡易詳細(名前・県・Wikipedia・チェックイン) */
+function openBaseDetail(qid){
+  const b = (window.ONSEN_BASE||[]).find(x=>x.qid===qid); if(!b) return;
+  const t = I18N[lang];
+  const oid = baseOid(b);
+  document.getElementById('detail-box').innerHTML = `
+    <button class="d-close" onclick="closeDetail()" aria-label="Close">✕</button>
+    <div class="article" style="padding-bottom:44px">
+      <span class="col-tag">${lang==='ja'?'全国の湯':'BASE SPRING'}</span>
+      <h2>${b.name}</h2>
+      <div class="col-meta">${b.pref||''}</div>
+      <p style="font-size:.92rem;line-height:2.1;color:var(--ink-soft)">${lang==='ja'
+        ?'Wikidata由来の基本情報のみの湯です。訪れたらチェックインして、湯録の地図に灯りをともしてください。泉質などの詳しいデータは、これからみんなで育てていきます。'
+        :'A base-layer spring from Wikidata with basic info only. Check in on-site to light it up on your Yuroku map — detailed spring data will grow over time.'}</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:20px">
+        <button class="rec-btn" onclick="checkIn(${oid})">${t.checkinCta}</button>
+        ${b.wiki?`<a class="rec-btn ghost" style="text-decoration:none;display:inline-flex;align-items:center" href="https://ja.wikipedia.org/wiki/${encodeURIComponent(b.wiki)}" target="_blank" rel="noopener">Wikipedia ↗</a>`:''}
+        <a class="rec-btn ghost" style="text-decoration:none;display:inline-flex;align-items:center" href="https://www.google.com/maps?q=${b.lat},${b.lng}" target="_blank" rel="noopener">${lang==='ja'?'地図アプリで開く':'Open in Maps'} ↗</a>
+      </div>
+    </div>`;
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
 /* ---------------- GPS チェックイン(現地でだけ押せるスタンプ)---------------- */
 const CHECKIN_RADIUS_KM = 1.5;  /* 温泉地の広がり＋GPS誤差を見込んだ半径。要調整 */
 function checkIn(oid){
-  const o = ONSEN.find(o=>o.id===oid); if(!o) return;
+  const o = anyOnsen(oid); if(!o) return;
   const t = I18N[lang];
   if(!navigator.geolocation){ toast(t.checkinFail); return; }
   toast(t.checkinChecking);
@@ -3141,6 +3199,16 @@ function renderPMap(){
     }else{
       marks += `<circle class="pm-unlit" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.6"/>`;
     }
+  }
+  /* ベース層(全国の湯)でチェックインした所も灯す */
+  for(const oid of vis){
+    const b = baseByOid(oid); if(!b) continue;
+    const [bx,by] = proj(b.lat,b.lng);
+    const bc = visitedColor(oid) || 'clear';
+    marks += `<g class="pm-lit" transform="translate(${bx.toFixed(1)},${by.toFixed(1)})">
+      <circle class="pm-halo" r="13" fill="url(#g-${bc})"/>
+      <circle r="6" fill="url(#g-${bc})" stroke="#fff" stroke-width="1.4"/>
+    </g>`;
   }
 
   const litCount = vis.size;
