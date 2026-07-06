@@ -57,6 +57,9 @@ let list = [...byQid.values()].filter(o => o.name && o.lat != null);
 // 「温泉」で終わらない名前(温泉郷・温泉街もOK)や、施設っぽくない項目のゆるい選別はせず、
 // 名前・座標があるものを全部残す(秘湯を落とさないため)。曖昧さ回避カッコは除去。
 list.forEach(o => { o.name = o.name.replace(/\s*[（(].*?[）)]\s*$/, ''); });
+// 歴史的行政区名の正規化(Wikidataの P131 チェーンが旧名を返すことがある)
+const PREF_FIX = { '東京府': '東京都', '琉球政府': '沖縄県' };
+list.forEach(o => { if (o.pref && PREF_FIX[o.pref]) o.pref = PREF_FIX[o.pref]; });
 
 // --- 特集96湯との重複除外(名前一致 or 名前類似＋10km以内) ---
 const html = fs.readFileSync('oyu-search-prototype-v21_1.html', 'utf8');
