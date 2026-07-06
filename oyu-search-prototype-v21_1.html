@@ -77,6 +77,8 @@ header{
   .tabicon{display:block;width:23px;height:23px}
 }
 .logo{font-weight:700;font-size:1.02rem;letter-spacing:.16em}
+.logo-home{background:none;border:none;font-family:inherit;color:var(--ink);cursor:pointer;padding:0;text-align:center}
+.logo-home:focus-visible{outline:2px solid var(--ink);outline-offset:4px;border-radius:6px}
 .logo small{display:block;font-weight:500;font-size:.56rem;letter-spacing:.34em;color:var(--ink-soft);margin-top:3px}
 .lang-switch{display:flex;border:1px solid var(--line-strong);border-radius:999px;overflow:hidden}
 .lang-switch button{
@@ -205,6 +207,7 @@ header{
 .jp-dot{fill:#DBDBDF}
 .base-dot{fill:#C4C4CA;cursor:pointer;transition:fill .15s}
 .base-dot:hover{fill:#8E8E96}
+.count-base{font-size:.78rem;color:var(--ink-soft);letter-spacing:.06em;margin-left:10px;font-weight:500}
 .name-q{width:100%;max-width:440px;padding:12px 16px;border:1px solid var(--line-strong);border-radius:12px;font-family:inherit;font-size:.95rem;background:var(--card);color:var(--ink)}
 .name-q:focus{outline:2px solid var(--ink);outline-offset:-1px;border-color:var(--ink)}
 .base-results{grid-column:1/-1;margin-top:8px}
@@ -565,7 +568,7 @@ a.rec-btn{display:inline-flex;align-items:center;justify-content:center;text-dec
 <body>
 
 <header>
-  <div class="h-row"><div class="logo" style="text-align:center">YU<small>JAPAN ONSEN DATABASE</small></div></div>
+  <div class="h-row"><button class="logo logo-home" onclick="goHome()" aria-label="トップに戻る">YU<small>JAPAN ONSEN DATABASE</small></button></div>
   <nav class="main-tabs" aria-label="Main">
     <button id="nv-mood" class="active" onclick="setMain('mood')">
       <svg class="tabicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s5 5.5 5 9a5 5 0 0 1-10 0c0-3.5 5-9 5-9z"/></svg>
@@ -591,7 +594,7 @@ a.rec-btn{display:inline-flex;align-items:center;justify-content:center;text-dec
 </section>
 
 <div class="results-head">
-  <div class="count"><strong id="count-num">0</strong><span data-i18n="countSuffix">湯が見つかりました</span></div>
+  <div class="count"><strong id="count-num">0</strong><span data-i18n="countSuffix">湯が見つかりました</span><span id="count-base" class="count-base"></span></div>
   <div class="rh-right">
     <div class="view-toggle" role="group" aria-label="View">
       <button id="vt-list" class="active" onclick="setView('list')" data-i18n="vList">リスト</button>
@@ -1237,6 +1240,20 @@ const PREF2REGION = {
 };
 const REGION_KEYS = ["hokkaido","tohoku","kanto","chubu","kinki","chugoku","shikoku","kyushu","okinawa"];
 function onsenRegion(o){ return PREF2REGION[o.ja.area.split('・')[0]]; }
+/* ベース層(全国の湯)用: 県名→地方 / 直線距離ベースの簡易所要時間 */
+function baseRegion(b){
+  if(!b.pref) return null;
+  const p = b.pref==='北海道' ? '北海道' : b.pref.replace(/[都府県]$/,'');
+  return PREF2REGION[p] || null;
+}
+function baseEstHours(b){
+  if(!state.origin) return null;
+  const d = hav(state.origin.lat, state.origin.lng, b.lat, b.lng);
+  let line;
+  if(state.mode==='car'){ line = 0.25 + d/(d>120 ? 80 : 50); }
+  else { const v = d>350 ? 160 : (d>140 ? 100 : 58); line = 0.5 + d/v; }
+  return line + 0.4; /* ラストマイルの目安 */
+}
 
 function hav(a,b,c,d){
   const R=6371, toR=x=>x*Math.PI/180;
@@ -1535,14 +1552,29 @@ function renderCards(){
   if(state.origin) list.sort((a,b)=>estHours(a)-estHours(b));
   document.getElementById('count-num').textContent = list.length;
   const grid = document.getElementById('grid');
-  /* 名前検索時はベース層(全国の湯)も横断ヒットさせる */
+  /* ベース層(全国の湯): 名前・エリア・現在地の条件が使える。泉質等のデータ条件が
+     かかっている時は判定不能なので数えない(データが無い湯を誤って出さない) */
   const q = state.q.toLowerCase();
-  const baseHits = q ? (window.ONSEN_BASE||[]).filter(b =>
-    (b.name + (b.en||'') + (b.pref||'')).toLowerCase().includes(q)).slice(0,30) : [];
-  const baseHtml = baseHits.length ? `<div class="base-results">
-      <div class="br-head">${lang==='ja'?`全国の湯から ${baseHits.length}件`:`${baseHits.length} from base springs`}</div>
-      ${baseHits.map(b=>`<button class="base-row" onclick="openBaseDetail('${b.qid}')"><span>${b.name}</span><span class="br-pref">${b.pref||''}</span></button>`).join('')}
-    </div>` : '';
+  const dataFiltered = state.purpose.size || state.tags.size || state.ind.size || state.color || state.quality.size || state.temp;
+  let baseHits = dataFiltered ? [] : (window.ONSEN_BASE||[]).filter(b=>{
+    if(q && !((b.name + (b.en||'') + (b.pref||'')).toLowerCase().includes(q))) return false;
+    if(state.region && baseRegion(b)!==state.region) return false;
+    if(state.origin && state.tmax!==null && baseEstHours(b) > state.tmax) return false;
+    return true;
+  });
+  if(state.origin) baseHits.sort((a,b)=>baseEstHours(a)-baseEstHours(b));
+  /* カウント行に全国の湯を併記 */
+  const cb = document.getElementById('count-base');
+  if(cb) cb.textContent = baseHits.length ? (lang==='ja' ? `＋ 全国の湯 ${baseHits.length.toLocaleString()}` : `+ ${baseHits.length.toLocaleString()} nationwide`) : '';
+  /* 絞り込みがある時は行リスト表示(最大30)。無い時は地図への誘導のみ */
+  const narrowed = q || state.region || (state.origin && state.tmax!==null);
+  const shown = narrowed ? baseHits.slice(0,30) : [];
+  const more = baseHits.length - shown.length;
+  const baseHtml = !baseHits.length ? '' : `<div class="base-results">
+      <div class="br-head">${lang==='ja'?`全国の湯から ${baseHits.length.toLocaleString()}件`:`${baseHits.length.toLocaleString()} from base springs`}</div>
+      ${shown.map(b=>`<button class="base-row" onclick="openBaseDetail('${b.qid}')"><span>${b.name}</span><span class="br-pref">${[b.pref||'', state.origin?fmtH(baseEstHours(b)):''].filter(Boolean).join(' ・ ')}</span></button>`).join('')}
+      ${(!narrowed || more>0) ? `<button class="base-row" onclick="setView('map')" style="justify-content:center;color:var(--ink-soft)">${lang==='ja'?(narrowed?`ほか ${more.toLocaleString()}湯を地図で見る →`:`全国の湯 ${baseHits.length.toLocaleString()} を地図で見る →`):(narrowed?`See ${more.toLocaleString()} more on the map →`:`See all ${baseHits.length.toLocaleString()} on the map →`)}</button>` : ''}
+    </div>`;
   if(!list.length){
     grid.innerHTML = baseHtml || `<div class="empty"><div class="serif">${t.emptyTitle}</div><div>${t.emptyLead}</div></div>`;
     return;
@@ -2228,6 +2260,7 @@ const COLUMNS = [
 
 /* ---------------- main view switching ---------------- */
 let mainView = 'mood';
+function goHome(){ setMain('mood'); window.scrollTo({top:0,behavior:'smooth'}); }
 function setMain(v){
   mainView = v;
   document.getElementById('main-mood').style.display = v==='mood'?'block':'none';
