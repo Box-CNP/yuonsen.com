@@ -1,0 +1,6164 @@
+[
+ {
+  "qid": "Q16360430",
+  "lat": 40.2438,
+  "lng": 20.4324,
+  "en": "Hot springs of Bënjë",
+  "country": "アルバニア",
+  "countryEn": "Albania",
+  "name": "Hot springs of Bënjë"
+ },
+ {
+  "qid": "Q89614118",
+  "lat": -33.0191,
+  "lng": -69.1148,
+  "en": "Cacheuta Spa",
+  "country": "アルゼンチン",
+  "countryEn": "Argentina",
+  "wikiEn": "Cacheuta_Spa",
+  "name": "Cacheuta Spa"
+ },
+ {
+  "qid": "Q28943002",
+  "lat": -32.0019,
+  "lng": 115.806,
+  "en": "Dalkeith Hot Pool",
+  "country": "オーストラリア",
+  "countryEn": "Australia",
+  "wikiEn": "Dalkeith_Hot_Pool",
+  "name": "Dalkeith Hot Pool"
+ },
+ {
+  "qid": "Q110468194",
+  "lat": -14.9249,
+  "lng": 133.1387,
+  "en": "Mataranka Hot Springs",
+  "country": "オーストラリア",
+  "countryEn": "Australia",
+  "wikiEn": "Mataranka_Thermal_Pools",
+  "name": "Mataranka Hot Springs"
+ },
+ {
+  "qid": "Q1709534",
+  "lat": 47.7175,
+  "lng": 13.5992,
+  "en": "Marie-Louisen-Quelle, Bad Ischl",
+  "country": "オーストリア",
+  "countryEn": "Austria",
+  "name": "Marie-Louisen-Quelle, Bad Ischl"
+ },
+ {
+  "qid": "Q139990085",
+  "lat": 6.5881,
+  "lng": 2.5039,
+  "en": "Hêtin-Sota thermal spring",
+  "country": "ベナン",
+  "countryEn": "Benin",
+  "name": "Hêtin-Sota thermal spring"
+ },
+ {
+  "qid": "Q123084950",
+  "lat": -17.573,
+  "lng": -66.6322,
+  "en": "Incuyo Hot Springs",
+  "country": "ボリビア",
+  "countryEn": "Bolivia",
+  "name": "Incuyo Hot Springs"
+ },
+ {
+  "qid": "Q122517007",
+  "lat": -22.5357,
+  "lng": -67.649,
+  "en": "Polques Hot Springs",
+  "country": "ボリビア",
+  "countryEn": "Bolivia",
+  "name": "Polques Hot Springs"
+ },
+ {
+  "qid": "Q2031701",
+  "lat": -22.4305,
+  "lng": -67.7575,
+  "en": "Sol de Mañana",
+  "country": "ボリビア",
+  "countryEn": "Bolivia",
+  "wikiEn": "Sol_de_Mañana",
+  "name": "Sol de Mañana"
+ },
+ {
+  "qid": "Q60500694",
+  "lat": -21.7878,
+  "lng": -46.5686,
+  "en": "Thermas Antônio Carlos",
+  "country": "ブラジル",
+  "countryEn": "Brazil",
+  "name": "Thermas Antônio Carlos"
+ },
+ {
+  "qid": "Q22697310",
+  "lat": 49.7332,
+  "lng": -116.9189,
+  "en": "Ainsworth Hot Springs",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "name": "Ainsworth Hot Springs"
+ },
+ {
+  "qid": "Q22378684",
+  "lat": 51.1166,
+  "lng": -117.8523,
+  "en": "Albert Canyon Hot Spring",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "name": "Albert Canyon Hot Spring"
+ },
+ {
+  "qid": "Q22551705",
+  "lat": 53.4655,
+  "lng": -128.8388,
+  "en": "Bishop Bay Hot Springs",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "name": "Bishop Bay Hot Springs"
+ },
+ {
+  "qid": "Q22445588",
+  "lat": 52.4588,
+  "lng": -127.3148,
+  "en": "Eucott Bay Hot Springs",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "name": "Eucott Bay Hot Springs"
+ },
+ {
+  "qid": "Q22699827",
+  "lat": 50.3333,
+  "lng": -115.8521,
+  "en": "Fairmont Hot Springs",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "name": "Fairmont Hot Springs"
+ },
+ {
+  "qid": "Q5505082",
+  "lat": 54.2,
+  "lng": -129.867,
+  "en": "Frizzell Hotsprings",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "wikiEn": "Frizzell_Hotsprings",
+  "name": "Frizzell Hotsprings"
+ },
+ {
+  "qid": "Q5641209",
+  "lat": 50.5247,
+  "lng": -117.901,
+  "en": "Halcyon Hot Springs",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "wikiEn": "Halcyon_Hot_Springs,_British_Columbia",
+  "name": "Halcyon Hot Springs"
+ },
+ {
+  "qid": "Q22576750",
+  "lat": 49.3164,
+  "lng": -121.8026,
+  "en": "Harrison Hot Springs",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "name": "Harrison Hot Springs"
+ },
+ {
+  "qid": "Q116482697",
+  "lat": 61.2501,
+  "lng": -124.0516,
+  "en": "Kraus Hotsprings",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "name": "Kraus Hotsprings"
+ },
+ {
+  "qid": "Q6478859",
+  "lat": 54.35,
+  "lng": -128.533,
+  "en": "Lakelse Hot Springs",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "wikiEn": "Lakelse_Hot_Springs",
+  "name": "Lakelse Hot Springs"
+ },
+ {
+  "qid": "Q22423141",
+  "lat": 59.4274,
+  "lng": -126.1073,
+  "en": "Liard Hot Springs",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "name": "Liard Hot Springs"
+ },
+ {
+  "qid": "Q6705238",
+  "lat": 50.1352,
+  "lng": -115.577,
+  "en": "Lussier Hot Springs",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "wikiEn": "Lussier_Hot_Springs",
+  "name": "Lussier Hot Springs"
+ },
+ {
+  "qid": "Q14874867",
+  "lat": 53.1299,
+  "lng": -117.771,
+  "en": "Miette hot springs",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "wikiEn": "Miette_Hot_Springs",
+  "name": "Miette hot springs"
+ },
+ {
+  "qid": "Q22651380",
+  "lat": 50.2999,
+  "lng": -117.6689,
+  "en": "Nakusp Hot Springs",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "name": "Nakusp Hot Springs"
+ },
+ {
+  "qid": "Q22659519",
+  "lat": 52.498,
+  "lng": -127.2706,
+  "en": "Nascall Hot Springs",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "name": "Nascall Hot Springs"
+ },
+ {
+  "qid": "Q22646796",
+  "lat": 61.9331,
+  "lng": -127.1702,
+  "en": "Rabbitkettle Hotsprings",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "name": "Rabbitkettle Hotsprings"
+ },
+ {
+  "qid": "Q22647875",
+  "lat": 50.6333,
+  "lng": -116.0354,
+  "en": "Radium Hot Springs",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "name": "Radium Hot Springs"
+ },
+ {
+  "qid": "Q22651949",
+  "lat": 50.0332,
+  "lng": -115.5854,
+  "en": "Ram Creek Hot Springs",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "name": "Ram Creek Hot Springs"
+ },
+ {
+  "qid": "Q22652998",
+  "lat": 49.3488,
+  "lng": -126.2574,
+  "en": "Ramsay Hot Spring",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "name": "Ramsay Hot Spring"
+ },
+ {
+  "qid": "Q7290129",
+  "lat": 49.35,
+  "lng": -126.2667,
+  "en": "Ramsay Hot Springs",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "wikiEn": "Ramsay_Hot_Springs",
+  "name": "Ramsay Hot Springs"
+ },
+ {
+  "qid": "Q7459450",
+  "lat": 57.6833,
+  "lng": -130.767,
+  "en": "Sezill Hot Springs",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "wikiEn": "Sezill_Hot_Springs",
+  "name": "Sezill Hot Springs"
+ },
+ {
+  "qid": "Q22612348",
+  "lat": 49.7332,
+  "lng": -116.9189,
+  "en": "Sherwin Hot Spring",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "name": "Sherwin Hot Spring"
+ },
+ {
+  "qid": "Q24190653",
+  "lat": 49.7411,
+  "lng": -122.3014,
+  "en": "Sloquet Hot Springs",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "wikiEn": "Sloquet_Hot_Springs",
+  "name": "Sloquet Hot Springs"
+ },
+ {
+  "qid": "Q22370853",
+  "lat": 50.4332,
+  "lng": -117.8523,
+  "en": "St. Leon Hot Springs",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "name": "St. Leon Hot Springs"
+ },
+ {
+  "qid": "Q22398718",
+  "lat": 56.8302,
+  "lng": -131.7608,
+  "en": "Stikine River Hot Springs",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "name": "Stikine River Hot Springs"
+ },
+ {
+  "qid": "Q17041227",
+  "lat": 52.205,
+  "lng": -126.9397,
+  "en": "Tallheo Hot Springs",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "wikiEn": "Tallheo_Hot_Springs",
+  "name": "Tallheo Hot Springs"
+ },
+ {
+  "qid": "Q22510329",
+  "lat": 58.9208,
+  "lng": -125.0542,
+  "en": "Toad Hot Springs",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "name": "Toad Hot Springs"
+ },
+ {
+  "qid": "Q22373593",
+  "lat": 63.8054,
+  "lng": -129.8746,
+  "en": "Twitya Hotspring",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "name": "Twitya Hotspring"
+ },
+ {
+  "qid": "Q24066986",
+  "lat": 51.1508,
+  "lng": -115.5611,
+  "en": "Upper Hot Springs Bath House",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "name": "Upper Hot Springs Bath House"
+ },
+ {
+  "qid": "Q116744705",
+  "lat": 66.2049,
+  "lng": -65.7453,
+  "en": "Uqquunginnaqtuq",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "name": "Uqquunginnaqtuq"
+ },
+ {
+  "qid": "Q22549225",
+  "lat": 59.3994,
+  "lng": -133.5703,
+  "en": "Warm Bay Hot Springs",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "name": "Warm Bay Hot Springs"
+ },
+ {
+  "qid": "Q22559247",
+  "lat": 53.6962,
+  "lng": -128.7897,
+  "en": "Weewanie Hot Springs",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "name": "Weewanie Hot Springs"
+ },
+ {
+  "qid": "Q22617268",
+  "lat": 61.4165,
+  "lng": -126.5867,
+  "en": "Wildmint Hotsprings",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "name": "Wildmint Hotsprings"
+ },
+ {
+  "qid": "Q2943271",
+  "lat": 51.1694,
+  "lng": -115.5911,
+  "en": "Cave and Basin National Historic Site",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "wikiJa": "ケイヴ・アンド・ベイスン",
+  "wikiEn": "Cave_and_Basin_National_Historic_Site",
+  "name": "ケイヴ・アンド・ベイスン"
+ },
+ {
+  "qid": "Q7678195",
+  "lat": 60.8787,
+  "lng": -135.359,
+  "en": "Takhini Hot Springs",
+  "country": "カナダ",
+  "countryEn": "Canada",
+  "wikiEn": "Takhini_Hot_Springs",
+  "name": "タキニ温泉"
+ },
+ {
+  "qid": "Q30596100",
+  "lat": 20.9167,
+  "lng": 17.1833,
+  "en": "Soborom Hot Springs",
+  "country": "チャド",
+  "countryEn": "Chad",
+  "wikiEn": "Soborom_Hot_Springs",
+  "name": "Soborom Hot Springs"
+ },
+ {
+  "qid": "Q110682369",
+  "lat": -40.7355,
+  "lng": -72.3081,
+  "en": "Aguas Calientes Hot Springs",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "wikiEn": "Aguas_Calientes_Hot_Springs",
+  "name": "Aguas Calientes Hot Springs"
+ },
+ {
+  "qid": "Q127691284",
+  "lat": -40.6833,
+  "lng": -72.2667,
+  "en": "Aguas calientes Thermal Baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Aguas calientes Thermal Baths"
+ },
+ {
+  "qid": "Q127822252",
+  "lat": -32.7472,
+  "lng": -70.6567,
+  "en": "Alto Thermal Baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Alto Thermal Baths"
+ },
+ {
+  "qid": "Q127931122",
+  "lat": -20.5004,
+  "lng": -69.3542,
+  "en": "Camiña Thermal Baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Camiña Thermal Baths"
+ },
+ {
+  "qid": "Q127868035",
+  "lat": -35.9342,
+  "lng": -70.5868,
+  "en": "Campanario Thermal Baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Campanario Thermal Baths"
+ },
+ {
+  "qid": "Q127795440",
+  "lat": -20.4833,
+  "lng": -69.3116,
+  "en": "Cocha Concova",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Cocha Concova"
+ },
+ {
+  "qid": "Q128034106",
+  "lat": -41.487,
+  "lng": -72.3108,
+  "en": "Cochamo Thermal Baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Cochamo Thermal Baths"
+ },
+ {
+  "qid": "Q127616509",
+  "lat": -33.1837,
+  "lng": -70.5993,
+  "en": "Colina Thermal Baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Colina Thermal Baths"
+ },
+ {
+  "qid": "Q128211690",
+  "lat": -33.8514,
+  "lng": -69.9842,
+  "en": "Colina Valley Thermal Baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Colina Valley Thermal Baths"
+ },
+ {
+  "qid": "Q128035086",
+  "lat": -32.7968,
+  "lng": -70.5473,
+  "en": "Corazon Thermal Baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Corazon Thermal Baths"
+ },
+ {
+  "qid": "Q128395299",
+  "lat": -19.2334,
+  "lng": -68.7921,
+  "en": "Encuelga Thermal Baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Encuelga Thermal Baths"
+ },
+ {
+  "qid": "Q127801009",
+  "lat": -35.1831,
+  "lng": -71.906,
+  "en": "Higuerilla Thermal Baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Higuerilla Thermal Baths"
+ },
+ {
+  "qid": "Q6142680",
+  "lat": -39.2277,
+  "lng": -71.6574,
+  "en": "Huife Thermal Baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Huife Thermal Baths"
+ },
+ {
+  "qid": "Q128425403",
+  "lat": -34.8007,
+  "lng": -70.4699,
+  "en": "Humos Creek",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Humos Creek"
+ },
+ {
+  "qid": "Q6142682",
+  "lat": -32.6844,
+  "lng": -70.5944,
+  "en": "Jahuel Termal Baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Jahuel Termal Baths"
+ },
+ {
+  "qid": "Q127634164",
+  "lat": -32.7221,
+  "lng": -70.6754,
+  "en": "La Higuera Thermal Baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "La Higuera Thermal Baths"
+ },
+ {
+  "qid": "Q127819233",
+  "lat": -20.4803,
+  "lng": -69.3238,
+  "en": "Las Ánimas Thermal Bath",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Las Ánimas Thermal Bath"
+ },
+ {
+  "qid": "Q6142685",
+  "lat": -39.7307,
+  "lng": -71.853,
+  "en": "Liquiñe Thermal Baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Liquiñe Thermal Baths"
+ },
+ {
+  "qid": "Q127598281",
+  "lat": -40.2064,
+  "lng": -72.2629,
+  "en": "Llifen Thermal Bath",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Llifen Thermal Bath"
+ },
+ {
+  "qid": "Q127868286",
+  "lat": -32.7966,
+  "lng": -70.4623,
+  "en": "Lobo Thermal Baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Lobo Thermal Baths"
+ },
+ {
+  "qid": "Q127867905",
+  "lat": -36.3557,
+  "lng": -71.1179,
+  "en": "Longavi Thermal Baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Longavi Thermal Baths"
+ },
+ {
+  "qid": "Q127960434",
+  "lat": -20.9279,
+  "lng": -69.0545,
+  "en": "Majala Thermal Baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Majala Thermal Baths"
+ },
+ {
+  "qid": "Q127964197",
+  "lat": -36.1136,
+  "lng": -70.4805,
+  "en": "Maule Thermal Baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Maule Thermal Baths"
+ },
+ {
+  "qid": "Q127686798",
+  "lat": -28.1833,
+  "lng": -69.8667,
+  "en": "Montosa Thermal Baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Montosa Thermal Baths"
+ },
+ {
+  "qid": "Q128124456",
+  "lat": -41.409,
+  "lng": -72.3295,
+  "en": "Nahuelhuapi Thermal Baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Nahuelhuapi Thermal Baths"
+ },
+ {
+  "qid": "Q128127312",
+  "lat": -37.6961,
+  "lng": -71.2907,
+  "en": "Nitrao Thermal Baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Nitrao Thermal Baths"
+ },
+ {
+  "qid": "Q128211145",
+  "lat": -33.6179,
+  "lng": -69.9103,
+  "en": "Plomo Thermal Baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Plomo Thermal Baths"
+ },
+ {
+  "qid": "Q124459347",
+  "lat": -18.9131,
+  "lng": -68.9989,
+  "en": "Polloquere Hot Springs",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Polloquere Hot Springs"
+ },
+ {
+  "qid": "Q128391043",
+  "lat": -18.9129,
+  "lng": -68.9988,
+  "en": "Polloquere Thermal Baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Polloquere Thermal Baths"
+ },
+ {
+  "qid": "Q128205044",
+  "lat": -37.148,
+  "lng": -73.5851,
+  "en": "Providencia Thermal Baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Providencia Thermal Baths"
+ },
+ {
+  "qid": "Q30625153",
+  "lat": -19.4129,
+  "lng": -68.96,
+  "en": "Puchuldiza",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "wikiEn": "Puchuldiza",
+  "name": "Puchuldiza"
+ },
+ {
+  "qid": "Q6142678",
+  "lat": -22.7208,
+  "lng": -68.0447,
+  "en": "Puritama Hot Springs",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "wikiEn": "Puritama_Hot_Springs",
+  "name": "Puritama Hot Springs"
+ },
+ {
+  "qid": "Q7262645",
+  "lat": -40.7119,
+  "lng": -72.3283,
+  "en": "Puyehue Hot Springs",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "wikiEn": "Puyehue_Hot_Springs",
+  "name": "Puyehue Hot Springs"
+ },
+ {
+  "qid": "Q6142705",
+  "lat": -44.4137,
+  "lng": -72.6458,
+  "en": "Puyuhuapi Thermal Baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Puyuhuapi Thermal Baths"
+ },
+ {
+  "qid": "Q127691419",
+  "lat": -41.3881,
+  "lng": -72.2847,
+  "en": "Ralun Thermal Baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Ralun Thermal Baths"
+ },
+ {
+  "qid": "Q127815024",
+  "lat": -37.479,
+  "lng": -71.465,
+  "en": "San Lorenzo Thermal Baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "San Lorenzo Thermal Baths"
+ },
+ {
+  "qid": "Q127785016",
+  "lat": -30.7324,
+  "lng": -71.4937,
+  "en": "Soco Thermal Baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Soco Thermal Baths"
+ },
+ {
+  "qid": "Q128034698",
+  "lat": -41.6588,
+  "lng": -72.3963,
+  "en": "Sotomo Thermal Baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Sotomo Thermal Baths"
+ },
+ {
+  "qid": "Q126812167",
+  "lat": 25.9167,
+  "lng": 67.6833,
+  "en": "Termal Bath",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Termal Bath"
+ },
+ {
+  "qid": "Q111730824",
+  "lat": -34.9576,
+  "lng": -70.4368,
+  "en": "Termas del Flaco",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Termas del Flaco"
+ },
+ {
+  "qid": "Q127518666",
+  "lat": -38.2344,
+  "lng": -71.7281,
+  "en": "Thermal Baths of Tolhuaca",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Thermal Baths of Tolhuaca"
+ },
+ {
+  "qid": "Q127686719",
+  "lat": -29.8333,
+  "lng": -70.0333,
+  "en": "Toro Thermal Baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Toro Thermal Baths"
+ },
+ {
+  "qid": "Q127869301",
+  "lat": -37.7072,
+  "lng": -71.2656,
+  "en": "Trapa-Trapa Thermal baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Trapa-Trapa Thermal baths"
+ },
+ {
+  "qid": "Q127966774",
+  "lat": -33.4,
+  "lng": -69.9834,
+  "en": "Tupungato Thermal baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Tupungato Thermal baths"
+ },
+ {
+  "qid": "Q127868971",
+  "lat": -30,
+  "lng": -70,
+  "en": "Volcan Thermal Baths",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "name": "Volcan Thermal Baths"
+ },
+ {
+  "qid": "Q519756",
+  "lat": -22.3314,
+  "lng": -68.0103,
+  "en": "El Tatio",
+  "country": "チリ",
+  "countryEn": "Chile",
+  "wikiEn": "El_Tatio",
+  "name": "エル・タティオ"
+ },
+ {
+  "qid": "Q5249123",
+  "lat": 9.7288,
+  "lng": -83.1556,
+  "en": "Dechibeta Hot Springs",
+  "country": "コスタリカ",
+  "countryEn": "Costa Rica",
+  "wikiEn": "Dechibeta_Hot_Springs",
+  "name": "Dechibeta Hot Springs"
+ },
+ {
+  "qid": "Q7672857",
+  "lat": 10.488,
+  "lng": -84.7224,
+  "en": "Tabacón Hot Springs",
+  "country": "コスタリカ",
+  "countryEn": "Costa Rica",
+  "wikiEn": "Tabacón",
+  "name": "Tabacón Hot Springs"
+ },
+ {
+  "qid": "Q13407930",
+  "lat": 49.9692,
+  "lng": 12.7031,
+  "en": "Alexandřin pramen",
+  "country": "チェコ共和国",
+  "countryEn": "Czech Republic",
+  "name": "Alexandřin pramen"
+ },
+ {
+  "qid": "Q108058024",
+  "lat": 50.0331,
+  "lng": 17.0358,
+  "en": "Eliška",
+  "country": "チェコ共和国",
+  "countryEn": "Czech Republic",
+  "name": "Eliška"
+ },
+ {
+  "qid": "Q108057915",
+  "lat": 50.0355,
+  "lng": 17.0349,
+  "en": "Karel",
+  "country": "チェコ共和国",
+  "countryEn": "Czech Republic",
+  "name": "Karel"
+ },
+ {
+  "qid": "Q18193559",
+  "lat": 49.018,
+  "lng": 17.444,
+  "en": "Lázně Ostrožská Nová Ves",
+  "country": "チェコ共和国",
+  "countryEn": "Czech Republic",
+  "name": "Lázně Ostrožská Nová Ves"
+ },
+ {
+  "qid": "Q130837154",
+  "lat": -0.2291,
+  "lng": -78.4311,
+  "en": "Cununyacu",
+  "country": "エクアドル",
+  "countryEn": "Ecuador",
+  "name": "Cununyacu"
+ },
+ {
+  "qid": "Q9285798",
+  "lat": 28.2664,
+  "lng": 33.5964,
+  "en": "Hammam Musa",
+  "country": "エジプト",
+  "countryEn": "Egypt",
+  "name": "Hammam Musa"
+ },
+ {
+  "qid": "Q6820258",
+  "lat": 29.8416,
+  "lng": 31.3338,
+  "en": "Capritage Helwan",
+  "country": "エジプト",
+  "countryEn": "Egypt",
+  "wikiJa": "カプリタージュ・ヘルワン",
+  "wikiEn": "Capritage_Helwan",
+  "name": "カプリタージュ・ヘルワン"
+ },
+ {
+  "qid": "Q49741890",
+  "lat": 42.485,
+  "lng": 1.9471,
+  "en": "Bains de Dorres",
+  "country": "フランス",
+  "countryEn": "France",
+  "name": "Bains de Dorres"
+ },
+ {
+  "qid": "Q22936825",
+  "lat": 42.7197,
+  "lng": 1.8396,
+  "en": "Bassin des Ladres",
+  "country": "フランス",
+  "countryEn": "France",
+  "name": "Bassin des Ladres"
+ },
+ {
+  "qid": "Q2879948",
+  "lat": 15.992,
+  "lng": -61.6669,
+  "en": "Dolé Thermal Baths",
+  "country": "フランス",
+  "countryEn": "France",
+  "name": "Dolé Thermal Baths"
+ },
+ {
+  "qid": "Q3075999",
+  "lat": 43.7108,
+  "lng": -1.0528,
+  "en": "Fontaine chaude",
+  "country": "フランス",
+  "countryEn": "France",
+  "wikiEn": "Fontaine_Chaude",
+  "name": "Fontaine chaude"
+ },
+ {
+  "qid": "Q131935292",
+  "lat": 46.1174,
+  "lng": 3.4107,
+  "en": "intermittent spring of Vesse",
+  "country": "フランス",
+  "countryEn": "France",
+  "name": "intermittent spring of Vesse"
+ },
+ {
+  "qid": "Q3391236",
+  "lat": 44.6583,
+  "lng": 6.6037,
+  "en": "Plan de Phazy",
+  "country": "フランス",
+  "countryEn": "France",
+  "name": "Plan de Phazy"
+ },
+ {
+  "qid": "Q3420315",
+  "lat": 16.2285,
+  "lng": -61.669,
+  "en": "Ravine Chaude",
+  "country": "フランス",
+  "countryEn": "France",
+  "name": "Ravine Chaude"
+ },
+ {
+  "qid": "Q41344969",
+  "lat": 49.4333,
+  "lng": 10.3,
+  "en": "historic spa Wildbad Burgbernheim",
+  "country": "ドイツ",
+  "countryEn": "Germany",
+  "name": "historic spa Wildbad Burgbernheim"
+ },
+ {
+  "qid": "Q1268992",
+  "lat": 50.0863,
+  "lng": 8.2419,
+  "en": "Kochbrunnen",
+  "country": "ドイツ",
+  "countryEn": "Germany",
+  "wikiEn": "Kochbrunnen",
+  "name": "Kochbrunnen"
+ },
+ {
+  "qid": "Q884399",
+  "lat": 50.1536,
+  "lng": 6.7203,
+  "en": "Wallender Born",
+  "country": "ドイツ",
+  "countryEn": "Germany",
+  "wikiEn": "Wallender_Born",
+  "name": "Wallender Born"
+ },
+ {
+  "qid": "Q781112",
+  "lat": 36.8447,
+  "lng": 27.3174,
+  "en": "Embros Thermes",
+  "country": "ギリシャ",
+  "countryEn": "Greece",
+  "name": "Embros Thermes"
+ },
+ {
+  "qid": "Q21406772",
+  "lat": 40.7364,
+  "lng": 24.0914,
+  "en": "Loutra Eleftheron",
+  "country": "ギリシャ",
+  "countryEn": "Greece",
+  "name": "Loutra Eleftheron"
+ },
+ {
+  "qid": "Q123279672",
+  "lat": 38.7932,
+  "lng": 22.5288,
+  "en": "Thermopylae Hot Springs",
+  "country": "ギリシャ",
+  "countryEn": "Greece",
+  "name": "Thermopylae Hot Springs"
+ },
+ {
+  "qid": "Q133042704",
+  "lat": 37.8677,
+  "lng": 20.7349,
+  "en": "Xigia,_Zakynthos",
+  "country": "ギリシャ",
+  "countryEn": "Greece",
+  "name": "Xigia,_Zakynthos"
+ },
+ {
+  "qid": "Q124454141",
+  "lat": 60.5075,
+  "lng": -45.3336,
+  "en": "Uunartoq Hot Spring",
+  "country": "グリーンランド",
+  "countryEn": "Greenland",
+  "name": "Uunartoq Hot Spring"
+ },
+ {
+  "qid": "Q26224613",
+  "lat": 19.65,
+  "lng": -72.9833,
+  "en": "Eaux de Baynes",
+  "country": "ハイチ",
+  "countryEn": "Haiti",
+  "name": "Eaux de Baynes"
+ },
+ {
+  "qid": "Q26224614",
+  "lat": 18.4833,
+  "lng": -74.2667,
+  "en": "Sources Chaudes",
+  "country": "ハイチ",
+  "countryEn": "Haiti",
+  "name": "Sources Chaudes"
+ },
+ {
+  "qid": "Q249992",
+  "lat": 46.7872,
+  "lng": 17.1931,
+  "en": "Lake Hévíz",
+  "country": "ハンガリー",
+  "countryEn": "Hungary",
+  "wikiJa": "ヘーヴィーズ湖",
+  "wikiEn": "Lake_Hévíz",
+  "name": "ヘーヴィーズ湖"
+ },
+ {
+  "qid": "Q2948571",
+  "lat": 64.3167,
+  "lng": -20.2999,
+  "en": "Geysir geothermal field",
+  "country": "アイスランド",
+  "countryEn": "Iceland",
+  "name": "Geysir geothermal field"
+ },
+ {
+  "qid": "Q27014316",
+  "lat": 64.015,
+  "lng": -21.1925,
+  "en": "Grýla",
+  "country": "アイスランド",
+  "countryEn": "Iceland",
+  "name": "Grýla"
+ },
+ {
+  "qid": "Q1557769",
+  "lat": 65.2464,
+  "lng": -21.8057,
+  "en": "Guðrúnarlaug",
+  "country": "アイスランド",
+  "countryEn": "Iceland",
+  "wikiEn": "Guðrúnarlaug",
+  "name": "Guðrúnarlaug"
+ },
+ {
+  "qid": "Q1554844",
+  "lat": 63.8193,
+  "lng": -22.6842,
+  "en": "Gunnuhver",
+  "country": "アイスランド",
+  "countryEn": "Iceland",
+  "wikiEn": "Gunnuhver",
+  "name": "Gunnuhver"
+ },
+ {
+  "qid": "Q27016709",
+  "lat": 65.5726,
+  "lng": -23.1716,
+  "en": "Hellulaug",
+  "country": "アイスランド",
+  "countryEn": "Iceland",
+  "name": "Hellulaug"
+ },
+ {
+  "qid": "Q16508340",
+  "lat": 65.6415,
+  "lng": -16.8093,
+  "en": "Hverarönd",
+  "country": "アイスランド",
+  "countryEn": "Iceland",
+  "name": "Hverarönd"
+ },
+ {
+  "qid": "Q124459524",
+  "lat": 64.8656,
+  "lng": -19.5548,
+  "en": "Hveravellir Hot Springs",
+  "country": "アイスランド",
+  "countryEn": "Iceland",
+  "name": "Hveravellir Hot Springs"
+ },
+ {
+  "qid": "Q16508608",
+  "lat": 64.0066,
+  "lng": -21.1813,
+  "en": "Leirgerður",
+  "country": "アイスランド",
+  "countryEn": "Iceland",
+  "name": "Leirgerður"
+ },
+ {
+  "qid": "Q27016707",
+  "lat": 65.6308,
+  "lng": -16.8485,
+  "en": "Myvatn Nature Baths",
+  "country": "アイスランド",
+  "countryEn": "Iceland",
+  "name": "Myvatn Nature Baths"
+ },
+ {
+  "qid": "Q16425194",
+  "lat": 63.8952,
+  "lng": -22.0561,
+  "en": "Seltún",
+  "country": "アイスランド",
+  "countryEn": "Iceland",
+  "name": "Seltún"
+ },
+ {
+  "qid": "Q105580736",
+  "lat": 63.895,
+  "lng": -22.0569,
+  "en": "Seltún Hot Springs",
+  "country": "アイスランド",
+  "countryEn": "Iceland",
+  "wikiEn": "Seltún_Hot_Springs",
+  "name": "Seltún Hot Springs"
+ },
+ {
+  "qid": "Q1489087",
+  "lat": 64.6644,
+  "lng": -21.2887,
+  "en": "Snorralaug",
+  "country": "アイスランド",
+  "countryEn": "Iceland",
+  "name": "Snorralaug"
+ },
+ {
+  "qid": "Q134993927",
+  "lat": 64.1426,
+  "lng": -21.8739,
+  "en": "Þvottalaugarnar",
+  "country": "アイスランド",
+  "countryEn": "Iceland",
+  "name": "Þvottalaugarnar"
+ },
+ {
+  "qid": "Q1130741",
+  "lat": 64.8653,
+  "lng": -19.5567,
+  "en": "Hveravellir",
+  "country": "アイスランド",
+  "countryEn": "Iceland",
+  "wikiEn": "Hveravellir",
+  "name": "クヴェラヴェトリル"
+ },
+ {
+  "qid": "Q216846",
+  "lat": 64.3138,
+  "lng": -20.2995,
+  "en": "Great Geysir",
+  "country": "アイスランド",
+  "countryEn": "Iceland",
+  "wikiJa": "ゲイシール",
+  "wikiEn": "Geysir",
+  "name": "ゲイシール"
+ },
+ {
+  "qid": "Q1128186",
+  "lat": 64.3127,
+  "lng": -20.3008,
+  "en": "Strokkur",
+  "country": "アイスランド",
+  "countryEn": "Iceland",
+  "wikiJa": "ストロックル間欠泉",
+  "wikiEn": "Strokkur",
+  "name": "ストロックル間欠泉"
+ },
+ {
+  "qid": "Q1183213",
+  "lat": 64.6631,
+  "lng": -21.4092,
+  "en": "Deildartunguhver",
+  "country": "アイスランド",
+  "countryEn": "Iceland",
+  "wikiEn": "Deildartunguhver",
+  "name": "デイルダルトゥングクヴェル"
+ },
+ {
+  "qid": "Q886946",
+  "lat": 63.8792,
+  "lng": -22.4455,
+  "en": "Blue Lagoon",
+  "country": "アイスランド",
+  "countryEn": "Iceland",
+  "wikiJa": "ブルーラグーン",
+  "wikiEn": "Blue_Lagoon_(geothermal_spa)",
+  "name": "ブルーラグーン"
+ },
+ {
+  "qid": "Q26813922",
+  "lat": 20.26,
+  "lng": 75.8556,
+  "en": "Garamjhara",
+  "country": "インド",
+  "countryEn": "India",
+  "name": "Garamjhara"
+ },
+ {
+  "qid": "Q124453622",
+  "lat": 31.9919,
+  "lng": 77.5097,
+  "en": "Kheerganga Hot Spring",
+  "country": "インド",
+  "countryEn": "India",
+  "name": "Kheerganga Hot Spring"
+ },
+ {
+  "qid": "Q26814312",
+  "lat": 21.5664,
+  "lng": 80.9117,
+  "en": "Nerbudda Hot Spring",
+  "country": "インド",
+  "countryEn": "India",
+  "name": "Nerbudda Hot Spring"
+ },
+ {
+  "qid": "Q7645345",
+  "lat": 24.1495,
+  "lng": 85.6454,
+  "en": "Surajkund hot spring",
+  "country": "インド",
+  "countryEn": "India",
+  "wikiEn": "Surajkund_hot_spring",
+  "name": "Surajkund hot spring"
+ },
+ {
+  "qid": "Q107418696",
+  "lat": 20.8535,
+  "lng": 73.3345,
+  "en": "Unai Hot Springs",
+  "country": "インド",
+  "countryEn": "India",
+  "name": "Unai Hot Springs"
+ },
+ {
+  "qid": "Q3595502",
+  "lat": 21.73,
+  "lng": 74.4414,
+  "en": "Unapdev",
+  "country": "インド",
+  "countryEn": "India",
+  "wikiEn": "Unapdev",
+  "name": "Unapdev"
+ },
+ {
+  "qid": "Q123401268",
+  "lat": -8.3536,
+  "lng": 115.1562,
+  "en": "Angseri Hot Springs",
+  "country": "インドネシア",
+  "countryEn": "Indonesia",
+  "name": "Angseri Hot Springs"
+ },
+ {
+  "qid": "Q122956574",
+  "lat": -8.2105,
+  "lng": 114.9671,
+  "en": "Banjar Hot Spring",
+  "country": "インドネシア",
+  "countryEn": "Indonesia",
+  "name": "Banjar Hot Spring"
+ },
+ {
+  "qid": "Q15120101",
+  "lat": -6.8319,
+  "lng": 107.6566,
+  "en": "Maribaya Waterfall",
+  "country": "インドネシア",
+  "countryEn": "Indonesia",
+  "name": "Maribaya Waterfall"
+ },
+ {
+  "qid": "Q136099238",
+  "lat": -7.6856,
+  "lng": 112.548,
+  "en": "Padusan Hot Spring",
+  "country": "インドネシア",
+  "countryEn": "Indonesia",
+  "name": "Padusan Hot Spring"
+ },
+ {
+  "qid": "Q12502468",
+  "lat": -7.31,
+  "lng": 109.218,
+  "en": "Pancuran Tujuh",
+  "country": "インドネシア",
+  "countryEn": "Indonesia",
+  "wikiEn": "Pancuran_Tujuh",
+  "name": "Pancuran Tujuh"
+ },
+ {
+  "qid": "Q16875397",
+  "lat": -1.9861,
+  "lng": 101.3551,
+  "en": "Semurup Hot Spring",
+  "country": "インドネシア",
+  "countryEn": "Indonesia",
+  "wikiEn": "Hot_Semurup",
+  "name": "Semurup Hot Spring"
+ },
+ {
+  "qid": "Q106154125",
+  "lat": 35.3455,
+  "lng": 58.3457,
+  "en": "Khalilabad Hot Spring",
+  "country": "イラン",
+  "countryEn": "Iran",
+  "name": "Khalilabad Hot Spring"
+ },
+ {
+  "qid": "Q26905266",
+  "lat": 28.78,
+  "lng": 51.3025,
+  "en": "Mir Ahmad Hot Spring",
+  "country": "イラン",
+  "countryEn": "Iran",
+  "name": "Mir Ahmad Hot Spring"
+ },
+ {
+  "qid": "Q26913155",
+  "lat": 36.6042,
+  "lng": 47.235,
+  "en": "Takht-e Soleyman Lake",
+  "country": "イラン",
+  "countryEn": "Iran",
+  "name": "Takht-e Soleyman Lake"
+ },
+ {
+  "qid": "Q26764130",
+  "lat": 31.1675,
+  "lng": 35.3675,
+  "en": "H̱ammé Zohar",
+  "country": "イスラエル",
+  "countryEn": "Israel",
+  "name": "H̱ammé Zohar"
+ },
+ {
+  "qid": "Q3621086",
+  "lat": 39.614,
+  "lng": 8.7863,
+  "en": "Aquae Neapolitanae",
+  "country": "イタリア",
+  "countryEn": "Italy",
+  "wikiEn": "Aquae_Neapolitanae",
+  "name": "Aquae Neapolitanae"
+ },
+ {
+  "qid": "Q945761",
+  "lat": 42.93,
+  "lng": 11.7014,
+  "en": "Bagni San Filippo",
+  "country": "イタリア",
+  "countryEn": "Italy",
+  "wikiEn": "Bagni_San_Filippo",
+  "name": "Bagni San Filippo"
+ },
+ {
+  "qid": "Q55391508",
+  "lat": 44.6755,
+  "lng": 8.4704,
+  "en": "La Bollente",
+  "country": "イタリア",
+  "countryEn": "Italy",
+  "name": "La Bollente"
+ },
+ {
+  "qid": "Q3828305",
+  "lat": 43.3908,
+  "lng": 11.1344,
+  "en": "Le Caldane",
+  "country": "イタリア",
+  "countryEn": "Italy",
+  "name": "Le Caldane"
+ },
+ {
+  "qid": "Q3777008",
+  "lat": 43.8803,
+  "lng": 10.8158,
+  "en": "Talking Cave",
+  "country": "イタリア",
+  "countryEn": "Italy",
+  "name": "Talking Cave"
+ },
+ {
+  "qid": "Q96082218",
+  "lat": 41.2224,
+  "lng": 14.5269,
+  "en": "Telese spa",
+  "country": "イタリア",
+  "countryEn": "Italy",
+  "name": "Telese spa"
+ },
+ {
+  "qid": "Q799945",
+  "lat": 43.0797,
+  "lng": 11.3,
+  "en": "Terme di Petriolo",
+  "country": "イタリア",
+  "countryEn": "Italy",
+  "name": "Terme di Petriolo"
+ },
+ {
+  "qid": "Q130224933",
+  "lat": 46.2949,
+  "lng": 8.3603,
+  "en": "Terme di Premia",
+  "country": "イタリア",
+  "countryEn": "Italy",
+  "name": "Terme di Premia"
+ },
+ {
+  "qid": "Q3984412",
+  "lat": 42.6581,
+  "lng": 11.5162,
+  "en": "Terme di Saturnia",
+  "country": "イタリア",
+  "countryEn": "Italy",
+  "wikiEn": "Terme_di_Saturnia",
+  "name": "Terme di Saturnia"
+ },
+ {
+  "qid": "Q133307775",
+  "lat": 45.917,
+  "lng": 9.3134,
+  "en": "Villa del Centro Lago (Lake Como)",
+  "country": "イタリア",
+  "countryEn": "Italy",
+  "name": "Villa del Centro Lago"
+ },
+ {
+  "qid": "Q11910919",
+  "lat": 31.597,
+  "lng": 35.5593,
+  "en": "Ayn al-Zara",
+  "country": "ヨルダン",
+  "countryEn": "Jordan",
+  "wikiEn": "Ayn_al-Zara",
+  "name": "Ayn al-Zara"
+ },
+ {
+  "qid": "Q6720622",
+  "lat": 31.6095,
+  "lng": 35.6105,
+  "en": "Ma'in Hot Springs",
+  "country": "ヨルダン",
+  "countryEn": "Jordan",
+  "wikiEn": "Ma'in_Hot_Springs",
+  "name": "マイーン温泉"
+ },
+ {
+  "qid": "Q16431855",
+  "lat": 43.6368,
+  "lng": 80.0549,
+  "en": "Chunja hot springs",
+  "country": "カザフスタン",
+  "countryEn": "Kazakhstan",
+  "wikiEn": "Chunja_hot_springs",
+  "name": "Chunja hot springs"
+ },
+ {
+  "qid": "Q125961726",
+  "lat": -18.9256,
+  "lng": 46.64,
+  "en": "Andranomandroatra Analavory Geysers",
+  "country": "マダガスカル",
+  "countryEn": "Madagascar",
+  "name": "Andranomandroatra Analavory Geysers"
+ },
+ {
+  "qid": "Q95712579",
+  "lat": 1.941,
+  "lng": 102.742,
+  "en": "Gersik River Hot Spring",
+  "country": "マレーシア",
+  "countryEn": "Malaysia",
+  "name": "Gersik River Hot Spring"
+ },
+ {
+  "qid": "Q105101277",
+  "lat": 2.4689,
+  "lng": 103.0503,
+  "en": "Hot Springs Recreation Center Labis",
+  "country": "マレーシア",
+  "countryEn": "Malaysia",
+  "name": "Hot Springs Recreation Center Labis"
+ },
+ {
+  "qid": "Q3699213",
+  "lat": 19.0706,
+  "lng": -98.2353,
+  "en": "Cuexcomate",
+  "country": "メキシコ",
+  "countryEn": "Mexico",
+  "wikiEn": "Cuexcomate",
+  "name": "Cuexcomate"
+ },
+ {
+  "qid": "Q87718843",
+  "lat": 32.1584,
+  "lng": -115.7703,
+  "en": "Guadalupe Canyon Hot Springs",
+  "country": "メキシコ",
+  "countryEn": "Mexico",
+  "wikiEn": "Guadalupe_Canyon_Hot_Springs",
+  "name": "Guadalupe Canyon Hot Springs"
+ },
+ {
+  "qid": "Q97356593",
+  "lat": 28.7411,
+  "lng": -113.7536,
+  "en": "Mission San Borja Hot Springs",
+  "country": "メキシコ",
+  "countryEn": "Mexico",
+  "wikiEn": "Mission_San_Borja_Hot_Springs",
+  "name": "Mission San Borja Hot Springs"
+ },
+ {
+  "qid": "Q125707489",
+  "lat": 27.6476,
+  "lng": -107.6395,
+  "en": "Recowata Hot Springs",
+  "country": "メキシコ",
+  "countryEn": "Mexico",
+  "name": "Recowata Hot Springs"
+ },
+ {
+  "qid": "Q97356601",
+  "lat": 32.1074,
+  "lng": -116.4541,
+  "en": "Russian Valley Hot Springs",
+  "country": "メキシコ",
+  "countryEn": "Mexico",
+  "wikiEn": "Russian_Valley_Hot_Springs",
+  "name": "Russian Valley Hot Springs"
+ },
+ {
+  "qid": "Q97356652",
+  "lat": 30.6475,
+  "lng": -115.2068,
+  "en": "Valle Chico Hot Springs",
+  "country": "メキシコ",
+  "countryEn": "Mexico",
+  "wikiEn": "Valle_Chico_Hot_Springs",
+  "name": "Valle Chico Hot Springs"
+ },
+ {
+  "qid": "Q20617016",
+  "lat": 47.25,
+  "lng": 101.9667,
+  "en": "Khokhsum Spring",
+  "country": "モンゴル国",
+  "countryEn": "Mongolia",
+  "name": "Khokhsum Spring"
+ },
+ {
+  "qid": "Q121422611",
+  "lat": 47.3199,
+  "lng": 101.6485,
+  "en": "Tsenkher Hot Spring",
+  "country": "モンゴル国",
+  "countryEn": "Mongolia",
+  "wikiEn": "Tsenkher_Hot_Spring",
+  "name": "Tsenkher Hot Spring"
+ },
+ {
+  "qid": "Q125945293",
+  "lat": 22.9916,
+  "lng": 97.7746,
+  "en": "Lashio Hot spring",
+  "country": "ミャンマー",
+  "countryEn": "Myanmar",
+  "name": "Lashio Hot spring"
+ },
+ {
+  "qid": "Q124459454",
+  "lat": -38.0644,
+  "lng": 176.3607,
+  "en": "Hell's Gate",
+  "country": "ニュージーランド",
+  "countryEn": "New Zealand",
+  "name": "Hell's Gate"
+ },
+ {
+  "qid": "Q111269816",
+  "lat": -39.107,
+  "lng": 175.648,
+  "en": "Ketetahi Hot Springs",
+  "country": "ニュージーランド",
+  "countryEn": "New Zealand",
+  "name": "Ketetahi Hot Springs"
+ },
+ {
+  "qid": "Q32241490",
+  "lat": -38.1342,
+  "lng": 176.2452,
+  "en": "Kuirau Park",
+  "country": "ニュージーランド",
+  "countryEn": "New Zealand",
+  "name": "Kuirau Park"
+ },
+ {
+  "qid": "Q32263870",
+  "lat": -39.165,
+  "lng": 176.3976,
+  "en": "Mangatainoka Hot Springs",
+  "country": "ニュージーランド",
+  "countryEn": "New Zealand",
+  "name": "Mangatainoka Hot Springs"
+ },
+ {
+  "qid": "Q32266098",
+  "lat": -39.1827,
+  "lng": 176.4587,
+  "en": "Mangatutu Hot Springs",
+  "country": "ニュージーランド",
+  "countryEn": "New Zealand",
+  "name": "Mangatutu Hot Springs"
+ },
+ {
+  "qid": "Q32297075",
+  "lat": -38.5332,
+  "lng": 176.1717,
+  "en": "Ngatamariki Hot Spring",
+  "country": "ニュージーランド",
+  "countryEn": "New Zealand",
+  "name": "Ngatamariki Hot Spring"
+ },
+ {
+  "qid": "Q116972069",
+  "lat": -37.208,
+  "lng": 175.331,
+  "en": "Pūkorokoro / Miranda Hot Springs",
+  "country": "ニュージーランド",
+  "countryEn": "New Zealand",
+  "name": "Pūkorokoro / Miranda Hot Springs"
+ },
+ {
+  "qid": "Q121851365",
+  "lat": -38.5347,
+  "lng": 176.1725,
+  "en": "Radiata Pool",
+  "country": "ニュージーランド",
+  "countryEn": "New Zealand",
+  "wikiEn": "Radiata_Pool",
+  "name": "Radiata Pool"
+ },
+ {
+  "qid": "Q25660746",
+  "lat": -37.9681,
+  "lng": 176.7392,
+  "en": "Te Waiu o Pukemaire/Braemar Springs",
+  "country": "ニュージーランド",
+  "countryEn": "New Zealand",
+  "name": "Te Waiu o Pukemaire/Braemar Springs"
+ },
+ {
+  "qid": "Q1440831",
+  "lat": -38.2833,
+  "lng": 176.4,
+  "en": "Waimangu Geyser",
+  "country": "ニュージーランド",
+  "countryEn": "New Zealand",
+  "wikiEn": "Waimangu_Geyser",
+  "name": "Waimangu Geyser"
+ },
+ {
+  "qid": "Q7960671",
+  "lat": -36.545,
+  "lng": 174.706,
+  "en": "Waiwera Hot Pools",
+  "country": "ニュージーランド",
+  "countryEn": "New Zealand",
+  "wikiEn": "Waiwera_Hot_Springs",
+  "name": "Waiwera Hot Pools"
+ },
+ {
+  "qid": "Q863914",
+  "lat": -38.1635,
+  "lng": 176.254,
+  "en": "Pōhutu Geyser",
+  "country": "ニュージーランド",
+  "countryEn": "New Zealand",
+  "wikiEn": "Pōhutu_Geyser",
+  "name": "ポフツ泉"
+ },
+ {
+  "qid": "Q6470306",
+  "lat": -38.3508,
+  "lng": 176.377,
+  "en": "Lady Knox Geyser",
+  "country": "ニュージーランド",
+  "countryEn": "New Zealand",
+  "wikiJa": "レディ・ノックス間欠泉",
+  "wikiEn": "Lady_Knox_Geyser",
+  "name": "レディ・ノックス間欠泉"
+ },
+ {
+  "qid": "Q1191418",
+  "lat": -36.8798,
+  "lng": 175.8189,
+  "en": "Hot Water Beach",
+  "country": "ニュージーランド",
+  "countryEn": "New Zealand",
+  "wikiEn": "Hot_Water_Beach",
+  "name": "温泉海岸"
+ },
+ {
+  "qid": "Q21528844",
+  "lat": 12.5818,
+  "lng": -86.7793,
+  "en": "Hervideros de San Jacinto",
+  "country": "ニカラグア",
+  "countryEn": "Nicaragua",
+  "name": "Hervideros de San Jacinto"
+ },
+ {
+  "qid": "Q139414287",
+  "lat": 13.8087,
+  "lng": -84.7616,
+  "en": "Termales El Dorado",
+  "country": "ニカラグア",
+  "countryEn": "Nicaragua",
+  "name": "Termales El Dorado"
+ },
+ {
+  "qid": "Q85973045",
+  "lat": 41.5255,
+  "lng": 129.6543,
+  "country": "朝鮮民主主義人民共和国",
+  "countryEn": "North Korea",
+  "name": "鏡城温泉"
+ },
+ {
+  "qid": "Q131129575",
+  "lat": 39.1995,
+  "lng": 126.8333,
+  "en": "Yangdok Hot Spring Resort",
+  "country": "朝鮮民主主義人民共和国",
+  "countryEn": "North Korea",
+  "name": "陽徳温泉文化リゾート"
+ },
+ {
+  "qid": "Q55603496",
+  "lat": 23.3754,
+  "lng": 57.8283,
+  "en": "Al Thowarah hot spring",
+  "country": "オマーン",
+  "countryEn": "Oman",
+  "wikiEn": "Al_Thowarah_hot_spring",
+  "name": "Al Thowarah hot spring"
+ },
+ {
+  "qid": "Q88679379",
+  "lat": 23.3755,
+  "lng": 57.8283,
+  "en": "Athawarah Hot Spring",
+  "country": "オマーン",
+  "countryEn": "Oman",
+  "name": "Athawarah Hot Spring"
+ },
+ {
+  "qid": "Q16132872",
+  "lat": 32.3277,
+  "lng": 35.4768,
+  "en": "Ḩammām al Māliḩ",
+  "country": "パレスチナ国",
+  "countryEn": "Palestine",
+  "name": "Ḩammām al Māliḩ"
+ },
+ {
+  "qid": "Q126692910",
+  "lat": 8.5978,
+  "lng": -80.1376,
+  "en": "El Valle de Anton Hot Springs",
+  "country": "パナマ",
+  "countryEn": "Panama",
+  "name": "El Valle de Anton Hot Springs"
+ },
+ {
+  "qid": "Q126009089",
+  "lat": -9.6534,
+  "lng": 150.8696,
+  "en": "Deidei Hot Springs",
+  "country": "パプアニューギニア",
+  "countryEn": "Papua New Guinea",
+  "name": "Deidei Hot Springs"
+ },
+ {
+  "qid": "Q28825299",
+  "lat": 32.5031,
+  "lng": 92.3031,
+  "en": "Goibug Caqu",
+  "country": "中華人民共和国",
+  "countryEn": "People's Republic of China",
+  "name": "Goibug Caqu"
+ },
+ {
+  "qid": "Q28825402",
+  "lat": 32.6019,
+  "lng": 92.3019,
+  "en": "Gyacha Caqukongma",
+  "country": "中華人民共和国",
+  "countryEn": "People's Republic of China",
+  "name": "Gyacha Caqukongma"
+ },
+ {
+  "qid": "Q28825838",
+  "lat": 27.8011,
+  "lng": 88.9011,
+  "en": "Kambu Qucain",
+  "country": "中華人民共和国",
+  "countryEn": "People's Republic of China",
+  "name": "Kambu Qucain"
+ },
+ {
+  "qid": "Q28825856",
+  "lat": 28.8019,
+  "lng": 88.1019,
+  "en": "Kau Qucain",
+  "country": "中華人民共和国",
+  "countryEn": "People's Republic of China",
+  "name": "Kau Qucain"
+ },
+ {
+  "qid": "Q28826055",
+  "lat": 28.7011,
+  "lng": 87.2011,
+  "en": "Lolo Qucain",
+  "country": "中華人民共和国",
+  "countryEn": "People's Republic of China",
+  "name": "Lolo Qucain"
+ },
+ {
+  "qid": "Q105122163",
+  "lat": -13.1096,
+  "lng": -72.6007,
+  "en": "Cocalmayo Hot Springs",
+  "country": "ペルー",
+  "countryEn": "Peru",
+  "name": "Cocalmayo Hot Springs"
+ },
+ {
+  "qid": "Q25248207",
+  "lat": -9.4689,
+  "lng": -77.5357,
+  "en": "Monterrey",
+  "country": "ペルー",
+  "countryEn": "Peru",
+  "wikiEn": "Monterrey,_Ancash",
+  "name": "Monterrey"
+ },
+ {
+  "qid": "Q110174252",
+  "lat": -17.218,
+  "lng": -70.1426,
+  "en": "Valley of Geysers",
+  "country": "ペルー",
+  "countryEn": "Peru",
+  "name": "Valley of Geysers"
+ },
+ {
+  "qid": "Q140429340",
+  "lat": -16.2458,
+  "lng": -71.6939,
+  "en": "Yura Hot Springs",
+  "country": "ペルー",
+  "countryEn": "Peru",
+  "name": "Yura Hot Springs"
+ },
+ {
+  "qid": "Q124454384",
+  "lat": 37.7695,
+  "lng": -25.3198,
+  "en": "Poça da Dona Beija",
+  "country": "ポルトガル",
+  "countryEn": "Portugal",
+  "name": "Poça da Dona Beija"
+ },
+ {
+  "qid": "Q4155454",
+  "lat": 52.453,
+  "lng": 158.195,
+  "en": "Dachnye Hot Springs",
+  "country": "ロシア",
+  "countryEn": "Russia",
+  "name": "Dachnye Hot Springs"
+ },
+ {
+  "qid": "Q4532817",
+  "lat": 55.9253,
+  "lng": 158.7164,
+  "en": "Esso wells",
+  "country": "ロシア",
+  "countryEn": "Russia",
+  "name": "Esso wells"
+ },
+ {
+  "qid": "Q135249094",
+  "lat": 52.9872,
+  "lng": 108.3075,
+  "en": "Goryachinsky Springs",
+  "country": "ロシア",
+  "countryEn": "Russia",
+  "name": "Goryachinsky Springs"
+ },
+ {
+  "qid": "Q4216406",
+  "lat": 52.7845,
+  "lng": 157.8253,
+  "en": "Karymchinsky hot springs",
+  "country": "ロシア",
+  "countryEn": "Russia",
+  "name": "Karymchinsky hot springs"
+ },
+ {
+  "qid": "Q4498813",
+  "lat": 52.1086,
+  "lng": 157.66,
+  "en": "Khodutkinskie Springs",
+  "country": "ロシア",
+  "countryEn": "Russia",
+  "name": "Khodutkinskie Springs"
+ },
+ {
+  "qid": "Q4237417",
+  "lat": 53.5747,
+  "lng": 158.837,
+  "en": "Krayevedcheskiye Hot Springs",
+  "country": "ロシア",
+  "countryEn": "Russia",
+  "name": "Krayevedcheskiye Hot Springs"
+ },
+ {
+  "qid": "Q4312697",
+  "lat": 53.5083,
+  "lng": 158.7639,
+  "en": "Nalychevo Hot Springs",
+  "country": "ロシア",
+  "countryEn": "Russia",
+  "name": "Nalychevo Hot Springs"
+ },
+ {
+  "qid": "Q4384895",
+  "lat": 54.05,
+  "lng": 158.05,
+  "en": "Puschinskie",
+  "country": "ロシア",
+  "countryEn": "Russia",
+  "name": "Puschinskie"
+ },
+ {
+  "qid": "Q4400235",
+  "lat": 58.5186,
+  "lng": 161.2764,
+  "en": "Rusakovskie Hot Springs",
+  "country": "ロシア",
+  "countryEn": "Russia",
+  "name": "Rusakovskie Hot Springs"
+ },
+ {
+  "qid": "Q4457536",
+  "lat": 53.8069,
+  "lng": 158.1658,
+  "en": "Timonovskiye Hot Springs",
+  "country": "ロシア",
+  "countryEn": "Russia",
+  "name": "Timonovskiye Hot Springs"
+ },
+ {
+  "qid": "Q4108294",
+  "lat": 54.3267,
+  "lng": 159.9664,
+  "en": "Verkhnesemlyachinskie",
+  "country": "ロシア",
+  "countryEn": "Russia",
+  "name": "Verkhnesemlyachinskie"
+ },
+ {
+  "qid": "Q4111439",
+  "lat": 52.7056,
+  "lng": 158.2775,
+  "en": "Vilyuchinskiye springs",
+  "country": "ロシア",
+  "countryEn": "Russia",
+  "name": "Vilyuchinskiye springs"
+ },
+ {
+  "qid": "Q116222167",
+  "lat": -1.74,
+  "lng": 29.2734,
+  "en": "Nyamyumba hot springs",
+  "country": "ルワンダ",
+  "countryEn": "Rwanda",
+  "wikiEn": "Nyamyumba_Hot_Springs",
+  "name": "Nyamyumba hot springs"
+ },
+ {
+  "qid": "Q125907271",
+  "lat": 13.8386,
+  "lng": -61.0466,
+  "en": "Sulphur springs",
+  "country": "セントルシア",
+  "countryEn": "Saint Lucia",
+  "name": "Sulphur springs"
+ },
+ {
+  "qid": "Q7449157",
+  "lat": 1.4345,
+  "lng": 103.822,
+  "en": "Sembawang Hot Spring Park",
+  "country": "シンガポール",
+  "countryEn": "Singapore",
+  "wikiEn": "Sembawang_Hot_Spring_Park",
+  "name": "Sembawang Hot Spring Park"
+ },
+ {
+  "qid": "Q12019526",
+  "lat": 48.8011,
+  "lng": 21.4775,
+  "en": "Herľany Geyser",
+  "country": "スロバキア",
+  "countryEn": "Slovakia",
+  "wikiEn": "Herľany_geyser",
+  "name": "Herľany Geyser"
+ },
+ {
+  "qid": "Q43656136",
+  "lat": -30.7142,
+  "lng": 26.7147,
+  "en": "Aliwal North Hot Spring",
+  "country": "南アフリカ共和国",
+  "countryEn": "South Africa",
+  "name": "Aliwal North Hot Spring"
+ },
+ {
+  "qid": "Q137579470",
+  "lat": 36.8778,
+  "lng": 126.9742,
+  "en": "Asan Spavis",
+  "country": "大韓民国",
+  "countryEn": "South Korea",
+  "name": "Asan Spavis"
+ },
+ {
+  "qid": "Q27310623",
+  "lat": 36.8561,
+  "lng": 126.9808,
+  "en": "Asan-onch'on",
+  "country": "大韓民国",
+  "countryEn": "South Korea",
+  "name": "Asan-onch'on"
+ },
+ {
+  "qid": "Q12598678",
+  "lat": 35.5444,
+  "lng": 128.4922,
+  "en": "Bugok",
+  "country": "大韓民国",
+  "countryEn": "South Korea",
+  "wikiEn": "Bugok",
+  "name": "Bugok"
+ },
+ {
+  "qid": "Q27340666",
+  "lat": 36.7578,
+  "lng": 127.2261,
+  "en": "Cheonanoncheongwangwangji",
+  "country": "大韓民国",
+  "countryEn": "South Korea",
+  "name": "Cheonanoncheongwangwangji"
+ },
+ {
+  "qid": "Q27310891",
+  "lat": 37.1011,
+  "lng": 127.7961,
+  "en": "Chungunoncheon",
+  "country": "大韓民国",
+  "countryEn": "South Korea",
+  "name": "Chungunoncheon"
+ },
+ {
+  "qid": "Q27309808",
+  "lat": 36.6894,
+  "lng": 126.66,
+  "en": "Deoksan Oncheon",
+  "country": "大韓民国",
+  "countryEn": "South Korea",
+  "name": "Deoksan Oncheon"
+ },
+ {
+  "qid": "Q27308608",
+  "lat": 37.6819,
+  "lng": 127.0453,
+  "en": "Dobongoncheon",
+  "country": "大韓民国",
+  "countryEn": "South Korea",
+  "name": "Dobongoncheon"
+ },
+ {
+  "qid": "Q27309613",
+  "lat": 36.7625,
+  "lng": 126.8861,
+  "en": "Dogooncheon",
+  "country": "大韓民国",
+  "countryEn": "South Korea",
+  "name": "Dogooncheon"
+ },
+ {
+  "qid": "Q27310444",
+  "lat": 37.0925,
+  "lng": 127.7925,
+  "en": "Donsanoncheon",
+  "country": "大韓民国",
+  "countryEn": "South Korea",
+  "name": "Donsanoncheon"
+ },
+ {
+  "qid": "Q27323761",
+  "lat": 35.8403,
+  "lng": 127.2783,
+  "en": "DSM Hwasimoncheon-yeonsuwon",
+  "country": "大韓民国",
+  "countryEn": "South Korea",
+  "name": "DSM Hwasimoncheon-yeonsuwon"
+ },
+ {
+  "qid": "Q27303269",
+  "lat": 37.8322,
+  "lng": 128.8289,
+  "en": "Kangnung-onch'on",
+  "country": "大韓民国",
+  "countryEn": "South Korea",
+  "name": "Kangnung-onch'on"
+ },
+ {
+  "qid": "Q27304308",
+  "lat": 37.8431,
+  "lng": 128.8372,
+  "en": "Kurami-onch'on",
+  "country": "大韓民国",
+  "countryEn": "South Korea",
+  "name": "Kurami-onch'on"
+ },
+ {
+  "qid": "Q27309340",
+  "lat": 36.7822,
+  "lng": 127.0011,
+  "en": "Onyang-onch'on",
+  "country": "大韓民国",
+  "countryEn": "South Korea",
+  "name": "Onyang-onch'on"
+ },
+ {
+  "qid": "Q27321866",
+  "lat": 36.7211,
+  "lng": 129.3383,
+  "en": "Paegam-onch'on",
+  "country": "大韓民国",
+  "countryEn": "South Korea",
+  "name": "Paegam-onch'on"
+ },
+ {
+  "qid": "Q27306543",
+  "lat": 37.85,
+  "lng": 128.8225,
+  "en": "Sogumgang-onch'on",
+  "country": "大韓民国",
+  "countryEn": "South Korea",
+  "name": "Sogumgang-onch'on"
+ },
+ {
+  "qid": "Q27308620",
+  "lat": 37.6394,
+  "lng": 127.0733,
+  "en": "Sour-onch'on",
+  "country": "大韓民国",
+  "countryEn": "South Korea",
+  "name": "Sour-onch'on"
+ },
+ {
+  "qid": "Q27290316",
+  "lat": 37.0786,
+  "lng": 129.2842,
+  "en": "Tokku-onch'on",
+  "country": "大韓民国",
+  "countryEn": "South Korea",
+  "name": "Tokku-onch'on"
+ },
+ {
+  "qid": "Q27309625",
+  "lat": 36.6944,
+  "lng": 126.6525,
+  "en": "Toksandae-onch'on",
+  "country": "大韓民国",
+  "countryEn": "South Korea",
+  "name": "Toksandae-onch'on"
+ },
+ {
+  "qid": "Q27325083",
+  "lat": 35.7433,
+  "lng": 128.4273,
+  "en": "Yaksanoncheon",
+  "country": "大韓民国",
+  "countryEn": "South Korea",
+  "name": "Yaksanoncheon"
+ },
+ {
+  "qid": "Q27308638",
+  "lat": 37.5706,
+  "lng": 127.0722,
+  "en": "Yerim-onch'on",
+  "country": "大韓民国",
+  "countryEn": "South Korea",
+  "name": "Yerim-onch'on"
+ },
+ {
+  "qid": "Q27324911",
+  "lat": 35.6889,
+  "lng": 128.7183,
+  "en": "Yongam-onch'on",
+  "country": "大韓民国",
+  "countryEn": "South Korea",
+  "name": "Yongam-onch'on"
+ },
+ {
+  "qid": "Q27300437",
+  "lat": 38.0622,
+  "lng": 127.7203,
+  "en": "Yonghwa-onch'on",
+  "country": "大韓民国",
+  "countryEn": "South Korea",
+  "name": "Yonghwa-onch'on"
+ },
+ {
+  "qid": "Q624171",
+  "lat": 36.3559,
+  "lng": 127.347,
+  "en": "Yusong foot spa",
+  "country": "大韓民国",
+  "countryEn": "South Korea",
+  "wikiJa": "儒城温泉",
+  "wikiEn": "Yuseong_Hot_Spring",
+  "name": "儒城温泉"
+ },
+ {
+  "qid": "Q626070",
+  "lat": 35.2201,
+  "lng": 129.0814,
+  "en": "Dongnae Hot Spring",
+  "country": "大韓民国",
+  "countryEn": "South Korea",
+  "wikiJa": "東萊温泉",
+  "name": "東萊温泉"
+ },
+ {
+  "qid": "Q12592940",
+  "lat": 36.7661,
+  "lng": 126.8859,
+  "country": "大韓民国",
+  "countryEn": "South Korea",
+  "name": "道高温泉"
+ },
+ {
+  "qid": "Q28700918",
+  "lat": 35.3545,
+  "lng": 128.6097,
+  "country": "大韓民国",
+  "countryEn": "South Korea",
+  "wikiJa": "馬金山温泉",
+  "name": "馬金山温泉"
+ },
+ {
+  "qid": "Q126207013",
+  "lat": 36.0929,
+  "lng": -5.6014,
+  "en": "Bañera de los Alayos",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "name": "Bañera de los Alayos"
+ },
+ {
+  "qid": "Q126069498",
+  "lat": 36.9637,
+  "lng": -5.0311,
+  "en": "Bañeras de Antoñito",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "name": "Bañeras de Antoñito"
+ },
+ {
+  "qid": "Q126072993",
+  "lat": 37.5236,
+  "lng": -3.8567,
+  "en": "Bañeras de la Chaparra Del Cerrillo",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "name": "Bañeras de la Chaparra Del Cerrillo"
+ },
+ {
+  "qid": "Q126206170",
+  "lat": 37.4902,
+  "lng": -2.7689,
+  "en": "Baño de la Judería",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "name": "Baño de la Judería"
+ },
+ {
+  "qid": "Q126056316",
+  "lat": 36.8709,
+  "lng": -5.5396,
+  "en": "Baño de los Conejos",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "name": "Baño de los Conejos"
+ },
+ {
+  "qid": "Q126205836",
+  "lat": 36.739,
+  "lng": -5.1629,
+  "en": "Baños Árabes",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "name": "Baños Árabes"
+ },
+ {
+  "qid": "Q126206162",
+  "lat": 37.1488,
+  "lng": -3.6425,
+  "en": "Baños Árabes",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "name": "Baños Árabes"
+ },
+ {
+  "qid": "Q126205884",
+  "lat": 37.1783,
+  "lng": -3.5928,
+  "en": "Baños árabes de El Bañuelo",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "name": "Baños árabes de El Bañuelo"
+ },
+ {
+  "qid": "Q126206290",
+  "lat": 37.1204,
+  "lng": -3.5891,
+  "en": "Baños árabes de la La Zubia",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "name": "Baños árabes de la La Zubia"
+ },
+ {
+  "qid": "Q126206230",
+  "lat": 37.7711,
+  "lng": -3.7939,
+  "en": "Baños árabes de Villardompardo",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "name": "Baños árabes de Villardompardo"
+ },
+ {
+  "qid": "Q126205955",
+  "lat": 36.6805,
+  "lng": -6.1395,
+  "en": "Baños árabes del Alcázar De Jerez",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "name": "Baños árabes del Alcázar De Jerez"
+ },
+ {
+  "qid": "Q126052712",
+  "lat": 36.8373,
+  "lng": -5.9337,
+  "en": "Baños de Gibalbín",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "name": "Baños de Gibalbín"
+ },
+ {
+  "qid": "Q5723868",
+  "lat": 36.8325,
+  "lng": -2.8658,
+  "en": "Baños de la Reina",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "name": "Baños de la Reina"
+ },
+ {
+  "qid": "Q126205632",
+  "lat": 38.2891,
+  "lng": -3.1999,
+  "en": "Baños de Nuestra Señora Del Collado",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "name": "Baños de Nuestra Señora Del Collado"
+ },
+ {
+  "qid": "Q126205851",
+  "lat": 37.9385,
+  "lng": -4.8955,
+  "en": "Baños de Popea",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "name": "Baños de Popea"
+ },
+ {
+  "qid": "Q126205948",
+  "lat": 36.134,
+  "lng": -5.4486,
+  "en": "Baños Reales Meriníes De Al-binya",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "name": "Baños Reales Meriníes De Al-binya"
+ },
+ {
+  "qid": "Q24019114",
+  "lat": 42.0925,
+  "lng": 3.0039,
+  "en": "Bassa de Jafre",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "name": "Bassa de Jafre"
+ },
+ {
+  "qid": "Q97602304",
+  "lat": 36.7763,
+  "lng": -2.7788,
+  "en": "Bóvedas de Galianilla",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "name": "Bóvedas de Galianilla"
+ },
+ {
+  "qid": "Q1002160",
+  "lat": 43.4075,
+  "lng": -4.6928,
+  "en": "Bufón de Arenillas",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "name": "Bufón de Arenillas"
+ },
+ {
+  "qid": "Q24023689",
+  "lat": 42.3346,
+  "lng": -7.8653,
+  "en": "Burga de Abaixo",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "name": "Burga de Abaixo"
+ },
+ {
+  "qid": "Q97625616",
+  "lat": 37.8779,
+  "lng": -4.7823,
+  "en": "caliphal baths of Cordoba",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "wikiEn": "Caliphal_Baths",
+  "name": "caliphal baths of Cordoba"
+ },
+ {
+  "qid": "Q5789709",
+  "lat": 37.242,
+  "lng": -4.9291,
+  "en": "Cortijo de Aparicio el Grande",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "name": "Cortijo de Aparicio el Grande"
+ },
+ {
+  "qid": "Q138454316",
+  "lat": 29.0056,
+  "lng": -13.7532,
+  "en": "Geyser, Parque Nacional de Timanfaya",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "name": "Geyser, Parque Nacional de Timanfaya"
+ },
+ {
+  "qid": "Q127521343",
+  "lat": 41.5723,
+  "lng": 2.5276,
+  "en": "La deu d'aigua termal",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "name": "La deu d'aigua termal"
+ },
+ {
+  "qid": "Q18696225",
+  "lat": 41.6344,
+  "lng": 2.1619,
+  "en": "Lion's fountain",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "name": "Lion's fountain"
+ },
+ {
+  "qid": "Q126070109",
+  "lat": 36.7191,
+  "lng": -5.4804,
+  "en": "Nacimiento Hedionda",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "name": "Nacimiento Hedionda"
+ },
+ {
+  "qid": "Q6162517",
+  "lat": 36.7122,
+  "lng": -4.257,
+  "en": "Roman Villa of Rincón de la Victoria",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "name": "Roman Villa of Rincón de la Victoria"
+ },
+ {
+  "qid": "Q126206744",
+  "lat": 36.4681,
+  "lng": -4.9936,
+  "en": "Terma de las Bóvedas",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "name": "Terma de las Bóvedas"
+ },
+ {
+  "qid": "Q97634205",
+  "lat": 37.2091,
+  "lng": -4.6601,
+  "en": "Termas romanas",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "name": "Termas romanas"
+ },
+ {
+  "qid": "Q6142725",
+  "lat": 36.9504,
+  "lng": -3.5508,
+  "en": "Termas Romanas de Feche",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "name": "Termas Romanas de Feche"
+ },
+ {
+  "qid": "Q5938445",
+  "lat": 36.4681,
+  "lng": -4.9937,
+  "en": "Termas romanas de Las Bóvedas (Marbella)",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "wikiEn": "Las_Bóvedas_(thermae)",
+  "name": "Termas romanas de Las Bóvedas"
+ },
+ {
+  "qid": "Q126206042",
+  "lat": 37.0145,
+  "lng": -4.5559,
+  "en": "Termas romanas de Santa María",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "name": "Termas romanas de Santa María"
+ },
+ {
+  "qid": "Q97632386",
+  "lat": 36.7286,
+  "lng": -3.9574,
+  "en": "Villa y Termas de Torrox",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "name": "Villa y Termas de Torrox"
+ },
+ {
+  "qid": "Q97633471",
+  "lat": 36.3515,
+  "lng": -5.2333,
+  "en": "Yacimiento del Castillo de la Duquesa",
+  "country": "スペイン",
+  "countryEn": "Spain",
+  "name": "Yacimiento del Castillo de la Duquesa"
+ },
+ {
+  "qid": "Q126654669",
+  "lat": 6.2537,
+  "lng": 80.982,
+  "en": "Madunagala Hot Water Springs",
+  "country": "スリランカ",
+  "countryEn": "Sri Lanka",
+  "name": "Madunagala Hot Water Springs"
+ },
+ {
+  "qid": "Q1229596",
+  "lat": 47.4803,
+  "lng": 8.3131,
+  "en": "Baden thermal baths",
+  "country": "スイス",
+  "countryEn": "Switzerland",
+  "wikiEn": "Baden_thermal_baths",
+  "name": "Baden thermal baths"
+ },
+ {
+  "qid": "Q1595440",
+  "lat": 46.483,
+  "lng": 9.8353,
+  "en": "Heilquellen St.Moritz",
+  "country": "スイス",
+  "countryEn": "Switzerland",
+  "name": "Heilquellen St.Moritz"
+ },
+ {
+  "qid": "Q85745315",
+  "lat": 23.1076,
+  "lng": 120.7034,
+  "en": "Baolai Spring Park",
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "wikiEn": "Baolai_Spring_Park",
+  "name": "Baolai Spring Park"
+ },
+ {
+  "qid": "Q139596830",
+  "lat": 24.6309,
+  "lng": 121.411,
+  "en": "Galahe Hot Spring",
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "name": "Galahe Hot Spring"
+ },
+ {
+  "qid": "Q101429485",
+  "lat": 25.2219,
+  "lng": 121.6458,
+  "en": "Jiujinshan Zongdu Hotspring",
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "name": "Jiujinshan Zongdu Hotspring"
+ },
+ {
+  "qid": "Q11110687",
+  "lat": 23.1979,
+  "lng": 121.0372,
+  "en": "Lisong Hot Spring",
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "wikiEn": "Lisong_Hot_Spring",
+  "name": "Lisong Hot Spring"
+ },
+ {
+  "qid": "Q101429474",
+  "lat": 25.1436,
+  "lng": 121.5283,
+  "en": "Long Feng Hot Spring",
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "name": "Long Feng Hot Spring"
+ },
+ {
+  "qid": "Q17041557",
+  "lat": 23.1246,
+  "lng": 121.0558,
+  "en": "Lulu Hot Springs",
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "name": "Lulu Hot Springs"
+ },
+ {
+  "qid": "Q139596032",
+  "lat": 24.2295,
+  "lng": 121.0568,
+  "en": "Maling Hot Spring",
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "name": "Maling Hot Spring"
+ },
+ {
+  "qid": "Q49741970",
+  "lat": 24.6114,
+  "lng": 121.6333,
+  "en": "Qingshui Hot Spring",
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "name": "Qingshui Hot Spring"
+ },
+ {
+  "qid": "Q139596046",
+  "lat": 24.6226,
+  "lng": 121.296,
+  "en": "Taigang Hot Spring",
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "name": "Taigang Hot Spring"
+ },
+ {
+  "qid": "Q139596022",
+  "lat": 23.7193,
+  "lng": 121.3761,
+  "en": "Wanrong Hot Spring",
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "name": "Wanrong Hot Spring"
+ },
+ {
+  "qid": "Q10868923",
+  "lat": 23.0664,
+  "lng": 120.6851,
+  "en": "Bulao Hot Spring",
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "wikiEn": "Bulao_Hot_Spring",
+  "name": "不老温泉"
+ },
+ {
+  "qid": "Q10892293",
+  "lat": 25.1942,
+  "lng": 121.5904,
+  "en": "Bayan Hot Spring",
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "wikiJa": "八煙温泉",
+  "name": "八煙温泉"
+ },
+ {
+  "qid": "Q17499000",
+  "lat": 22.8643,
+  "lng": 121.1615,
+  "en": "Liji Hot Spring",
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "wikiJa": "利吉温泉",
+  "name": "利吉温泉"
+ },
+ {
+  "qid": "Q10925395",
+  "lat": 22.0958,
+  "lng": 120.7503,
+  "en": "Sichongxi Hot Spring",
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "wikiJa": "四重渓温泉",
+  "wikiEn": "Sichongxi_Hot_Spring",
+  "name": "四重渓温泉"
+ },
+ {
+  "qid": "Q10928336",
+  "lat": 25.1379,
+  "lng": 121.5119,
+  "en": "Beitou Hell Valley",
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "wikiEn": "Thermal_Valley",
+  "name": "地熱谷"
+ },
+ {
+  "qid": "Q15927869",
+  "lat": 23.2933,
+  "lng": 121.3381,
+  "en": "Antong Hot Spring",
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "wikiJa": "安通温泉",
+  "name": "安通温泉"
+ },
+ {
+  "qid": "Q10956047",
+  "lat": 23.1036,
+  "lng": 120.7103,
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "wikiJa": "宝来温泉",
+  "name": "宝来温泉"
+ },
+ {
+  "qid": "Q11064895",
+  "lat": 24.0225,
+  "lng": 121.1864,
+  "en": "Lushan Hot Spring",
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "wikiJa": "廬山温泉",
+  "name": "廬山温泉"
+ },
+ {
+  "qid": "Q11079742",
+  "lat": 24.2024,
+  "lng": 121.4906,
+  "en": "Wunshan Hot Spring",
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "wikiJa": "文山温泉",
+  "name": "文山温泉"
+ },
+ {
+  "qid": "Q11088885",
+  "lat": 24.025,
+  "lng": 121.166,
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "wikiJa": "春陽温泉",
+  "name": "春陽温泉"
+ },
+ {
+  "qid": "Q11092538",
+  "lat": 22.6367,
+  "lng": 121.5053,
+  "en": "Zhaori Hot Spring",
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "wikiJa": "朝日温泉_(台湾)",
+  "wikiEn": "Zhaori_Hot_Spring",
+  "name": "朝日温泉"
+ },
+ {
+  "qid": "Q15920485",
+  "lat": 23.5633,
+  "lng": 120.9306,
+  "en": "Dongpu Hot Spring",
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "wikiJa": "東埔温泉",
+  "name": "東埔温泉"
+ },
+ {
+  "qid": "Q11144931",
+  "lat": 24.4719,
+  "lng": 120.9769,
+  "en": "Tai-an Hot Spring",
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "wikiJa": "泰安温泉",
+  "wikiEn": "Tai'an_Hot_Spring",
+  "name": "泰安温泉"
+ },
+ {
+  "qid": "Q11567253",
+  "lat": 24.8653,
+  "lng": 121.5517,
+  "en": "Wulai Hot Spring",
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "wikiJa": "烏来温泉",
+  "wikiEn": "Wulai_Hot_Spring",
+  "name": "烏来温泉"
+ },
+ {
+  "qid": "Q17060984",
+  "lat": 23.4967,
+  "lng": 121.3436,
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "wikiJa": "瑞穂温泉",
+  "name": "瑞穂温泉"
+ },
+ {
+  "qid": "Q698236",
+  "lat": 22.6929,
+  "lng": 121.02,
+  "en": "Jhiben Hot Spring",
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "wikiJa": "知本温泉",
+  "wikiEn": "Zhiben_Hot_Spring",
+  "name": "知本温泉"
+ },
+ {
+  "qid": "Q17039700",
+  "lat": 23.1759,
+  "lng": 121.0293,
+  "en": "Bishan Hot Spring",
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "wikiJa": "碧山温泉",
+  "name": "碧山温泉"
+ },
+ {
+  "qid": "Q17030209",
+  "lat": 24.6206,
+  "lng": 121.2871,
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "name": "秀巒温泉"
+ },
+ {
+  "qid": "Q10914534",
+  "lat": 23.4907,
+  "lng": 121.3253,
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "wikiJa": "紅葉温泉_(台東県)",
+  "name": "紅葉温泉"
+ },
+ {
+  "qid": "Q17029169",
+  "lat": 23.4916,
+  "lng": 121.3263,
+  "en": "Hongye Hot Spring",
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "wikiJa": "紅葉温泉_(花蓮県)",
+  "name": "紅葉温泉"
+ },
+ {
+  "qid": "Q11633129",
+  "lat": 24.2034,
+  "lng": 121.007,
+  "en": "Guguan",
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "wikiJa": "谷関温泉",
+  "wikiEn": "Guguan_(hot_spring)",
+  "name": "谷関温泉"
+ },
+ {
+  "qid": "Q717027",
+  "lat": 23.3333,
+  "lng": 120.5,
+  "en": "Guanziling Hot Spring",
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "wikiJa": "関子嶺温泉",
+  "wikiEn": "Guanziling_Hot_Spring",
+  "name": "関子嶺温泉"
+ },
+ {
+  "qid": "Q11675201",
+  "lat": 24.5453,
+  "lng": 121.5078,
+  "en": "Jiuzhize Hot Spring",
+  "country": "中華民国",
+  "countryEn": "Taiwan",
+  "wikiJa": "鳩之沢温泉",
+  "name": "鳩之沢温泉"
+ },
+ {
+  "qid": "Q4133792",
+  "lat": 37.2038,
+  "lng": 71.537,
+  "en": "Garm Chashma",
+  "country": "タジキスタン",
+  "countryEn": "Tajikistan",
+  "wikiEn": "Gharm-Chashma",
+  "name": "Garm Chashma"
+ },
+ {
+  "qid": "Q56647451",
+  "lat": -5.0436,
+  "lng": 39.0567,
+  "en": "Galanos hot springs",
+  "country": "タンザニア",
+  "countryEn": "Tanzania",
+  "name": "Galanos hot springs"
+ },
+ {
+  "qid": "Q118903552",
+  "lat": -3.4443,
+  "lng": 37.1938,
+  "en": "Kikuletwa Hot Springs",
+  "country": "タンザニア",
+  "countryEn": "Tanzania",
+  "wikiEn": "Kikuletwa_Hot_Springs",
+  "name": "Kikuletwa Hot Springs"
+ },
+ {
+  "qid": "Q99201117",
+  "lat": 9.3558,
+  "lng": 99.1835,
+  "en": "Ban Pak Dan Hot Spring",
+  "country": "タイ王国",
+  "countryEn": "Thailand",
+  "name": "Ban Pak Dan Hot Spring"
+ },
+ {
+  "qid": "Q16639025",
+  "lat": 18.8164,
+  "lng": 99.228,
+  "en": "Sankampaeng Hot Springs",
+  "country": "タイ王国",
+  "countryEn": "Thailand",
+  "wikiJa": "サンカムペーン温泉",
+  "name": "サンカムペーン温泉"
+ },
+ {
+  "qid": "Q18028439",
+  "lat": -8.9867,
+  "lng": 125.3138,
+  "en": "Marobo hot springs",
+  "country": "東ティモール",
+  "countryEn": "Timor-Leste",
+  "name": "Marobo hot springs"
+ },
+ {
+  "qid": "Q49741877",
+  "lat": 40.8519,
+  "lng": 33.2567,
+  "en": "Acısu Kaplıcası",
+  "country": "トルコ",
+  "countryEn": "Turkey",
+  "name": "Acısu Kaplıcası"
+ },
+ {
+  "qid": "Q49742034",
+  "lat": 37.7133,
+  "lng": 34.5908,
+  "en": "Çiftehan Kaplıcası",
+  "country": "トルコ",
+  "countryEn": "Turkey",
+  "name": "Çiftehan Kaplıcası"
+ },
+ {
+  "qid": "Q49741906",
+  "lat": 37.36,
+  "lng": 36.3978,
+  "en": "Düziçi Haruniye Ilıcası",
+  "country": "トルコ",
+  "countryEn": "Turkey",
+  "name": "Düziçi Haruniye Ilıcası"
+ },
+ {
+  "qid": "Q49741908",
+  "lat": 40.9006,
+  "lng": 34.8892,
+  "en": "Evlik Kaplıcası",
+  "country": "トルコ",
+  "countryEn": "Turkey",
+  "name": "Evlik Kaplıcası"
+ },
+ {
+  "qid": "Q49741910",
+  "lat": 40.6017,
+  "lng": 35.4522,
+  "en": "Figani Kaplıcası",
+  "country": "トルコ",
+  "countryEn": "Turkey",
+  "name": "Figani Kaplıcası"
+ },
+ {
+  "qid": "Q49741921",
+  "lat": 39.4233,
+  "lng": 32.4886,
+  "en": "Haymana Ilıcası",
+  "country": "トルコ",
+  "countryEn": "Turkey",
+  "name": "Haymana Ilıcası"
+ },
+ {
+  "qid": "Q49741922",
+  "lat": 38.6394,
+  "lng": 30.8511,
+  "en": "Heybeliada Kaplıcaları",
+  "country": "トルコ",
+  "countryEn": "Turkey",
+  "name": "Heybeliada Kaplıcaları"
+ },
+ {
+  "qid": "Q49741928",
+  "lat": 39.2697,
+  "lng": 28.3158,
+  "en": "Hisaralan Kaplıcası",
+  "country": "トルコ",
+  "countryEn": "Turkey",
+  "name": "Hisaralan Kaplıcası"
+ },
+ {
+  "qid": "Q49742035",
+  "lat": 37.4364,
+  "lng": 30.5578,
+  "en": "İnsuyu Kaplıcası",
+  "country": "トルコ",
+  "countryEn": "Turkey",
+  "name": "İnsuyu Kaplıcası"
+ },
+ {
+  "qid": "Q49742036",
+  "lat": 40.9342,
+  "lng": 33.6511,
+  "en": "İstınata Kaplıcası",
+  "country": "トルコ",
+  "countryEn": "Turkey",
+  "name": "İstınata Kaplıcası"
+ },
+ {
+  "qid": "Q49741940",
+  "lat": 40.0092,
+  "lng": 32.3358,
+  "en": "Karakaya Ilıcası",
+  "country": "トルコ",
+  "countryEn": "Turkey",
+  "name": "Karakaya Ilıcası"
+ },
+ {
+  "qid": "Q49741943",
+  "lat": 37.1578,
+  "lng": 29.6728,
+  "en": "Kayacık Ilıcası",
+  "country": "トルコ",
+  "countryEn": "Turkey",
+  "name": "Kayacık Ilıcası"
+ },
+ {
+  "qid": "Q49741944",
+  "lat": 41.0036,
+  "lng": 33.7014,
+  "en": "Kazancı Kaplıcası",
+  "country": "トルコ",
+  "countryEn": "Turkey",
+  "name": "Kazancı Kaplıcası"
+ },
+ {
+  "qid": "Q49741945",
+  "lat": 39.7425,
+  "lng": 26.1889,
+  "en": "Kestanbol Kaplıcası",
+  "country": "トルコ",
+  "countryEn": "Turkey",
+  "name": "Kestanbol Kaplıcası"
+ },
+ {
+  "qid": "Q126059099",
+  "lat": 37.9674,
+  "lng": 29.1028,
+  "en": "Kırmızı Su, Karahayıt",
+  "country": "トルコ",
+  "countryEn": "Turkey",
+  "name": "Kırmızı Su, Karahayıt"
+ },
+ {
+  "qid": "Q49741951",
+  "lat": 40.8406,
+  "lng": 32.8983,
+  "en": "Kös Kaplıcası",
+  "country": "トルコ",
+  "countryEn": "Turkey",
+  "name": "Kös Kaplıcası"
+ },
+ {
+  "qid": "Q49741974",
+  "lat": 38.7689,
+  "lng": 28.4503,
+  "en": "Saraycık Ilıcası",
+  "country": "トルコ",
+  "countryEn": "Turkey",
+  "name": "Saraycık Ilıcası"
+ },
+ {
+  "qid": "Q49741975",
+  "lat": 40.6072,
+  "lng": 31.0778,
+  "en": "Sarıot Kaplıcası",
+  "country": "トルコ",
+  "countryEn": "Turkey",
+  "name": "Sarıot Kaplıcası"
+ },
+ {
+  "qid": "Q49742002",
+  "lat": 40.4728,
+  "lng": 35.705,
+  "en": "Terziköy Kaplıcası",
+  "country": "トルコ",
+  "countryEn": "Turkey",
+  "name": "Terziköy Kaplıcası"
+ },
+ {
+  "qid": "Q123014534",
+  "lat": 37.9243,
+  "lng": 29.1235,
+  "en": "Travertines of Pamukkale",
+  "country": "トルコ",
+  "countryEn": "Turkey",
+  "name": "Travertines of Pamukkale"
+ },
+ {
+  "qid": "Q31189587",
+  "lat": 38.5717,
+  "lng": 27.8411,
+  "en": "Urganlı Kaplıcaları",
+  "country": "トルコ",
+  "countryEn": "Turkey",
+  "name": "Urganlı Kaplıcaları"
+ },
+ {
+  "qid": "Q105893254",
+  "lat": 37.9236,
+  "lng": 29.1223,
+  "en": "Pamukkale",
+  "country": "トルコ",
+  "countryEn": "Turkey",
+  "wikiEn": "Pamukkale",
+  "name": "パムッカレ"
+ },
+ {
+  "qid": "Q49741881",
+  "lat": 3.3583,
+  "lng": 31.9278,
+  "en": "Amar",
+  "country": "ウガンダ",
+  "countryEn": "Uganda",
+  "name": "Amar"
+ },
+ {
+  "qid": "Q121538562",
+  "lat": 2.7965,
+  "lng": 31.8919,
+  "en": "Amuru Hot Springs",
+  "country": "ウガンダ",
+  "countryEn": "Uganda",
+  "name": "Amuru Hot Springs"
+ },
+ {
+  "qid": "Q134068127",
+  "lat": 1.6739,
+  "lng": 31.2558,
+  "en": "Kibiro hot springs",
+  "country": "ウガンダ",
+  "countryEn": "Uganda",
+  "name": "Kibiro hot springs"
+ },
+ {
+  "qid": "Q6417694",
+  "lat": -0.6731,
+  "lng": 30.1581,
+  "en": "Kitagata Hot Springs",
+  "country": "ウガンダ",
+  "countryEn": "Uganda",
+  "wikiEn": "Kitagata_Hot_Springs",
+  "name": "Kitagata Hot Springs"
+ },
+ {
+  "qid": "Q4146324",
+  "lat": 46.2153,
+  "lng": 32.1358,
+  "en": "Goryachy Klyuch",
+  "country": "ウクライナ",
+  "countryEn": "Ukraine",
+  "name": "Goryachy Klyuch"
+ },
+ {
+  "qid": "Q116760784",
+  "lat": 57.0026,
+  "lng": -2.3875,
+  "en": "Red Beard's Well",
+  "country": "イギリス",
+  "countryEn": "United Kingdom",
+  "name": "Red Beard's Well"
+ },
+ {
+  "qid": "Q26552512",
+  "lat": 52.6413,
+  "lng": -0.4955,
+  "en": "Stamford Spa Cistern",
+  "country": "イギリス",
+  "countryEn": "United Kingdom",
+  "name": "Stamford Spa Cistern"
+ },
+ {
+  "qid": "Q12070498",
+  "lat": 51.5447,
+  "lng": -3.2715,
+  "en": "Taff's Well Thermal Spring",
+  "country": "イギリス",
+  "countryEn": "United Kingdom",
+  "wikiEn": "Taff's_Well_Thermal_Spring",
+  "name": "Taff's Well Thermal Spring"
+ },
+ {
+  "qid": "Q119157904",
+  "lat": 57.6765,
+  "lng": -2.569,
+  "en": "The Red Well",
+  "country": "イギリス",
+  "countryEn": "United Kingdom",
+  "name": "The Red Well"
+ },
+ {
+  "qid": "Q2778623",
+  "lat": 44.5431,
+  "lng": -110.7964,
+  "en": "A-0 Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "A-0_Geyser",
+  "name": "A-0 Geyser"
+ },
+ {
+  "qid": "Q4670739",
+  "lat": 44.4182,
+  "lng": -110.5724,
+  "en": "Abyss Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Abyss_Pool",
+  "name": "Abyss Pool"
+ },
+ {
+  "qid": "Q101312641",
+  "lat": 54.15,
+  "lng": -165.8833,
+  "en": "Akutan Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Akutan_Hot_Springs",
+  "name": "Akutan Hot Springs"
+ },
+ {
+  "qid": "Q4738335",
+  "lat": 42.5439,
+  "lng": -118.533,
+  "en": "Alvord Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Alvord_Hot_Springs",
+  "name": "Alvord Hot Springs"
+ },
+ {
+  "qid": "Q2685107",
+  "lat": 44.4627,
+  "lng": -110.829,
+  "en": "Anemone Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Anemone_Geyser",
+  "name": "Anemone Geyser"
+ },
+ {
+  "qid": "Q4771165",
+  "lat": 42.501,
+  "lng": -119.693,
+  "en": "Antelope Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Antelope_Hot_Springs",
+  "name": "Antelope Hot Springs"
+ },
+ {
+  "qid": "Q96372351",
+  "lat": 35.9605,
+  "lng": -114.7258,
+  "en": "Arizona (Ringbolt) Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Arizona_(Ringbolt)_Hot_Springs",
+  "name": "Arizona (Ringbolt) Hot Springs"
+ },
+ {
+  "qid": "Q2689679",
+  "lat": 44.4783,
+  "lng": -110.8485,
+  "en": "Artemisia Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Artemisia_Geyser",
+  "name": "Artemisia Geyser"
+ },
+ {
+  "qid": "Q3999597",
+  "lat": 44.5441,
+  "lng": -110.7842,
+  "en": "Artesia Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Artesia_Geyser",
+  "name": "Artesia Geyser"
+ },
+ {
+  "qid": "Q3181260",
+  "lat": 44.4781,
+  "lng": -110.8491,
+  "en": "Atomizer Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Atomizer_Geyser",
+  "name": "Atomizer Geyser"
+ },
+ {
+  "qid": "Q777439",
+  "lat": 44.4646,
+  "lng": -110.8295,
+  "en": "Aurum Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Aurum_Geyser",
+  "name": "Aurum Geyser"
+ },
+ {
+  "qid": "Q49741888",
+  "lat": 44.4853,
+  "lng": -110.8573,
+  "en": "Avoca Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Avoca Spring"
+ },
+ {
+  "qid": "Q4833105",
+  "lat": 44.5623,
+  "lng": -110.8297,
+  "en": "Azure Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Azure_Spring",
+  "name": "Azure Spring"
+ },
+ {
+  "qid": "Q2915913",
+  "lat": 44.4818,
+  "lng": -110.8507,
+  "en": "Baby Daisy Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Baby_Daisy_Geyser",
+  "name": "Baby Daisy Geyser"
+ },
+ {
+  "qid": "Q4841499",
+  "lat": 44.9357,
+  "lng": -122.174,
+  "en": "Bagby Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Bagby_Hot_Springs",
+  "name": "Bagby Hot Springs"
+ },
+ {
+  "qid": "Q49706430",
+  "lat": 39.6128,
+  "lng": -112.7292,
+  "en": "Baker Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Baker_Hot_Springs",
+  "name": "Baker Hot Springs"
+ },
+ {
+  "qid": "Q97191735",
+  "lat": 57.085,
+  "lng": -134.839,
+  "en": "Baranof Warm Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Baranof_Warm_Springs_(thermal_mineral_springs)",
+  "name": "Baranof Warm Springs"
+ },
+ {
+  "qid": "Q97356299",
+  "lat": 39.5583,
+  "lng": -116.3611,
+  "en": "Bartine Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Bartine_Hot_Springs",
+  "name": "Bartine Hot Springs"
+ },
+ {
+  "qid": "Q4399546",
+  "lat": 44.5433,
+  "lng": -110.7953,
+  "en": "Bead Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Bead_Geyser",
+  "name": "Bead Geyser"
+ },
+ {
+  "qid": "Q4877892",
+  "lat": 44.4684,
+  "lng": -110.8388,
+  "en": "Beauty Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Beauty_Pool",
+  "name": "Beauty Pool"
+ },
+ {
+  "qid": "Q814039",
+  "lat": 44.4626,
+  "lng": -110.83,
+  "en": "Beehive Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Beehive_Geyser",
+  "name": "Beehive Geyser"
+ },
+ {
+  "qid": "Q4882481",
+  "lat": 44.4661,
+  "lng": -110.8367,
+  "en": "Belgian Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Belgian_Pool",
+  "name": "Belgian Pool"
+ },
+ {
+  "qid": "Q4896090",
+  "lat": 44.6787,
+  "lng": -110.7465,
+  "en": "Beryl Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Beryl_Spring",
+  "name": "Beryl Spring"
+ },
+ {
+  "qid": "Q4904924",
+  "lat": 44.7195,
+  "lng": -110.7089,
+  "en": "Big Alcove Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Big_Alcove_Spring",
+  "name": "Big Alcove Spring"
+ },
+ {
+  "qid": "Q103817205",
+  "lat": 34.5392,
+  "lng": -119.5646,
+  "en": "Big Caliente Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Big_Caliente_Hot_Springs",
+  "name": "Big Caliente Hot Springs"
+ },
+ {
+  "qid": "Q4905474",
+  "lat": 44.4176,
+  "lng": -110.5706,
+  "en": "Big Cone",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Big_Cone",
+  "name": "Big Cone"
+ },
+ {
+  "qid": "Q2189157",
+  "lat": 44.464,
+  "lng": -110.831,
+  "en": "Big Cub Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Big_Cub_Geyser",
+  "name": "Big Cub Geyser"
+ },
+ {
+  "qid": "Q123148372",
+  "lat": 40.7865,
+  "lng": -76.3189,
+  "en": "Big Mine Run Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Big Mine Run Geyser"
+ },
+ {
+  "qid": "Q2459857",
+  "lat": 44.4708,
+  "lng": -110.8404,
+  "en": "Bijou Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Bijou_Geyser",
+  "name": "Bijou Geyser"
+ },
+ {
+  "qid": "Q49707954",
+  "lat": 44.4817,
+  "lng": -110.8506,
+  "en": "Biscuit Basin Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Biscuit Basin Geyser"
+ },
+ {
+  "qid": "Q49708033",
+  "lat": 44.6203,
+  "lng": -110.4356,
+  "en": "Black Dragon's Caldron",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Black Dragon's Caldron"
+ },
+ {
+  "qid": "Q123271664",
+  "lat": 44.4851,
+  "lng": -110.8536,
+  "en": "Black Opal Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Black Opal Spring"
+ },
+ {
+  "qid": "Q123271313",
+  "lat": 44.4857,
+  "lng": -110.856,
+  "en": "Black Pearl Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Black Pearl Geyser"
+ },
+ {
+  "qid": "Q4921486",
+  "lat": 44.4182,
+  "lng": -110.5719,
+  "en": "Black Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Black_Pool",
+  "name": "Black Pool"
+ },
+ {
+  "qid": "Q112648529",
+  "lat": 36.5308,
+  "lng": -105.7122,
+  "en": "Black Rock Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Black_Rock_Hot_Springs",
+  "name": "Black Rock Hot Springs"
+ },
+ {
+  "qid": "Q49708105",
+  "lat": 44.4672,
+  "lng": -110.8519,
+  "en": "Black Sand Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Black Sand Pool"
+ },
+ {
+  "qid": "Q121849569",
+  "lat": 44.6922,
+  "lng": -110.7374,
+  "en": "Blood Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Blood Geyser"
+ },
+ {
+  "qid": "Q134568964",
+  "lat": 44.4168,
+  "lng": -110.572,
+  "en": "Blue Funnel Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Blue Funnel Spring"
+ },
+ {
+  "qid": "Q134977996",
+  "lat": 44.7206,
+  "lng": -110.7073,
+  "en": "Blue Mud Steam Vent",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Blue Mud Steam Vent"
+ },
+ {
+  "qid": "Q137127508",
+  "lat": 44.4619,
+  "lng": -110.8286,
+  "en": "Blue Star Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Blue_Star_Spring",
+  "name": "Blue Star Spring"
+ },
+ {
+  "qid": "Q134568995",
+  "lat": 44.4158,
+  "lng": -110.571,
+  "en": "Bluebell Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Bluebell Pool"
+ },
+ {
+  "qid": "Q110324115",
+  "lat": 44.2448,
+  "lng": -114.8861,
+  "en": "Boat Box Hot Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Boat_Box_Hot_Spring",
+  "name": "Boat Box Hot Spring"
+ },
+ {
+  "qid": "Q27966566",
+  "lat": 40.4356,
+  "lng": -121.3971,
+  "en": "Boiling Springs Lake",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Boiling Springs Lake"
+ },
+ {
+  "qid": "Q4948823",
+  "lat": 44.5348,
+  "lng": -110.7995,
+  "en": "Botryoidal Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Botryoidal_Spring",
+  "name": "Botryoidal Spring"
+ },
+ {
+  "qid": "Q4951561",
+  "lat": 44.5434,
+  "lng": -110.795,
+  "en": "Box Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Box_Spring",
+  "name": "Box Spring"
+ },
+ {
+  "qid": "Q104856118",
+  "lat": 44.7831,
+  "lng": -121.9778,
+  "en": "Breitenbush Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Breitenbush_Hot_Springs_(thermal_mineral_springs)",
+  "name": "Breitenbush Hot Springs"
+ },
+ {
+  "qid": "Q4968060",
+  "lat": 44.4701,
+  "lng": -110.8444,
+  "en": "Brilliant Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Brilliant_Pool",
+  "name": "Brilliant Pool"
+ },
+ {
+  "qid": "Q134822319",
+  "lat": 44.4627,
+  "lng": -110.8284,
+  "en": "Bronze Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Bronze Spring"
+ },
+ {
+  "qid": "Q115813014",
+  "lat": 33.4167,
+  "lng": -111.7011,
+  "en": "Buckhorn Hot Mineral Wells",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Buckhorn_Hot_Mineral_Wells",
+  "name": "Buckhorn Hot Mineral Wells"
+ },
+ {
+  "qid": "Q4996382",
+  "lat": 44.466,
+  "lng": -110.8369,
+  "en": "Bulger Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Bulger_Geyser",
+  "name": "Bulger Geyser"
+ },
+ {
+  "qid": "Q27946574",
+  "lat": 40.4574,
+  "lng": -121.503,
+  "en": "Bumpass Hell",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Bumpass Hell"
+ },
+ {
+  "qid": "Q49710411",
+  "lat": 44.9066,
+  "lng": -110.3949,
+  "en": "Calcite Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Calcite Springs"
+ },
+ {
+  "qid": "Q48977016",
+  "lat": 39.193,
+  "lng": -119.7524,
+  "en": "Carson Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Carson_Hot_Springs",
+  "name": "Carson Hot Springs"
+ },
+ {
+  "qid": "Q5047812",
+  "lat": 37.6464,
+  "lng": -118.916,
+  "en": "Casa Diablo Hot Springs, California",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Casa_Diablo_Hot_Springs",
+  "name": "Casa Diablo Hot Springs, California"
+ },
+ {
+  "qid": "Q134714416",
+  "lat": 44.4625,
+  "lng": -110.829,
+  "en": "Cascade Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Cascade Geyser"
+ },
+ {
+  "qid": "Q49710909",
+  "lat": 44.48,
+  "lng": -110.8508,
+  "en": "Cascade Group",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Cascade Group"
+ },
+ {
+  "qid": "Q1049360",
+  "lat": 44.4637,
+  "lng": -110.8365,
+  "en": "Castle Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Castle_Geyser",
+  "name": "Castle Geyser"
+ },
+ {
+  "qid": "Q17514903",
+  "lat": 33.9827,
+  "lng": -112.362,
+  "en": "Castle Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Castle_Hot_Springs_(Arizona)",
+  "name": "Castle Hot Springs"
+ },
+ {
+  "qid": "Q49711009",
+  "lat": 44.4708,
+  "lng": -110.8405,
+  "en": "Catfish Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Catfish Geyser"
+ },
+ {
+  "qid": "Q97191866",
+  "lat": 65.0531,
+  "lng": -146.0556,
+  "en": "Chena Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Chena_Hot_Springs_(thermal_mineral_springs)",
+  "name": "Chena Hot Springs"
+ },
+ {
+  "qid": "Q49711840",
+  "lat": 44.465,
+  "lng": -110.8369,
+  "en": "Chimney Cone",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Chimney Cone"
+ },
+ {
+  "qid": "Q86752862",
+  "lat": 30.038,
+  "lng": -104.598,
+  "en": "Chinati Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Chinati_Hot_Springs",
+  "name": "Chinati Hot Springs"
+ },
+ {
+  "qid": "Q21196893",
+  "lat": 44.462,
+  "lng": -110.8291,
+  "en": "Chinese Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Chinese_Spring_(Wyoming)",
+  "name": "Chinese Spring"
+ },
+ {
+  "qid": "Q5113728",
+  "lat": 44.4686,
+  "lng": -110.8393,
+  "en": "Chromatic Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Chromatic_Spring",
+  "name": "Chromatic Spring"
+ },
+ {
+  "qid": "Q49741898",
+  "lat": 44.6213,
+  "lng": -110.4346,
+  "en": "Churning Caldron",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Churning Caldron"
+ },
+ {
+  "qid": "Q134721328",
+  "lat": 44.462,
+  "lng": -110.8548,
+  "en": "Cinnamon Spouter",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Cinnamon Spouter"
+ },
+ {
+  "qid": "Q49712192",
+  "lat": 44.723,
+  "lng": -110.7052,
+  "en": "Cistern Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Cistern Spring"
+ },
+ {
+  "qid": "Q2213524",
+  "lat": 44.5511,
+  "lng": -110.8089,
+  "en": "Clepsydra Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Clepsydra_Geyser",
+  "name": "Clepsydra Geyser"
+ },
+ {
+  "qid": "Q2979048",
+  "lat": 44.4623,
+  "lng": -110.854,
+  "en": "Cliff Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Cliff Geyser"
+ },
+ {
+  "qid": "Q4875267",
+  "lat": 18.0378,
+  "lng": -66.3739,
+  "en": "Coamo Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Baños_de_Coamo",
+  "name": "Coamo Springs"
+ },
+ {
+  "qid": "Q134569045",
+  "lat": 44.4164,
+  "lng": -110.5716,
+  "en": "Collapsing Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Collapsing Pool"
+ },
+ {
+  "qid": "Q1112127",
+  "lat": 44.5147,
+  "lng": -109.1172,
+  "en": "Colter's Hell",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Colter's_Hell",
+  "name": "Colter's Hell"
+ },
+ {
+  "qid": "Q49713178",
+  "lat": 44.2815,
+  "lng": -110.5061,
+  "en": "Columbia Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Columbia Spring"
+ },
+ {
+  "qid": "Q2736302",
+  "lat": 44.4702,
+  "lng": -110.8444,
+  "en": "Comet Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Comet_Geyser",
+  "name": "Comet Geyser"
+ },
+ {
+  "qid": "Q134695356",
+  "lat": 44.4628,
+  "lng": -110.8301,
+  "en": "Copper Kettle",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Copper Kettle"
+ },
+ {
+  "qid": "Q134739150",
+  "lat": 44.4857,
+  "lng": -110.8558,
+  "en": "Coral Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Coral Geyser"
+ },
+ {
+  "qid": "Q5176028",
+  "lat": 44.0836,
+  "lng": -122.24,
+  "en": "Cougar Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Terwilliger_Hot_Springs",
+  "name": "Cougar Hot Springs"
+ },
+ {
+  "qid": "Q5178926",
+  "lat": 45.2901,
+  "lng": -117.814,
+  "en": "Cove Hot Springs Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Cove_Hot_Springs_Pool",
+  "name": "Cove Hot Springs Pool"
+ },
+ {
+  "qid": "Q5180288",
+  "lat": 39.2899,
+  "lng": -122.8222,
+  "en": "Crabtree Hot Springs, California",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Crabtree_Hot_Springs,_California",
+  "name": "Crabtree Hot Springs, California"
+ },
+ {
+  "qid": "Q5184578",
+  "lat": 44.4641,
+  "lng": -110.8365,
+  "en": "Crested Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Crested_Pool",
+  "name": "Crested Pool"
+ },
+ {
+  "qid": "Q5191204",
+  "lat": 38.9383,
+  "lng": -110.135,
+  "en": "Crystal Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Crystal_Geyser",
+  "name": "Crystal Geyser"
+ },
+ {
+  "qid": "Q104852687",
+  "lat": 37.5317,
+  "lng": -115.2339,
+  "en": "Crystal Springs hot springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Crystal_Springs_hot_springs",
+  "name": "Crystal Springs hot springs"
+ },
+ {
+  "qid": "Q2664688",
+  "lat": 44.4702,
+  "lng": -110.8442,
+  "en": "Daisy Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Daisy_Geyser",
+  "name": "Daisy Geyser"
+ },
+ {
+  "qid": "Q49715074",
+  "lat": 44.4703,
+  "lng": -110.8436,
+  "en": "Daisy Group",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Daisy Group"
+ },
+ {
+  "qid": "Q5250129",
+  "lat": 34.3394,
+  "lng": -117.177,
+  "en": "Deep Creek Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Deep_Creek_Hot_Springs",
+  "name": "Deep Creek Hot Springs"
+ },
+ {
+  "qid": "Q5250720",
+  "lat": 44.2411,
+  "lng": -122.059,
+  "en": "Deer Creek Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Deer_Creek_Hot_Springs",
+  "name": "Deer Creek Hot Springs"
+ },
+ {
+  "qid": "Q134739039",
+  "lat": 44.4652,
+  "lng": -110.8373,
+  "en": "Deleted Teakettle Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Deleted Teakettle Geyser"
+ },
+ {
+  "qid": "Q49715721",
+  "lat": 44.3061,
+  "lng": -110.5272,
+  "en": "Deluge Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Deluge Geyser"
+ },
+ {
+  "qid": "Q134822060",
+  "lat": 44.463,
+  "lng": -110.8306,
+  "en": "Depression Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Depression Geyser"
+ },
+ {
+  "qid": "Q5276752",
+  "lat": 44.5431,
+  "lng": -110.7964,
+  "en": "Dilemma Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Dilemma_Geyser",
+  "name": "Dilemma Geyser"
+ },
+ {
+  "qid": "Q5300156",
+  "lat": 44.4643,
+  "lng": -110.8297,
+  "en": "Doublet Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Doublet_Pool",
+  "name": "Doublet Pool"
+ },
+ {
+  "qid": "Q49741903",
+  "lat": 44.6252,
+  "lng": -110.4351,
+  "en": "Dragon's Mouth Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Dragon's Mouth Spring"
+ },
+ {
+  "qid": "Q49717507",
+  "lat": 44.4639,
+  "lng": -110.8308,
+  "en": "Ear Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Ear_Spring",
+  "name": "Ear Spring"
+ },
+ {
+  "qid": "Q134978729",
+  "lat": 44.462,
+  "lng": -110.829,
+  "en": "East Chinaman Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "East Chinaman Spring"
+ },
+ {
+  "qid": "Q5332600",
+  "lat": 44.722,
+  "lng": -110.702,
+  "en": "Echinus Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Echinus_Geyser",
+  "name": "Echinus Geyser"
+ },
+ {
+  "qid": "Q2738252",
+  "lat": 44.4678,
+  "lng": -110.8379,
+  "en": "Economic Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Economic_Geyser",
+  "name": "Economic Geyser"
+ },
+ {
+  "qid": "Q49718702",
+  "lat": 44.461,
+  "lng": -110.8552,
+  "en": "Emerald Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Emerald_Pool_(Yellowstone_National_Park)",
+  "name": "Emerald Pool"
+ },
+ {
+  "qid": "Q5370483",
+  "lat": 44.7257,
+  "lng": -110.7043,
+  "en": "Emerald Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Emerald_Spring",
+  "name": "Emerald Spring"
+ },
+ {
+  "qid": "Q49718880",
+  "lat": 44.4168,
+  "lng": -110.5718,
+  "en": "Ephedra Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Ephedra Spring"
+ },
+ {
+  "qid": "Q2703843",
+  "lat": 44.5264,
+  "lng": -110.8365,
+  "en": "Excelsior Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Excelsior_Geyser",
+  "name": "Excelsior Geyser"
+ },
+ {
+  "qid": "Q49741909",
+  "lat": 44.5263,
+  "lng": -110.8368,
+  "en": "Excelsior Geyser Crater",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Excelsior Geyser Crater"
+ },
+ {
+  "qid": "Q49126873",
+  "lat": 44.4744,
+  "lng": -110.8428,
+  "en": "Fan Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Fan Geyser"
+ },
+ {
+  "qid": "Q19880445",
+  "lat": 32.5575,
+  "lng": -107.993,
+  "en": "Faywood Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Faywood_Hot_Springs",
+  "name": "Faywood Hot Springs"
+ },
+ {
+  "qid": "Q123914266",
+  "lat": 40.0829,
+  "lng": -111.3187,
+  "en": "Fifth Water Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Fifth Water Hot Springs"
+ },
+ {
+  "qid": "Q5455004",
+  "lat": 44.4173,
+  "lng": -110.5703,
+  "en": "Fishing Cone",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Fishing_Cone",
+  "name": "Fishing Cone"
+ },
+ {
+  "qid": "Q49719783",
+  "lat": 44.5292,
+  "lng": -110.8286,
+  "en": "Flood Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Flood Geyser"
+ },
+ {
+  "qid": "Q2657752",
+  "lat": 44.5512,
+  "lng": -110.8083,
+  "en": "Fountain Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Fountain_Geyser",
+  "name": "Fountain Geyser"
+ },
+ {
+  "qid": "Q49719983",
+  "lat": 44.5542,
+  "lng": -110.8136,
+  "en": "Fountain Group",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Fountain Group"
+ },
+ {
+  "qid": "Q8565025",
+  "lat": 44.5506,
+  "lng": -110.8062,
+  "en": "Fountain Paint Pot",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Fountain_Paint_Pot",
+  "name": "Fountain Paint Pot"
+ },
+ {
+  "qid": "Q124373117",
+  "lat": 34.5027,
+  "lng": -120.2183,
+  "en": "Gaviota Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Gaviota_Hot_Springs",
+  "name": "Gaviota Hot Springs"
+ },
+ {
+  "qid": "Q49720578",
+  "lat": 44.4794,
+  "lng": -110.849,
+  "en": "Gem Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Gem Pool"
+ },
+ {
+  "qid": "Q49720652",
+  "lat": 37.7469,
+  "lng": -108.1175,
+  "en": "Geyser Warm Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Geyser Warm Spring"
+ },
+ {
+  "qid": "Q1129264",
+  "lat": 44.4706,
+  "lng": -110.8405,
+  "en": "Giant Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Giant_Geyser",
+  "name": "Giant Geyser"
+ },
+ {
+  "qid": "Q49720658",
+  "lat": 44.4706,
+  "lng": -110.8408,
+  "en": "Giant Group",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Giant Group"
+ },
+ {
+  "qid": "Q2311916",
+  "lat": 44.4635,
+  "lng": -110.829,
+  "en": "Giantess Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Giantess_Geyser",
+  "name": "Giantess Geyser"
+ },
+ {
+  "qid": "Q124454121",
+  "lat": 39.5496,
+  "lng": -107.3237,
+  "en": "Glenwood Hot Springs Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Glenwood Hot Springs Pool"
+ },
+ {
+  "qid": "Q96379674",
+  "lat": 35.9994,
+  "lng": -114.7425,
+  "en": "Gold Strike Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Gold_Strike_Hot_Springs",
+  "name": "Gold Strike Hot Springs"
+ },
+ {
+  "qid": "Q35041605",
+  "lat": 44.905,
+  "lng": -113.929,
+  "en": "Goldbug Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Goldbug_Hot_Springs",
+  "name": "Goldbug Hot Springs"
+ },
+ {
+  "qid": "Q543451",
+  "lat": 44.4667,
+  "lng": -110.837,
+  "en": "Grand Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Grand_Geyser",
+  "name": "Grand Geyser"
+ },
+ {
+  "qid": "Q49721181",
+  "lat": 44.4667,
+  "lng": -110.8361,
+  "en": "Grand Group",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Grand Group"
+ },
+ {
+  "qid": "Q5595878",
+  "lat": 43.3695,
+  "lng": -110.446,
+  "en": "Granite Hot Springs, Wyoming",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Granite_Hot_Springs,_Wyoming",
+  "name": "Granite Hot Springs, Wyoming"
+ },
+ {
+  "qid": "Q41801011",
+  "lat": 44.544,
+  "lng": -110.7846,
+  "en": "Gray Bulger Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Gray Bulger Geyser"
+ },
+ {
+  "qid": "Q1544194",
+  "lat": 44.5366,
+  "lng": -110.8,
+  "en": "Great Fountain Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Great_Fountain_Geyser",
+  "name": "Great Fountain Geyser"
+ },
+ {
+  "qid": "Q123271884",
+  "lat": 44.4617,
+  "lng": -110.8541,
+  "en": "Green Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Green Spring"
+ },
+ {
+  "qid": "Q115821586",
+  "lat": 46.044,
+  "lng": -112.811,
+  "en": "Gregson Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Gregson_Hot_Springs",
+  "name": "Gregson Hot Springs"
+ },
+ {
+  "qid": "Q49741914",
+  "lat": 44.6233,
+  "lng": -110.4357,
+  "en": "Grizzly Fumarole",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Grizzly Fumarole"
+ },
+ {
+  "qid": "Q2276235",
+  "lat": 44.4718,
+  "lng": -110.8418,
+  "en": "Grotto Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Grotto_Geyser",
+  "name": "Grotto Geyser"
+ },
+ {
+  "qid": "Q49722490",
+  "lat": 44.2819,
+  "lng": -110.5064,
+  "en": "Heart Lake Geyser Basin - Rustic Group",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Heart Lake Geyser Basin - Rustic Group"
+ },
+ {
+  "qid": "Q5890565",
+  "lat": 40.5239,
+  "lng": -111.485,
+  "en": "Homestead caldera",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Homestead_caldera",
+  "name": "Homestead caldera"
+ },
+ {
+  "qid": "Q49723698",
+  "lat": 37.2647,
+  "lng": -107.0108,
+  "en": "Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Hot Springs"
+ },
+ {
+  "qid": "Q49723690",
+  "lat": 37.2344,
+  "lng": -118.8825,
+  "en": "Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Hot Springs"
+ },
+ {
+  "qid": "Q115821455",
+  "lat": 32.5233,
+  "lng": -109.4264,
+  "en": "Hot Well Dunes",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Hot_Well_Dunes",
+  "name": "Hot Well Dunes"
+ },
+ {
+  "qid": "Q5944110",
+  "lat": 42.2217,
+  "lng": -120.3694,
+  "en": "Hunter's Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Hunters_Hot_Springs",
+  "name": "Hunter's Hot Springs"
+ },
+ {
+  "qid": "Q20714476",
+  "lat": 65.2092,
+  "lng": -149.9925,
+  "en": "Hutlinana Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Hutlinana_Hot_Springs",
+  "name": "Hutlinana Hot Springs"
+ },
+ {
+  "qid": "Q16846607",
+  "lat": 37.705,
+  "lng": -88.2953,
+  "en": "Illinois Salines",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Illinois_Salines",
+  "name": "Illinois Salines"
+ },
+ {
+  "qid": "Q30674790",
+  "lat": 39.5554,
+  "lng": -107.3362,
+  "en": "Iron Mountain Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Iron_Mountain_Hot_Springs",
+  "name": "Iron Mountain Hot Springs"
+ },
+ {
+  "qid": "Q140329458",
+  "lat": 47.6991,
+  "lng": -122.3394,
+  "en": "Iron-sulfur spring at Licton Springs Park",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Iron-sulfur spring at Licton Springs Park"
+ },
+ {
+  "qid": "Q49724671",
+  "lat": 37.5303,
+  "lng": -119.0319,
+  "en": "Iva Bell Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Iva Bell Hot Springs"
+ },
+ {
+  "qid": "Q134721803",
+  "lat": 44.4621,
+  "lng": -110.8537,
+  "en": "Jagged Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Jagged Spring"
+ },
+ {
+  "qid": "Q121863755",
+  "lat": 44.5509,
+  "lng": -110.8088,
+  "en": "Jelly Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Jelly Geyser"
+ },
+ {
+  "qid": "Q2700834",
+  "lat": 44.5509,
+  "lng": -110.8082,
+  "en": "Jet Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Jet_Geyser",
+  "name": "Jet Geyser"
+ },
+ {
+  "qid": "Q6189460",
+  "lat": 44.4849,
+  "lng": -110.8562,
+  "en": "Jewel Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Jewel_Geyser",
+  "name": "Jewel Geyser"
+ },
+ {
+  "qid": "Q49725163",
+  "lat": 36.2292,
+  "lng": -118.3033,
+  "en": "Jordan Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Jordan_Hot_Springs",
+  "name": "Jordan Hot Springs"
+ },
+ {
+  "qid": "Q96385345",
+  "lat": 66.3417,
+  "lng": -150.8456,
+  "en": "Kanuti Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Kanuti_Hot_Springs",
+  "name": "Kanuti Hot Springs"
+ },
+ {
+  "qid": "Q14682926",
+  "lat": 37.2542,
+  "lng": -118.376,
+  "en": "Keough Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Keough_Hot_Springs",
+  "name": "Keough Hot Springs"
+ },
+ {
+  "qid": "Q49725528",
+  "lat": 36.4781,
+  "lng": -118.4061,
+  "en": "Kern Hot Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Kern Hot Spring"
+ },
+ {
+  "qid": "Q49725559",
+  "lat": 44.5586,
+  "lng": -110.8075,
+  "en": "Kidney Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Kidney Geyser"
+ },
+ {
+  "qid": "Q49725588",
+  "lat": 44.4189,
+  "lng": -110.572,
+  "en": "King Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "King Geyser"
+ },
+ {
+  "qid": "Q2086791",
+  "lat": 44.5437,
+  "lng": -110.7953,
+  "en": "Labial Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Labial_Geyser",
+  "name": "Labial Geyser"
+ },
+ {
+  "qid": "Q134567963",
+  "lat": 44.4168,
+  "lng": -110.5699,
+  "en": "Lakeshore Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Lakeshore Geyser"
+ },
+ {
+  "qid": "Q134568747",
+  "lat": 44.4159,
+  "lng": -110.5697,
+  "en": "Lakeshore Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Lakeshore Spring"
+ },
+ {
+  "qid": "Q49725856",
+  "lat": 44.4163,
+  "lng": -110.5698,
+  "en": "Lakeside Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Lakeside Spring"
+ },
+ {
+  "qid": "Q97189171",
+  "lat": 42.6194,
+  "lng": -112.0142,
+  "en": "Lava Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Lava_Hot_Springs_(thermal_mineral_springs)",
+  "name": "Lava Hot Springs"
+ },
+ {
+  "qid": "Q121863551",
+  "lat": 44.5512,
+  "lng": -110.806,
+  "en": "Leather Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Leather Pool"
+ },
+ {
+  "qid": "Q134567383",
+  "lat": 44.4165,
+  "lng": -110.5715,
+  "en": "Ledge Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Ledge Spring"
+ },
+ {
+  "qid": "Q15242214",
+  "lat": 45.1512,
+  "lng": -118.6603,
+  "en": "Lehman Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Lehman_Hot_Springs",
+  "name": "Lehman Hot Springs"
+ },
+ {
+  "qid": "Q125378612",
+  "lat": 44.5357,
+  "lng": -110.8048,
+  "en": "Lemon Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Lemon Spring"
+ },
+ {
+  "qid": "Q134533274",
+  "lat": 44.4664,
+  "lng": -110.841,
+  "en": "Limekiln Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Limekiln Spring"
+ },
+ {
+  "qid": "Q2029172",
+  "lat": 44.4641,
+  "lng": -110.831,
+  "en": "Lion Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Lion_Geyser",
+  "name": "Lion Geyser"
+ },
+ {
+  "qid": "Q36698486",
+  "lat": 44.464,
+  "lng": -110.8311,
+  "en": "Lioness Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Lioness Geyser"
+ },
+ {
+  "qid": "Q25933938",
+  "lat": 44.464,
+  "lng": -110.8311,
+  "en": "Little Cub Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Little Cub Geyser"
+ },
+ {
+  "qid": "Q49726444",
+  "lat": 44.3564,
+  "lng": -110.7975,
+  "en": "Little Giant Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Little Giant Geyser"
+ },
+ {
+  "qid": "Q6671433",
+  "lat": 44.4184,
+  "lng": -110.8067,
+  "en": "Lone Star Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Lone_Star_Geyser",
+  "name": "Lone Star Geyser"
+ },
+ {
+  "qid": "Q134695986",
+  "lat": 44.5714,
+  "lng": -110.8335,
+  "en": "Maiden's Grave Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Maiden's Grave Spring"
+ },
+ {
+  "qid": "Q1013311",
+  "lat": 44.9706,
+  "lng": -110.7056,
+  "en": "Mammoth Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Mammoth_Hot_Springs",
+  "name": "Mammoth Hot Springs"
+ },
+ {
+  "qid": "Q49727636",
+  "lat": 36.5081,
+  "lng": -105.7239,
+  "en": "Manby Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Manby_Hot_Springs",
+  "name": "Manby Hot Springs"
+ },
+ {
+  "qid": "Q14684933",
+  "lat": 38.8578,
+  "lng": -104.921,
+  "en": "Manitou Mineral Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Manitou_Mineral_Springs",
+  "name": "Manitou Mineral Springs"
+ },
+ {
+  "qid": "Q134696048",
+  "lat": 44.4728,
+  "lng": -110.8414,
+  "en": "Marathon Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Marathon Pool"
+ },
+ {
+  "qid": "Q97355467",
+  "lat": 38.8636,
+  "lng": -112.5063,
+  "en": "Meadow Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Meadow_Hot_Springs",
+  "name": "Meadow Hot Springs"
+ },
+ {
+  "qid": "Q6838666",
+  "lat": 42.6768,
+  "lng": -118.347,
+  "en": "Mickey Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Mickey_Hot_Springs",
+  "name": "Mickey Hot Springs"
+ },
+ {
+  "qid": "Q121872931",
+  "lat": 44.4163,
+  "lng": -110.5722,
+  "en": "Mimulus Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Mimulus Pool"
+ },
+ {
+  "qid": "Q6864288",
+  "lat": 38.168,
+  "lng": -105.924,
+  "en": "Mineral Hot Springs, Colorado",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Mineral_Hot_Springs_(Colorado)",
+  "name": "Mineral Hot Springs, Colorado"
+ },
+ {
+  "qid": "Q49728745",
+  "lat": 44.7294,
+  "lng": -110.7031,
+  "en": "Minute Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Minute Geyser"
+ },
+ {
+  "qid": "Q49728750",
+  "lat": 44.4831,
+  "lng": -110.8503,
+  "en": "Mirror Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Mirror Pool"
+ },
+ {
+  "qid": "Q14714804",
+  "lat": 44.5514,
+  "lng": -110.8083,
+  "en": "Morning Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Morning_Geyser",
+  "name": "Morning Geyser"
+ },
+ {
+  "qid": "Q49741962",
+  "lat": 44.6239,
+  "lng": -110.4333,
+  "en": "Mud Caldron",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Mud Caldron"
+ },
+ {
+  "qid": "Q49729198",
+  "lat": 44.6231,
+  "lng": -110.4319,
+  "en": "Mud Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Mud Geyser"
+ },
+ {
+  "qid": "Q49741963",
+  "lat": 44.6244,
+  "lng": -110.4346,
+  "en": "Mud Volcano",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Mud Volcano"
+ },
+ {
+  "qid": "Q117220544",
+  "lat": 44.5387,
+  "lng": -110.798,
+  "en": "Mushroom Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Mushroom Spring"
+ },
+ {
+  "qid": "Q49729853",
+  "lat": 44.4859,
+  "lng": -110.8562,
+  "en": "Mustard Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Mustard Spring"
+ },
+ {
+  "qid": "Q49527626",
+  "lat": 38.6342,
+  "lng": -112.1094,
+  "en": "Mystic Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Mystic_Hot_Springs",
+  "name": "Mystic Hot Springs"
+ },
+ {
+  "qid": "Q1926253",
+  "lat": 44.5443,
+  "lng": -110.797,
+  "en": "Narcissus Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Narcissus_Geyser",
+  "name": "Narcissus Geyser"
+ },
+ {
+  "qid": "Q125550434",
+  "lat": 44.4745,
+  "lng": -110.8425,
+  "en": "Norris Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Norris Pool"
+ },
+ {
+  "qid": "Q25983660",
+  "lat": 44.4642,
+  "lng": -110.8308,
+  "en": "North Goggles Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "North Goggles Geyser"
+ },
+ {
+  "qid": "Q49126885",
+  "lat": 44.4693,
+  "lng": -110.8403,
+  "en": "Oblong Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Oblong Geyser"
+ },
+ {
+  "qid": "Q49730526",
+  "lat": 44.4218,
+  "lng": -110.5738,
+  "en": "Occasional Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Occasional Geyser"
+ },
+ {
+  "qid": "Q134567470",
+  "lat": 44.4166,
+  "lng": -110.5717,
+  "en": "Oil Slick Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Oil Slick Pool"
+ },
+ {
+  "qid": "Q85790381",
+  "lat": 36.3103,
+  "lng": -106.0467,
+  "en": "Ojo Caliente Mineral Springs Resort & Spa",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Ojo_Caliente_Hot_Springs",
+  "name": "Ojo Caliente Mineral Springs Resort & Spa"
+ },
+ {
+  "qid": "Q7081641",
+  "lat": 44.5629,
+  "lng": -110.8388,
+  "en": "Ojo Caliente Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Ojo_Caliente_Spring",
+  "name": "Ojo Caliente Spring"
+ },
+ {
+  "qid": "Q65249949",
+  "lat": 38.5963,
+  "lng": -122.6023,
+  "en": "Old Faithful Geyser of California",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Old Faithful Geyser of California"
+ },
+ {
+  "qid": "Q134607604",
+  "lat": 42.2215,
+  "lng": -120.369,
+  "en": "Old Perpetual",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Old Perpetual"
+ },
+ {
+  "qid": "Q7085170",
+  "lat": 37.6286,
+  "lng": -80.2417,
+  "en": "Old Sweet Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Sweet_Springs_Resort",
+  "name": "Old Sweet Springs"
+ },
+ {
+  "qid": "Q14713864",
+  "lat": 47.9767,
+  "lng": -123.689,
+  "en": "Olympic Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Olympic_Hot_Springs",
+  "name": "Olympic Hot Springs"
+ },
+ {
+  "qid": "Q2009174",
+  "lat": 44.5267,
+  "lng": -110.8387,
+  "en": "Opal Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Opal_Pool",
+  "name": "Opal Pool"
+ },
+ {
+  "qid": "Q134713667",
+  "lat": 44.4632,
+  "lng": -110.8534,
+  "en": "Opalescent Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Opalescent Pool"
+ },
+ {
+  "qid": "Q55627811",
+  "lat": 44.9664,
+  "lng": -110.7148,
+  "en": "Orange Spring Mound",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Orange_Mound_Spring",
+  "name": "Orange Spring Mound"
+ },
+ {
+  "qid": "Q85791799",
+  "lat": 37.2681,
+  "lng": -107.0244,
+  "en": "Pagosa hot springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Pagosa_hot_springs",
+  "name": "Pagosa hot springs"
+ },
+ {
+  "qid": "Q49731286",
+  "lat": 44.7333,
+  "lng": -110.7008,
+  "en": "Pearl Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Pearl Geyser"
+ },
+ {
+  "qid": "Q125660078",
+  "lat": 44.4647,
+  "lng": -110.8302,
+  "en": "Pendant Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Pendant Spring"
+ },
+ {
+  "qid": "Q49731355",
+  "lat": 38.2152,
+  "lng": -107.2273,
+  "en": "Penny Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Penny_Hot_Springs",
+  "name": "Penny Hot Springs"
+ },
+ {
+  "qid": "Q7164913",
+  "lat": 44.4657,
+  "lng": -110.8363,
+  "en": "Penta Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Penta_Geyser",
+  "name": "Penta Geyser"
+ },
+ {
+  "qid": "Q134569039",
+  "lat": 44.4166,
+  "lng": -110.5716,
+  "en": "Percolating Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Percolating Spring"
+ },
+ {
+  "qid": "Q134553276",
+  "lat": 44.4167,
+  "lng": -110.5718,
+  "en": "Perforated Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Perforated Pool"
+ },
+ {
+  "qid": "Q7195981",
+  "lat": 44.5431,
+  "lng": -110.7961,
+  "en": "Pink Cone Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Pink_Cone_Geyser",
+  "name": "Pink Cone Geyser"
+ },
+ {
+  "qid": "Q2845858",
+  "lat": 44.5434,
+  "lng": -110.7964,
+  "en": "Pink Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Pink_Geyser",
+  "name": "Pink Geyser"
+ },
+ {
+  "qid": "Q134713887",
+  "lat": 44.4796,
+  "lng": -110.8489,
+  "en": "Pinto Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Pinto Spring"
+ },
+ {
+  "qid": "Q57483167",
+  "lat": 38.874,
+  "lng": -123.518,
+  "en": "Point Arena Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Point_Arena_Hot_Springs",
+  "name": "Point Arena Hot Springs"
+ },
+ {
+  "qid": "Q49732103",
+  "lat": 44.7056,
+  "lng": -110.7075,
+  "en": "Porkchop Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Porkchop Geyser"
+ },
+ {
+  "qid": "Q2675935",
+  "lat": 44.4638,
+  "lng": -110.8295,
+  "en": "Pump Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Pump_Geyser",
+  "name": "Pump Geyser"
+ },
+ {
+  "qid": "Q49732364",
+  "lat": 44.4694,
+  "lng": -110.8487,
+  "en": "Punch Bowl Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Punch Bowl Spring"
+ },
+ {
+  "qid": "Q134721816",
+  "lat": 44.4621,
+  "lng": -110.8537,
+  "en": "Ragged Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Ragged Spring"
+ },
+ {
+  "qid": "Q49732638",
+  "lat": 44.4708,
+  "lng": -110.8592,
+  "en": "Rainbow Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Rainbow Pool"
+ },
+ {
+  "qid": "Q121863602",
+  "lat": 44.5511,
+  "lng": -110.8062,
+  "en": "Red Spouter",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Red Spouter"
+ },
+ {
+  "qid": "Q1128808",
+  "lat": 44.4735,
+  "lng": -110.8409,
+  "en": "Riverside Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Riverside_Geyser",
+  "name": "Riverside Geyser"
+ },
+ {
+  "qid": "Q96402653",
+  "lat": 32.753,
+  "lng": -109.708,
+  "en": "Roper Lake State Park Hot Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Roper_Lake_State_Park_Hot_Spring",
+  "name": "Roper Lake State Park Hot Spring"
+ },
+ {
+  "qid": "Q49734075",
+  "lat": 44.2822,
+  "lng": -110.5064,
+  "en": "Rustic Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Rustic Geyser"
+ },
+ {
+  "qid": "Q49734082",
+  "lat": 44.4846,
+  "lng": -110.8517,
+  "en": "Rusty Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Rusty Geyser"
+ },
+ {
+  "qid": "Q109973522",
+  "lat": 36.8056,
+  "lng": -117.7734,
+  "en": "Saline Valley Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Saline_Valley_Hot_Springs",
+  "name": "Saline Valley Hot Springs"
+ },
+ {
+  "qid": "Q25929159",
+  "lat": 44.485,
+  "lng": -110.8553,
+  "en": "Sapphire Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Sapphire Pool"
+ },
+ {
+  "qid": "Q7423371",
+  "lat": 43.0511,
+  "lng": -73.8039,
+  "en": "Saratoga Spa State Park",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Saratoga_Spa_State_Park",
+  "name": "Saratoga Spa State Park"
+ },
+ {
+  "qid": "Q7428663",
+  "lat": 44.4655,
+  "lng": -110.8366,
+  "en": "Sawmill Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Sawmill_Geyser",
+  "name": "Sawmill Geyser"
+ },
+ {
+  "qid": "Q49734706",
+  "lat": 44.4653,
+  "lng": -110.8371,
+  "en": "Scalloped Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Scalloped Spring"
+ },
+ {
+  "qid": "Q134569014",
+  "lat": 44.4159,
+  "lng": -110.571,
+  "en": "Seismograph Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Seismograph Pool"
+ },
+ {
+  "qid": "Q134591664",
+  "lat": 44.4635,
+  "lng": -110.8371,
+  "en": "Shield Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Shield Spring"
+ },
+ {
+  "qid": "Q121849619",
+  "lat": 44.5502,
+  "lng": -110.8059,
+  "en": "Silex Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Silex Spring"
+ },
+ {
+  "qid": "Q134589509",
+  "lat": 44.4851,
+  "lng": -110.8575,
+  "en": "Silver Globe Slit Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Silver Globe Slit Geyser"
+ },
+ {
+  "qid": "Q49741987",
+  "lat": 44.6218,
+  "lng": -110.4339,
+  "en": "Sizzling Basin",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Sizzling Basin"
+ },
+ {
+  "qid": "Q7553193",
+  "lat": 42.6572,
+  "lng": -111.6052,
+  "en": "Soda Springs Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Soda_Springs_Geyser",
+  "name": "Soda Springs Geyser"
+ },
+ {
+  "qid": "Q2279547",
+  "lat": 44.4686,
+  "lng": -110.8293,
+  "en": "Solitary Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Solitary_Geyser",
+  "name": "Solitary Geyser"
+ },
+ {
+  "qid": "Q134696060",
+  "lat": 44.4651,
+  "lng": -110.837,
+  "en": "South Scalloped Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "South Scalloped Spring"
+ },
+ {
+  "qid": "Q134722180",
+  "lat": 44.4724,
+  "lng": -110.8419,
+  "en": "Spa Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Spa Geyser"
+ },
+ {
+  "qid": "Q7573979",
+  "lat": 44.5511,
+  "lng": -110.8087,
+  "en": "Spasm Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Spasm_Geyser",
+  "name": "Spasm Geyser"
+ },
+ {
+  "qid": "Q2309349",
+  "lat": 44.4657,
+  "lng": -110.8361,
+  "en": "Spasmodic Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Spasmodic_Geyser",
+  "name": "Spasmodic Geyser"
+ },
+ {
+  "qid": "Q1881913",
+  "lat": 44.5316,
+  "lng": -110.7955,
+  "en": "Spindle Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Spindle_Geyser",
+  "name": "Spindle Geyser"
+ },
+ {
+  "qid": "Q2376138",
+  "lat": 44.4702,
+  "lng": -110.8447,
+  "en": "Splendid Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Splendid_Geyser",
+  "name": "Splendid Geyser"
+ },
+ {
+  "qid": "Q49736276",
+  "lat": 44.4627,
+  "lng": -110.8533,
+  "en": "Spouter Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Spouter Geyser"
+ },
+ {
+  "qid": "Q134713845",
+  "lat": 44.4798,
+  "lng": -110.849,
+  "en": "Sprite Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Sprite Pool"
+ },
+ {
+  "qid": "Q125576485",
+  "lat": 44.4729,
+  "lng": -110.8423,
+  "en": "Square Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Square Spring"
+ },
+ {
+  "qid": "Q7599680",
+  "lat": 46.3164,
+  "lng": -115.2586,
+  "en": "Stanley Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Stanley_Hot_Springs",
+  "name": "Stanley Hot Springs"
+ },
+ {
+  "qid": "Q41800230",
+  "lat": 44.5443,
+  "lng": -110.7867,
+  "en": "Steady Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Steady Geyser"
+ },
+ {
+  "qid": "Q49736521",
+  "lat": 43.2683,
+  "lng": -108.8953,
+  "en": "Steamboat Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Steamboat Geyser"
+ },
+ {
+  "qid": "Q121872752",
+  "lat": 44.4628,
+  "lng": -110.8281,
+  "en": "Sulphide Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Sulphide Spring"
+ },
+ {
+  "qid": "Q3503507",
+  "lat": 19.4322,
+  "lng": -155.261,
+  "en": "Sulphur Banks",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Sulphur Banks"
+ },
+ {
+  "qid": "Q49736868",
+  "lat": 44.6278,
+  "lng": -110.4328,
+  "en": "Sulphur Caldron",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Sulphur Caldron"
+ },
+ {
+  "qid": "Q7636532",
+  "lat": 44.6547,
+  "lng": -110.4818,
+  "en": "Sulphur Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Sulphur_Spring",
+  "name": "Sulphur Spring"
+ },
+ {
+  "qid": "Q100159600",
+  "lat": 40.4488,
+  "lng": -121.5358,
+  "en": "Sulphur Works",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Sulphur Works"
+ },
+ {
+  "qid": "Q48521925",
+  "lat": 42.7256,
+  "lng": -120.6473,
+  "en": "Summer Lake Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Summer_Lake_Hot_Springs",
+  "name": "Summer Lake Hot Springs"
+ },
+ {
+  "qid": "Q49737110",
+  "lat": 44.7294,
+  "lng": -114.9928,
+  "en": "Sunflower Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Sunflower_Hot_Springs",
+  "name": "Sunflower Hot Springs"
+ },
+ {
+  "qid": "Q123271733",
+  "lat": 44.4628,
+  "lng": -110.8547,
+  "en": "Sunset Lake",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Sunset Lake"
+ },
+ {
+  "qid": "Q134567485",
+  "lat": 44.4163,
+  "lng": -110.5715,
+  "en": "Surging Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Surging Spring"
+ },
+ {
+  "qid": "Q7646601",
+  "lat": 44.5358,
+  "lng": -110.8004,
+  "en": "Surprise Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Surprise_Pool",
+  "name": "Surprise Pool"
+ },
+ {
+  "qid": "Q49737449",
+  "lat": 44.4654,
+  "lng": -110.8365,
+  "en": "Tardy Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Tardy Geyser"
+ },
+ {
+  "qid": "Q7687624",
+  "lat": 36.2336,
+  "lng": -121.55,
+  "en": "Tassajara Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Tassajara_Hot_Springs",
+  "name": "Tassajara Hot Springs"
+ },
+ {
+  "qid": "Q134567499",
+  "lat": 44.4166,
+  "lng": -110.5718,
+  "en": "Thumb Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Thumb Geyser"
+ },
+ {
+  "qid": "Q49737873",
+  "lat": 44.416,
+  "lng": -110.5713,
+  "en": "Thumb Paintpots",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Thumb Paintpots"
+ },
+ {
+  "qid": "Q7814576",
+  "lat": 65.2667,
+  "lng": -148.867,
+  "en": "Tolovana Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Tolovana_Hot_Springs",
+  "name": "Tolovana Hot Springs"
+ },
+ {
+  "qid": "Q134696071",
+  "lat": 44.4638,
+  "lng": -110.8293,
+  "en": "Topaz Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Topaz Spring"
+ },
+ {
+  "qid": "Q134696086",
+  "lat": 44.4673,
+  "lng": -110.8376,
+  "en": "Topsoil Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Topsoil Spring"
+ },
+ {
+  "qid": "Q49738175",
+  "lat": 44.4638,
+  "lng": -110.8366,
+  "en": "Tortoise Shell Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Tortoise Shell Spring"
+ },
+ {
+  "qid": "Q18354228",
+  "lat": 40.7647,
+  "lng": -119.144,
+  "en": "Trego Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Trego_Hot_Springs",
+  "name": "Trego Hot Springs"
+ },
+ {
+  "qid": "Q110413471",
+  "lat": 33.1336,
+  "lng": -107.2528,
+  "en": "Truth or Consequences Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Truth_or_Consequences_Hot_Springs",
+  "name": "Truth or Consequences Hot Springs"
+ },
+ {
+  "qid": "Q661687",
+  "lat": 44.4667,
+  "lng": -110.837,
+  "en": "Turban Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Turban_Geyser",
+  "name": "Turban Geyser"
+ },
+ {
+  "qid": "Q49738587",
+  "lat": 44.6283,
+  "lng": -110.4336,
+  "en": "Turbulent Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Turbulent Pool"
+ },
+ {
+  "qid": "Q7856203",
+  "lat": 44.5267,
+  "lng": -110.8377,
+  "en": "Turquoise Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Turquoise_Pool",
+  "name": "Turquoise Pool"
+ },
+ {
+  "qid": "Q121863675",
+  "lat": 44.5511,
+  "lng": -110.8078,
+  "en": "Twig Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Twig Geyser"
+ },
+ {
+  "qid": "Q49738716",
+  "lat": 44.4173,
+  "lng": -110.5727,
+  "en": "Twin Geysers",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Twin Geysers"
+ },
+ {
+  "qid": "Q7881774",
+  "lat": 43.295,
+  "lng": -122.366,
+  "en": "Umpqua Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Umpqua_Hot_Springs",
+  "name": "Umpqua Hot Springs"
+ },
+ {
+  "qid": "Q123880882",
+  "lat": 34.084,
+  "lng": -117.294,
+  "en": "Urbita Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Urbita_Hot_Springs",
+  "name": "Urbita Hot Springs"
+ },
+ {
+  "qid": "Q134567278",
+  "lat": 44.4171,
+  "lng": -110.5703,
+  "en": "Vandalized Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Vandalized Pool"
+ },
+ {
+  "qid": "Q125518760",
+  "lat": 44.4716,
+  "lng": -110.8414,
+  "en": "Variable Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Variable Spring"
+ },
+ {
+  "qid": "Q3136183",
+  "lat": 44.4668,
+  "lng": -110.8371,
+  "en": "Vent Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Vent_Geyser",
+  "name": "Vent Geyser"
+ },
+ {
+  "qid": "Q49739357",
+  "lat": 34.3553,
+  "lng": -111.71,
+  "en": "Verde Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Verde_Hot_Springs",
+  "name": "Verde Hot Springs"
+ },
+ {
+  "qid": "Q121826441",
+  "lat": 44.723,
+  "lng": -110.7057,
+  "en": "Veteran Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Veteran Geyser"
+ },
+ {
+  "qid": "Q123271628",
+  "lat": 44.4853,
+  "lng": -110.8542,
+  "en": "Wall Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Wall Pool"
+ },
+ {
+  "qid": "Q134722678",
+  "lat": 44.468,
+  "lng": -110.8379,
+  "en": "Wave Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "Wave Spring"
+ },
+ {
+  "qid": "Q7986703",
+  "lat": 44.4666,
+  "lng": -110.8372,
+  "en": "West Triplet Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "West_Triplet_Geyser",
+  "name": "West Triplet Geyser"
+ },
+ {
+  "qid": "Q138064",
+  "lat": 44.5393,
+  "lng": -110.803,
+  "en": "White Dome Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "White_Dome_Geyser",
+  "name": "White Dome Geyser"
+ },
+ {
+  "qid": "Q134696164",
+  "lat": 44.4614,
+  "lng": -110.8549,
+  "en": "White Sand Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "name": "White Sand Spring"
+ },
+ {
+  "qid": "Q48839207",
+  "lat": 31.6007,
+  "lng": -92.2763,
+  "en": "White Sulphur Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "White_Sulphur_Springs_(Jena,_Louisiana)",
+  "name": "White Sulphur Springs"
+ },
+ {
+  "qid": "Q8000205",
+  "lat": 39.0386,
+  "lng": -122.421,
+  "en": "Wilbur Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Wilbur_Hot_Springs",
+  "name": "Wilbur Hot Springs"
+ },
+ {
+  "qid": "Q385340",
+  "lat": 44.544,
+  "lng": -110.7845,
+  "en": "Young Hopeful Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Young_Hopeful_and_Grey_Bulger_Geysers",
+  "name": "Young Hopeful Geyser"
+ },
+ {
+  "qid": "Q8003703",
+  "lat": 34.5756,
+  "lng": -119.051,
+  "en": "Willett Hot Springs",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Willett_Hot_Springs",
+  "name": "ウィレット温泉"
+ },
+ {
+  "qid": "Q858794",
+  "lat": 44.4605,
+  "lng": -110.8281,
+  "en": "Old Faithful",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiJa": "オールド・フェイスフル・ガイザー",
+  "wikiEn": "Old_Faithful",
+  "name": "オールド・フェイスフル・ガイザー"
+ },
+ {
+  "qid": "Q1422831",
+  "lat": 44.525,
+  "lng": -110.8381,
+  "en": "Grand Prismatic Spring",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiJa": "グランド・プリズマティック・スプリング",
+  "wikiEn": "Grand_Prismatic_Spring",
+  "name": "グランド・プリズマティック・スプリング"
+ },
+ {
+  "qid": "Q1438568",
+  "lat": 44.7235,
+  "lng": -110.703,
+  "en": "Steamboat Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Steamboat_Geyser",
+  "name": "スチームボート・ガイザー"
+ },
+ {
+  "qid": "Q2421402",
+  "lat": 40.8594,
+  "lng": -119.332,
+  "en": "Fly Geyser",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiJa": "フライガイザー",
+  "wikiEn": "Fly_Geyser",
+  "name": "フライガイザー"
+ },
+ {
+  "qid": "Q1153990",
+  "lat": 44.4751,
+  "lng": -110.8435,
+  "en": "Morning Glory Pool",
+  "country": "アメリカ合衆国",
+  "countryEn": "United States",
+  "wikiEn": "Morning_Glory_Pool",
+  "name": "モーニンググローリープール"
+ },
+ {
+  "qid": "Q6142690",
+  "lat": -32.3517,
+  "lng": -57.2689,
+  "en": "Termas de Almirón",
+  "country": "ウルグアイ",
+  "countryEn": "Uruguay",
+  "name": "Termas de Almirón"
+ },
+ {
+  "qid": "Q1526733",
+  "lat": -31.4576,
+  "lng": -57.9096,
+  "en": "Termas del Daymán",
+  "country": "ウルグアイ",
+  "countryEn": "Uruguay",
+  "name": "Termas del Daymán"
+ },
+ {
+  "qid": "Q3491895",
+  "lat": 17.0679,
+  "lng": 106.8389,
+  "en": "Bang Spa",
+  "country": "ベトナム",
+  "countryEn": "Vietnam",
+  "wikiEn": "Bang_Spa",
+  "name": "Bang Spa"
+ },
+ {
+  "qid": "Q31285395",
+  "lat": 15.0058,
+  "lng": 43.5669,
+  "en": "Ḩammām Maḩy ad Dīn",
+  "country": "イエメン",
+  "countryEn": "Yemen",
+  "name": "Ḩammām Maḩy ad Dīn"
+ },
+ {
+  "qid": "Q31285022",
+  "lat": 14.8875,
+  "lng": 43.9119,
+  "en": "Ḩammām Malāḩah",
+  "country": "イエメン",
+  "countryEn": "Yemen",
+  "name": "Ḩammām Malāḩah"
+ },
+ {
+  "qid": "Q25106077",
+  "lat": -19.6333,
+  "lng": 32.4667,
+  "en": "Hot Springs, Manicaland",
+  "country": "ジンバブエ",
+  "countryEn": "Zimbabwe",
+  "wikiEn": "Hot_Springs,_Manicaland",
+  "name": "Hot Springs, Manicaland"
+ },
+ {
+  "qid": "Q32010841",
+  "lat": -20.3569,
+  "lng": 32.3858,
+  "en": "Rupise Hot Springs",
+  "country": "ジンバブエ",
+  "countryEn": "Zimbabwe",
+  "name": "Rupise Hot Springs"
+ }
+]

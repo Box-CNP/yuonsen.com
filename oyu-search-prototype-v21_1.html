@@ -755,6 +755,8 @@ a.rec-btn{display:inline-flex;align-items:center;justify-content:center;text-dec
 <script src="onsen-photos/db/placeholders.js"></script>
 <!-- ベース層: Wikidata(CC0)由来の全国温泉データ。無くても特集96湯で動作 -->
 <script src="onsen-base.js?v=2"></script>
+<!-- 世界の温泉(Wikidata CC0・日本以外) -->
+<script src="onsen-world.js?v=1"></script>
 <script>
 /* ---------------- i18n ---------------- */
 const I18N = {
@@ -1578,11 +1580,16 @@ function renderCards(){
     return true;
   });
   if(state.origin) baseHits.sort((a,b)=>baseEstHours(a)-baseEstHours(b));
-  /* カウントは合計を主役に(特集＋全国)。データ条件時は特集のみ */
+  /* 世界の湯: 日本向け条件(エリア/現在地/データ)が無いときだけ対象。名前検索に反応 */
+  const worldHits = (dataFiltered || state.region || state.origin) ? [] : (window.ONSEN_WORLD||[]).filter(w=>
+    !q || (w.name + (w.en||'') + (w.country||'') + (w.countryEn||'')).toLowerCase().includes(q));
+  /* カウントは合計を主役に(特集＋全国＋世界)。データ条件時は特集のみ */
   const cb = document.getElementById('count-base');
-  document.getElementById('count-num').textContent = (list.length + baseHits.length).toLocaleString();
-  if(cb) cb.textContent = baseHits.length
-    ? (lang==='ja' ? `(詳しいデータつき ${list.length}湯 ＋ 全国の湯 ${baseHits.length.toLocaleString()})` : `(${list.length} in depth + ${baseHits.length.toLocaleString()} nationwide)`)
+  document.getElementById('count-num').textContent = (list.length + baseHits.length + worldHits.length).toLocaleString();
+  if(cb) cb.textContent = (baseHits.length || worldHits.length)
+    ? (lang==='ja'
+        ? `(詳しいデータつき ${list.length}湯 ＋ 全国の湯 ${baseHits.length.toLocaleString()}${worldHits.length?` ＋ 世界の湯 ${worldHits.length.toLocaleString()}`:''})`
+        : `(${list.length} in depth + ${baseHits.length.toLocaleString()} nationwide${worldHits.length?` + ${worldHits.length.toLocaleString()} worldwide`:''})`)
     : '';
   /* 絞り込みがある時は行リスト表示(最大30)。無い時は地図への誘導のみ */
   const narrowed = q || state.region || (state.origin && state.tmax!==null);
@@ -1593,8 +1600,14 @@ function renderCards(){
       ${shown.map(b=>`<button class="base-row" onclick="openBaseDetail('${b.qid}')"><span>${b.name}</span><span class="br-pref">${[b.pref||'', state.origin?fmtH(baseEstHours(b)):''].filter(Boolean).join(' ・ ')}</span></button>`).join('')}
       ${(!narrowed || more>0) ? `<button class="base-row" onclick="setView('map')" style="justify-content:center;color:var(--ink-soft)">${lang==='ja'?(narrowed?`ほか ${more.toLocaleString()}湯を地図で見る →`:`全国の湯 ${baseHits.length.toLocaleString()} を地図で見る →`):(narrowed?`See ${more.toLocaleString()} more on the map →`:`See all ${baseHits.length.toLocaleString()} on the map →`)}</button>` : ''}
     </div>`;
+  /* 世界の湯: 名前検索時のみ行リスト(最大20) */
+  const wShown = q ? worldHits.slice(0,20) : [];
+  const worldHtml = !wShown.length ? '' : `<div class="base-results">
+      <div class="br-head">${lang==='ja'?`世界の湯から ${worldHits.length.toLocaleString()}件`:`${worldHits.length.toLocaleString()} from world springs`}</div>
+      ${wShown.map(w=>`<button class="base-row" onclick="openBaseDetail('${w.qid}')"><span>${(lang==='en'&&w.en)?w.en:w.name}</span><span class="br-pref">${lang==='ja'?(w.country||w.countryEn||''):(w.countryEn||w.country||'')}</span></button>`).join('')}
+    </div>`;
   if(!list.length){
-    grid.innerHTML = baseHtml || `<div class="empty"><div class="serif">${t.emptyTitle}</div><div>${t.emptyLead}</div></div>`;
+    grid.innerHTML = (baseHtml + worldHtml) || `<div class="empty"><div class="serif">${t.emptyTitle}</div><div>${t.emptyLead}</div></div>`;
     return;
   }
   grid.innerHTML = list.map(o=>{
@@ -1626,7 +1639,7 @@ function renderCards(){
       <p class="note">${L.note}</p>
       </div>
     </button>`;
-  }).join('') + baseHtml;
+  }).join('') + baseHtml + worldHtml;
 }
 
 /* ---------------- detail ---------------- */
@@ -2424,34 +2437,46 @@ function baseOid(b){ return BASE_OID + parseInt(b.qid.slice(1), 10); }
 function baseByOid(oid){
   if(oid < BASE_OID) return null;
   const q = 'Q' + (oid - BASE_OID);
-  return (window.ONSEN_BASE||[]).find(b=>b.qid===q) || null;
+  return (window.ONSEN_BASE||[]).find(b=>b.qid===q)
+      || (window.ONSEN_WORLD||[]).find(b=>b.qid===q) || null;
 }
-/* 特集96湯・ベース層のどちらでも、湯録/チェックイン/地図が使える形で返す */
+/* 特集96湯・ベース層(全国/世界)のどれでも、湯録/チェックイン/地図が使える形で返す */
 function anyOnsen(oid){
   const o = ONSEN.find(o=>o.id===oid); if(o) return o;
   const b = baseByOid(oid); if(!b) return null;
+  const areaJa = b.pref || b.country || b.countryEn || '';
+  const areaEn = b.pref || b.countryEn || b.country || '';
   return { id:oid, base:true, lat:b.lat, lng:b.lng, bk:b.name, color:'clear',
-    quality:[], purpose:[], tags:[], wiki:b.wiki||null,
-    ja:{name:b.name, area:b.pref||''}, en:{name:b.en||b.name, area:b.pref||''}, kana:'' };
+    quality:[], purpose:[], tags:[], wiki:b.wiki||b.wikiJa||null,
+    ja:{name:b.name, area:areaJa}, en:{name:b.en||b.name, area:areaEn}, kana:'' };
 }
 
-/* ベース湯の簡易詳細(名前・県・Wikipedia・チェックイン) */
+/* ベース湯(全国/世界)の簡易詳細(名前・県または国・Wikipedia・チェックイン) */
 function openBaseDetail(qid){
-  const b = (window.ONSEN_BASE||[]).find(x=>x.qid===qid); if(!b) return;
+  const b = (window.ONSEN_BASE||[]).find(x=>x.qid===qid)
+         || (window.ONSEN_WORLD||[]).find(x=>x.qid===qid);
+  if(!b) return;
   const t = I18N[lang];
   const oid = baseOid(b);
+  const isWorld = !b.pref && (b.country || b.countryEn);
+  const place = isWorld ? (lang==='ja' ? (b.country||b.countryEn) : (b.countryEn||b.country)) : (b.pref||'');
+  const dispName = (lang==='en' && b.en) ? b.en : b.name;
+  const wikiHref = (!isWorld && b.wiki) ? `https://ja.wikipedia.org/wiki/${encodeURIComponent(b.wiki)}`
+    : (lang==='ja' && b.wikiJa) ? `https://ja.wikipedia.org/wiki/${encodeURIComponent(b.wikiJa)}`
+    : b.wikiEn ? `https://en.wikipedia.org/wiki/${encodeURIComponent(b.wikiEn)}`
+    : b.wikiJa ? `https://ja.wikipedia.org/wiki/${encodeURIComponent(b.wikiJa)}` : null;
   document.getElementById('detail-box').innerHTML = `
     <button class="d-close" onclick="closeDetail()" aria-label="Close">✕</button>
     <div class="article" style="padding-bottom:44px">
-      <span class="col-tag">${lang==='ja'?'全国の湯':'BASE SPRING'}</span>
-      <h2>${b.name}</h2>
-      <div class="col-meta">${b.pref||''}</div>
+      <span class="col-tag">${isWorld?(lang==='ja'?'世界の湯':'WORLD SPRING'):(lang==='ja'?'全国の湯':'BASE SPRING')}</span>
+      <h2>${dispName}</h2>
+      <div class="col-meta">${place}</div>
       <p style="font-size:.92rem;line-height:2.1;color:var(--ink-soft)">${lang==='ja'
-        ?'Wikidata由来の基本情報のみの湯です。訪れたらチェックインして、湯録の地図に灯りをともしてください。泉質などの詳しいデータは、これからみんなで育てていきます。'
-        :'A base-layer spring from Wikidata with basic info only. Check in on-site to light it up on your Yuroku map — detailed spring data will grow over time.'}</p>
+        ?'Wikidata由来の基本情報のみの湯です。訪れたらチェックインして、湯録に灯りをともしてください。'
+        :'A spring from Wikidata with basic info. Check in on-site to light it up in your Yuroku.'}</p>
       <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:20px">
         <button class="rec-btn" onclick="checkIn(${oid})">${t.checkinCta}</button>
-        ${b.wiki?`<a class="rec-btn ghost" style="text-decoration:none;display:inline-flex;align-items:center" href="https://ja.wikipedia.org/wiki/${encodeURIComponent(b.wiki)}" target="_blank" rel="noopener">Wikipedia ↗</a>`:''}
+        ${wikiHref?`<a class="rec-btn ghost" style="text-decoration:none;display:inline-flex;align-items:center" href="${wikiHref}" target="_blank" rel="noopener">Wikipedia ↗</a>`:''}
         <a class="rec-btn ghost" style="text-decoration:none;display:inline-flex;align-items:center" href="https://www.google.com/maps?q=${b.lat},${b.lng}" target="_blank" rel="noopener">${lang==='ja'?'地図アプリで開く':'Open in Maps'} ↗</a>
       </div>
     </div>`;
