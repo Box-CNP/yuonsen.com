@@ -208,6 +208,21 @@ header{
 .base-dot{fill:#C4C4CA;cursor:pointer;transition:fill .15s}
 .base-dot:hover{fill:#8E8E96}
 .count-base{font-size:.78rem;color:var(--ink-soft);letter-spacing:.06em;margin-left:10px;font-weight:500}
+/* クエスト(ゆかりの湯めぐり) */
+.q-head{font-size:.72rem;letter-spacing:.24em;color:var(--ink-soft);font-weight:600;margin:42px 0 6px}
+.q-lead{font-size:.8rem;color:var(--ink-soft);line-height:1.8;margin-bottom:16px}
+.quests{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px;margin-bottom:46px}
+.quest{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 20px 16px}
+.quest.done{border-color:#B08A3A}
+.q-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.q-top b{font-size:.95rem;letter-spacing:.02em}
+.q-prog{font-size:.72rem;color:var(--ink-soft);font-weight:700;flex-shrink:0}
+.q-badge{font-size:.64rem;background:#B08A3A;color:#fff;padding:3px 11px;border-radius:99px;letter-spacing:.08em;font-weight:600;flex-shrink:0}
+.q-desc{font-size:.76rem;color:var(--ink-soft);line-height:1.75;margin:8px 0 12px}
+.q-onsen{display:flex;flex-wrap:wrap;gap:6px}
+.q-spot{font-size:.72rem;border:1px solid var(--line-strong);background:none;border-radius:99px;padding:4px 11px;cursor:pointer;font-family:inherit;color:var(--ink-soft)}
+.q-spot.v{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.q-share{margin-top:14px}
 .name-q{width:100%;max-width:440px;padding:12px 16px;border:1px solid var(--line-strong);border-radius:12px;font-family:inherit;font-size:.95rem;background:var(--card);color:var(--ink)}
 .name-q:focus{outline:2px solid var(--ink);outline-offset:-1px;border-color:var(--ink)}
 .base-results{grid-column:1/-1;margin-top:8px}
@@ -678,6 +693,7 @@ a.rec-btn{display:inline-flex;align-items:center;justify-content:center;text-dec
     <div><span class="k" data-i18n="ysQ">泉質</span><span class="v" id="ys-q">0<small>/10</small></span></div>
     <div><span class="k" data-i18n="ysP">都道府県</span><span class="v" id="ys-p">0</span></div>
   </div>
+  <div id="yu-quests"></div>
   <div id="yu-stamps"></div>
 </section>
 
@@ -1753,7 +1769,9 @@ Object.assign(I18N.ja, {
   toastSaved:"湯録に押しました",
   mkContrib:"記録", mkCastle:"城", mkYukari:"人",
   readMin:"分", readBy:"編集部", readAll:"すべて", mitamaShop:"ミタマのぬいぐるみ →",
-  plushTitle:"このコ、お迎えできます", plushCta:"ミタマのぬいぐるみを見る →"
+  plushTitle:"このコ、お迎えできます", plushCta:"ミタマのぬいぐるみを見る →",
+  questTitle:"ク エ ス ト", questLead:"ゆかりの湯をめぐって、称号を集めよう。現地でのチェックイン、または湯録で進みます。",
+  questShareBtn:"称号を画像でシェア"
 });
 Object.assign(I18N.en, {
   nvSearch:"Search", nvRead:"Reads", nvYuroku:"Yuroku",
@@ -1774,7 +1792,9 @@ Object.assign(I18N.en, {
   toastSaved:"Stamped to your Yuroku",
   mkContrib:"REC", mkCastle:"CASTLE", mkYukari:"FIGURE",
   readMin:"min", readBy:"Editorial", readAll:"All", mitamaShop:"Get the Mitama plush →",
-  plushTitle:"Take this little one home", plushCta:"See the Mitama plush →"
+  plushTitle:"Take this little one home", plushCta:"See the Mitama plush →",
+  questTitle:"QUESTS", questLead:"Tour the storied springs and collect badges — progress by on-site check-in or a Yuroku record.",
+  questShareBtn:"Share badge as image"
 });
 
 const SMELLS = {sulfur:{ja:"硫黄",en:"Sulfur"},iron:{ja:"金気",en:"Iron"},shio:{ja:"塩",en:"Salt"},abura:{ja:"油",en:"Oil"},mold:{ja:"モール",en:"Moor"},none:{ja:"無臭",en:"None"}};
@@ -2371,6 +2391,7 @@ function pref(o){ return o.ja.area.split('・')[0]; }
 function renderYuroku(){
   renderAuth();
   renderPMap();
+  renderQuests();
   const t = I18N[lang];
   document.getElementById('ys-logs').textContent = yuLogs.length;
   document.getElementById('ys-q').innerHTML =
@@ -2436,6 +2457,103 @@ function openBaseDetail(qid){
     </div>`;
   document.getElementById('overlay').classList.add('open');
   document.body.style.overflow='hidden';
+}
+
+/* ---------------- クエスト(ゆかりの湯めぐり → 称号) ---------------- */
+const QUESTS = [
+ {id:"ishin", onsen:[25,26,27,28],
+  ja:{title:"維新の湯", badge:"維新の湯人", desc:"西郷隆盛と坂本龍馬が癒えた鹿児島の四湯。幕末の回復の地図をたどる。"},
+  en:{title:"Springs of the Restoration", badge:"Ishin Bather", desc:"Four Kagoshima springs where Saigō and Ryōma healed."}},
+ {id:"basho", onsen:[54,34,88],
+  ja:{title:"奥の細道、湯の道", badge:"芭蕉の湯の旅人", desc:"芭蕉が旅の途中で浸かった湯。飯坂から鳴子、山中へ。"},
+  en:{title:"Bashō's Narrow Road", badge:"Bashō's Fellow Traveler", desc:"The baths of Oku no Hosomichi: Iizaka, Naruko, Yamanaka."}},
+ {id:"sanmeisen", onsen:[6,4,63],
+  ja:{title:"天下三名泉", badge:"三名泉 制覇", desc:"林羅山が讃えた有馬・草津・下呂。江戸の格付けを自分の肌で。"},
+  en:{title:"Three Great Springs", badge:"Three Springs Conquered", desc:"Arima, Kusatsu, Gero — Razan's three, tested on your own skin."}},
+ {id:"makura", onsen:[6,44,67],
+  ja:{title:"枕草子の三名泉", badge:"千年の湯人", desc:"清少納言が記した有馬・玉造・ななくりの湯。千年前のベストスリー。"},
+  en:{title:"The Pillow Book Three", badge:"Thousand-Year Bather", desc:"Arima, Tamatsukuri, Nanakuri — Sei Shōnagon's best three."}},
+ {id:"joshu", onsen:[4,85,84,5,38],
+  ja:{title:"上州 湯の国めぐり", badge:"上州湯めぐり名人", desc:"草津・伊香保・四万・万座・法師。名湯の国、群馬を制する。"},
+  en:{title:"Jōshū, Land of Springs", badge:"Master of Jōshū", desc:"Kusatsu, Ikaho, Shima, Manza, Hōshi — conquer Gunma."}},
+ {id:"michinoku", onsen:[1,2,3,51],
+  ja:{title:"みちのく秘湯行", badge:"みちのく秘湯師", desc:"玉川・酸ヶ湯・乳頭・蔦。雪の奥の、湯治の聖地をめぐる。"},
+  en:{title:"Hidden North", badge:"Master of Michinoku", desc:"Tamagawa, Sukayu, Nyūtō, Tsuta — sanctuaries deep in the snow."}},
+ {id:"shinshu", onsen:[8,40,42,41,16],
+  ja:{title:"信州 山の湯めぐり", badge:"信州 山湯の人", desc:"別所・白骨・野沢・渋・高峰。山と城と外湯の国を歩く。"},
+  en:{title:"Mountain Baths of Shinshū", badge:"Shinshū Mountain Bather", desc:"Bessho, Shirahone, Nozawa, Shibu, Takamine."}},
+ {id:"bungo", onsen:[12,13,90,87,18],
+  ja:{title:"豊後 湯けむりの国", badge:"湯けむり通", desc:"明礬・鉄輪・竹瓦・由布院・長湯。日本一の温泉県を縦断。"},
+  en:{title:"Bungo, Land of Steam", badge:"Steam Connoisseur", desc:"Myōban, Kannawa, Takegawara, Yufuin, Nagayu — across Ōita."}},
+ {id:"kumano", onsen:[72,70,45],
+  ja:{title:"熊野 蘇りの道", badge:"蘇りの湯人", desc:"湯の峰・十津川・龍神。詣での前に身を清めた、再生の湯へ。"},
+  en:{title:"Kumano, Road of Rebirth", badge:"Reborn at Kumano", desc:"Yunomine, Totsukawa, Ryūjin — the pilgrim's cleansing waters."}},
+ {id:"bunjin", onsen:[7,48,85,92,38],
+  ja:{title:"文人の湯をたどる", badge:"湯の文人", desc:"漱石の道後、志賀直哉の城崎、夢二の伊香保、魯山人の山代、川端の法師。"},
+  en:{title:"The Writers' Springs", badge:"Literary Bather", desc:"Dōgo, Kinosaki, Ikaho, Yamashiro, Hōshi — where they wrote."}},
+ {id:"kaisan", onsen:[86,77,68,91],
+  ja:{title:"湯を開いた僧の道", badge:"開湯の巡礼者", desc:"空海の修善寺と塩江、最澄のおごと、勝道上人の奥日光湯元。"},
+  en:{title:"Path of the Founding Monks", badge:"Pilgrim of the Founders", desc:"Shuzenji, Shionoe, Ogoto, Oku-Nikkō — springs the monks opened."}}
+];
+function questDone(q){ const vis = visitedIds(); return q.onsen.filter(id=>vis.has(id)); }
+function renderQuests(){
+  const host = document.getElementById('yu-quests'); if(!host) return;
+  const t = I18N[lang];
+  host.innerHTML = `<div class="q-head">${t.questTitle}</div><p class="q-lead">${t.questLead}</p><div class="quests">` +
+    QUESTS.map(q=>{
+      const L = q[lang], done = questDone(q), complete = done.length===q.onsen.length;
+      return `<div class="quest ${complete?'done':''}">
+        <div class="q-top"><b>${L.title}</b>${complete?`<span class="q-badge">${L.badge}</span>`:`<span class="q-prog">${done.length}/${q.onsen.length}</span>`}</div>
+        <p class="q-desc">${L.desc}</p>
+        <div class="q-onsen">${q.onsen.map(id=>{
+          const o = ONSEN.find(x=>x.id===id); if(!o) return '';
+          const v = done.includes(id);
+          return `<button class="q-spot ${v?'v':''}" onclick="openDetail(${id})">${v?'♨ ':''}${o[lang].name}</button>`;
+        }).join('')}</div>
+        ${complete?`<button class="rec-btn q-share" onclick="questShare('${q.id}')">${t.questShareBtn}</button>`:''}
+      </div>`;
+    }).join('') + '</div>';
+}
+async function questShare(qid){
+  const q = QUESTS.find(x=>x.id===qid); if(!q) return;
+  const L = q[lang], ja = lang==='ja';
+  const W=1200, H=630, PANEL=420;
+  const cv=document.createElement('canvas'); cv.width=W; cv.height=H;
+  const cx=cv.getContext('2d');
+  cx.fillStyle='#F7F4EF'; cx.fillRect(0,0,W,H);
+  cx.fillStyle='#ECE6D6'; cx.fillRect(W-PANEL,0,PANEL,H);
+  cx.fillStyle='#B08A3A'; cx.fillRect(0,0,W,8);
+  try{
+    const img=new Image();
+    await new Promise((res,rej)=>{img.onload=res;img.onerror=rej;img.src=MITAMA_SRC;});
+    const ih=350, iw=ih*img.width/img.height;
+    cx.drawImage(img,(W-PANEL)+(PANEL-iw)/2,120,iw,ih);
+  }catch(e){}
+  cx.textAlign='center';
+  cx.fillStyle='#9C8A5F'; cx.font='500 22px "Hiragino Sans",sans-serif';
+  cx.fillText(ja?'クエスト達成':'QUEST CLEAR',(W-PANEL)+PANEL/2,540);
+  cx.textAlign='left';
+  cx.fillStyle='#B08A3A'; cx.font='600 24px "Hiragino Sans",sans-serif';
+  cx.fillText(ja?'称 号 獲 得':'BADGE EARNED',96,108);
+  cx.fillStyle='#1D1D1F'; cx.font='700 60px "Hiragino Mincho ProN","Hiragino Sans",serif';
+  const blines = wrapText(cx,'「'+L.badge+'」',620);
+  let y=200; for(const l of blines){ cx.fillText(l,96,y); y+=80; }
+  cx.fillStyle='#6E6E73'; cx.font='28px "Hiragino Sans",sans-serif';
+  cx.fillText(L.title+(ja?' 全'+q.onsen.length+'湯 完湯':' — all '+q.onsen.length+' springs'),96,y+8); y+=54;
+  cx.fillStyle='#6E6E73'; cx.font='22px "Hiragino Sans",sans-serif';
+  const names = q.onsen.map(id=>{const o=ONSEN.find(x=>x.id===id);return o?o[lang].name:'';}).filter(Boolean).join(' ・ ');
+  for(const l of wrapText(cx,names,620)){ cx.fillText(l,96,y); y+=34; }
+  cx.fillStyle='#A8A49B'; cx.font='20px "Hiragino Sans",sans-serif';
+  cx.fillText('#YU温泉  ・  oyu-onsen.fujino-090.workers.dev',96,H-42);
+  cv.toBlob(async (blob)=>{
+    if(!blob) return;
+    const file = new File([blob],'yu-quest.png',{type:'image/png'});
+    if(navigator.canShare && navigator.canShare({files:[file]})){
+      try{ await navigator.share({files:[file], text:(ja?`称号「${L.badge}」獲得 ♨ #YU温泉 `:`Earned "${L.badge}" ♨ #YU温泉 `)+'https://oyu-onsen.fujino-090.workers.dev/'}); return; }catch(e){ if(e && e.name==='AbortError') return; }
+    }
+    const a=document.createElement('a'); a.download='yu-quest.png'; a.href=cv.toDataURL('image/png'); a.click();
+    toast(ja?'画像を保存しました。Xに貼ってシェア♨':'Image saved — attach it to your post ♨');
+  },'image/png');
 }
 
 /* ---------------- GPS チェックイン(現地でだけ押せるスタンプ)---------------- */
