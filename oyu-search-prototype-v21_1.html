@@ -1275,6 +1275,18 @@ function baseEstHours(b){
   else { const v = d>350 ? 160 : (d>140 ? 100 : 58); line = 0.5 + d/v; }
   return line + 0.4; /* ラストマイルの目安 */
 }
+/* 都道府県の英語表記(英語モードのベース湯表示用) */
+const PREF_EN = {
+  "北海道":"Hokkaidō","青森県":"Aomori","岩手県":"Iwate","宮城県":"Miyagi","秋田県":"Akita","山形県":"Yamagata","福島県":"Fukushima",
+  "茨城県":"Ibaraki","栃木県":"Tochigi","群馬県":"Gunma","埼玉県":"Saitama","千葉県":"Chiba","東京都":"Tokyo","神奈川県":"Kanagawa",
+  "新潟県":"Niigata","富山県":"Toyama","石川県":"Ishikawa","福井県":"Fukui","山梨県":"Yamanashi","長野県":"Nagano","岐阜県":"Gifu",
+  "静岡県":"Shizuoka","愛知県":"Aichi","三重県":"Mie","滋賀県":"Shiga","京都府":"Kyoto","大阪府":"Osaka","兵庫県":"Hyōgo",
+  "奈良県":"Nara","和歌山県":"Wakayama","鳥取県":"Tottori","島根県":"Shimane","岡山県":"Okayama","広島県":"Hiroshima","山口県":"Yamaguchi",
+  "徳島県":"Tokushima","香川県":"Kagawa","愛媛県":"Ehime","高知県":"Kōchi","福岡県":"Fukuoka","佐賀県":"Saga","長崎県":"Nagasaki",
+  "熊本県":"Kumamoto","大分県":"Ōita","宮崎県":"Miyazaki","鹿児島県":"Kagoshima","沖縄県":"Okinawa"
+};
+function prefDisp(p){ return (lang==='en' && p && PREF_EN[p]) ? PREF_EN[p] : (p||''); }
+
 /* 世界の湯: 国 → 地域カテゴリ */
 const WREGION_KEYS = ["w_asia","w_europe","w_namerica","w_latin","w_oceania","w_meaf"];
 const COUNTRY2WREGION = {
@@ -1696,7 +1708,7 @@ function renderCards(){
   const more = baseHits.length - shown.length;
   const baseHtml = !baseHits.length ? '' : `<div class="base-results">
       <div class="br-head">${lang==='ja'?`全国の湯から ${baseHits.length.toLocaleString()}件`:`${baseHits.length.toLocaleString()} from base springs`}</div>
-      ${shown.map(b=>`<button class="base-row" onclick="openBaseDetail('${b.qid}')"><span>${b.name}</span><span class="br-pref">${[b.pref||'', state.origin?fmtH(baseEstHours(b)):''].filter(Boolean).join(' ・ ')}</span></button>`).join('')}
+      ${shown.map(b=>`<button class="base-row" onclick="openBaseDetail('${b.qid}')"><span>${(lang==='en'&&b.en)?b.en:b.name}</span><span class="br-pref">${[prefDisp(b.pref), state.origin?fmtH(baseEstHours(b)):''].filter(Boolean).join(' ・ ')}</span></button>`).join('')}
       ${(!narrowed || more>0) ? `<button class="base-row" onclick="setView('map')" style="justify-content:center;color:var(--ink-soft)">${lang==='ja'?(narrowed?`ほか ${more.toLocaleString()}湯を地図で見る →`:`全国の湯 ${baseHits.length.toLocaleString()} を地図で見る →`):(narrowed?`See ${more.toLocaleString()} more on the map →`:`See all ${baseHits.length.toLocaleString()} on the map →`)}</button>` : ''}
     </div>`;
   /* 世界の湯: 名前検索または世界地域選択時に行リスト(最大30) */
@@ -1852,6 +1864,8 @@ function setLang(l){
   if(typeof renderYuroku==='function') renderYuroku();
   const lb=document.getElementById('lang-btn'); if(lb) lb.textContent = (l==='ja'?'English':'日本語');
   const nq=document.getElementById('name-q'); if(nq) nq.placeholder = I18N[l].fNamePh || nq.placeholder;
+  document.title = (l==='ja') ? 'YU — 日本の温泉データベース' : 'YU — Japan Onsen Database';
+  try{ localStorage.setItem('yu-lang', l); }catch(e){}
 }
 function update(){
   renderFilters(); renderCards();
@@ -2520,7 +2534,9 @@ function renderYuroku(){
   const sorted = [...yuLogs].sort((a,b)=>b.date.localeCompare(a.date));
   wrap.innerHTML = '<div class="stamps">' + sorted.map(x=>{
     const o = anyOnsen(x.oid); if(!o) return '';
-    const short = o.ja.name.replace(/温泉.*/,'').replace(/\s.*/,'').slice(0,4);
+    const short = lang==='ja'
+      ? o.ja.name.replace(/温泉.*/,'').replace(/\s.*/,'').slice(0,4)
+      : o.en.name.replace(/\s*(Onsen|Hot\s*Springs?).*$/i,'').slice(0,7);
     const marks = [x.verified?t.mkVerified:null, x.contrib?t.mkContrib:null, o.castle?t.mkCastle:null, o.yukari?t.mkYukari:null].filter(Boolean).join(' ・ ');
     const c = x.color || o.color;
     return `<div class="stamp">
@@ -2546,7 +2562,7 @@ function anyOnsen(oid){
   const o = ONSEN.find(o=>o.id===oid); if(o) return o;
   const b = baseByOid(oid); if(!b) return null;
   const areaJa = b.pref || b.country || b.countryEn || '';
-  const areaEn = b.pref || b.countryEn || b.country || '';
+  const areaEn = (b.pref ? (PREF_EN[b.pref]||b.pref) : '') || b.countryEn || b.country || '';
   return { id:oid, base:true, lat:b.lat, lng:b.lng, bk:b.name, color:'clear',
     quality:[], purpose:[], tags:[], wiki:b.wiki||b.wikiJa||null,
     ja:{name:b.name, area:areaJa}, en:{name:b.en||b.name, area:areaEn}, kana:'' };
@@ -2560,7 +2576,7 @@ function openBaseDetail(qid){
   const t = I18N[lang];
   const oid = baseOid(b);
   const isWorld = !b.pref && (b.country || b.countryEn);
-  const place = isWorld ? (lang==='ja' ? (b.country||b.countryEn) : (b.countryEn||b.country)) : (b.pref||'');
+  const place = isWorld ? (lang==='ja' ? (b.country||b.countryEn) : (b.countryEn||b.country)) : prefDisp(b.pref);
   const dispName = (lang==='en' && b.en) ? b.en : b.name;
   const wikiHref = (!isWorld && b.wiki) ? `https://ja.wikipedia.org/wiki/${encodeURIComponent(b.wiki)}`
     : (lang==='ja' && b.wikiJa) ? `https://ja.wikipedia.org/wiki/${encodeURIComponent(b.wikiJa)}`
@@ -3890,7 +3906,16 @@ async function savePaste(){
 /* ---- init: must run after ALL definitions (PHOTOS/SCENES/cardMedia) ---- */
 /* buildMapBase は MapLibre 移行で不要に(SVG地図は撤去。湯録の温泉地図は自前フォールバックで描画) */
 /* userLoad() は setupAuth() 内で必要時に呼ぶ(Supabaseセッション確認込み) */
-setLang((navigator.language||'ja').toLowerCase().startsWith('ja') ? 'ja' : 'en');
+/* 言語の決定: URLパラメータ(?lang=en) > 保存済みの選択 > ブラウザ言語 */
+setLang((()=>{
+  try{
+    const p = new URLSearchParams(location.search).get('lang');
+    if(p==='en'||p==='ja') return p;
+    const saved = localStorage.getItem('yu-lang');
+    if(saved==='en'||saved==='ja') return saved;
+  }catch(e){}
+  return (navigator.language||'ja').toLowerCase().startsWith('ja') ? 'ja' : 'en';
+})());
 setView('list');
 setupAuth();
 visitorsLoad();
