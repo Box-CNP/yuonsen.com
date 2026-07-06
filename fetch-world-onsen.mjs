@@ -56,7 +56,8 @@ for (const b of data.results.bindings) {
 let list = [...byQid.values()]
   .map(o => ({ ...o, name: o.ja || o.en }))
   .filter(o => o.name && !/^Q\d+$/.test(o.name) && o.lat != null
-    && (o.country || o.countryEn)); /* 国なし=深海熱水噴出孔などを除外 */
+    && (o.country || o.countryEn)      /* 国なし=深海熱水噴出孔などを除外 */
+    && (o.wikiJa || o.wikiEn));        /* Wikipedia記事なし=真偽を確かめられないため除外(情報の質優先) */
 list.forEach(o => {
   o.name = o.name.replace(/\s*[（(].*?[）)]\s*$/, '');
   delete o.ja;

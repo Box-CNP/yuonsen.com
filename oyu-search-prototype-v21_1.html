@@ -743,7 +743,7 @@ a.rec-btn{display:inline-flex;align-items:center;justify-content:center;text-dec
 </div>
 
 <footer>
-  <span data-i18n="footer">掲載データは各施設の温泉分析書・公開情報をもとにした参考値です。</span>
+  <span data-i18n="footer">掲載データは温泉分析書・Wikidata等の公開情報をもとにした参考値です。営業状況・入浴可否・泉質は変わることがあります。おでかけ前に必ず公式情報をご確認ください。掲載内容に基づいて生じた損害について、当サイトは責任を負いかねます。</span>
   <a href="https://shop.cryptoninja-partners.xyz/products/%E3%81%AC%E3%81%84%E3%81%90%E3%82%8B%E3%81%BF%E3%83%9E%E3%82%B9%E3%82%B3%E3%83%83%E3%83%88-%E3%83%9F%E3%82%BF%E3%83%9E-s?variant=51105643069735" target="_blank" rel="noopener" id="mitama-shop" data-i18n="mitamaShop" style="display:block;margin:14px auto 0;font-size:.7rem;letter-spacing:.1em;color:var(--ink-soft);text-decoration:underline;text-underline-offset:3px">ミタマのぬいぐるみ →</a>
   <button class="lang-mini" id="lang-btn" onclick="setLang(lang==='ja'?'en':'ja')">English</button>
 </footer>
@@ -757,7 +757,7 @@ a.rec-btn{display:inline-flex;align-items:center;justify-content:center;text-dec
 <!-- ベース層: Wikidata(CC0)由来の全国温泉データ。無くても特集96湯で動作 -->
 <script src="onsen-base.js?v=2"></script>
 <!-- 世界の温泉(Wikidata CC0・日本以外) -->
-<script src="onsen-world.js?v=1"></script>
+<script src="onsen-world.js?v=2"></script>
 <script>
 /* ---------------- i18n ---------------- */
 const I18N = {
@@ -1883,7 +1883,8 @@ Object.assign(I18N.ja, {
   readMin:"分", readBy:"編集部", readAll:"すべて", mitamaShop:"ミタマのぬいぐるみ →",
   plushTitle:"このコ、お迎えできます", plushCta:"ミタマのぬいぐるみを見る →",
   questTitle:"ク エ ス ト", questLead:"ゆかりの湯をめぐって、称号を集めよう。現地でのチェックイン、または湯録で進みます。",
-  questShareBtn:"称号を画像でシェア"
+  questShareBtn:"称号を画像でシェア",
+  footer:"掲載データは温泉分析書・Wikidata等の公開情報をもとにした参考値です。営業状況・入浴可否・泉質は変わることがあります。おでかけ前に必ず公式情報をご確認ください。掲載内容に基づいて生じた損害について、当サイトは責任を負いかねます。"
 });
 Object.assign(I18N.en, {
   nvSearch:"Search", nvRead:"Reads", nvYuroku:"Yuroku",
@@ -1906,7 +1907,8 @@ Object.assign(I18N.en, {
   readMin:"min", readBy:"Editorial", readAll:"All", mitamaShop:"Get the Mitama plush →",
   plushTitle:"Take this little one home", plushCta:"See the Mitama plush →",
   questTitle:"QUESTS", questLead:"Tour the storied springs and collect badges — progress by on-site check-in or a Yuroku record.",
-  questShareBtn:"Share badge as image"
+  questShareBtn:"Share badge as image",
+  footer:"Data are reference values based on public sources (spring analysis sheets, Wikidata, etc.). Opening status, bathability, and water quality may change — always check official information before visiting. This site accepts no liability for damages arising from the listed content."
 });
 
 const SMELLS = {sulfur:{ja:"硫黄",en:"Sulfur"},iron:{ja:"金気",en:"Iron"},shio:{ja:"塩",en:"Salt"},abura:{ja:"油",en:"Oil"},mold:{ja:"モール",en:"Moor"},none:{ja:"無臭",en:"None"}};
@@ -2573,6 +2575,9 @@ function openBaseDetail(qid){
       <p style="font-size:.92rem;line-height:2.1;color:var(--ink-soft)">${lang==='ja'
         ?'Wikidata由来の基本情報のみの湯です。訪れたらチェックインして、湯録に灯りをともしてください。'
         :'A spring from Wikidata with basic info. Check in on-site to light it up in your Yuroku.'}</p>
+      <p style="font-size:.74rem;line-height:1.9;color:var(--ink-soft);margin-top:10px">${lang==='ja'
+        ?'※ 現存・営業状況・入浴の可否は保証できません。おでかけ前に必ずWikipediaや公式情報でご確認ください。'
+        :'※ Existence, opening status, and bathability are not guaranteed. Always verify via Wikipedia or official sources before visiting.'}</p>
       <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:20px">
         <button class="rec-btn" onclick="checkIn(${oid})">${t.checkinCta}</button>
         ${wikiHref?`<a class="rec-btn ghost" style="text-decoration:none;display:inline-flex;align-items:center" href="${wikiHref}" target="_blank" rel="noopener">Wikipedia ↗</a>`:''}
