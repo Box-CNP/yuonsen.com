@@ -1,5 +1,5 @@
 /* お湯から、探す。— Service Worker(PWA: ホーム画面追加＋オフライン殻) */
-const CACHE = 'oyu-v1';
+const CACHE = 'oyu-v2';
 const SHELL = [
   '/', '/index.html', '/app-config.js', '/manifest.json',
   '/onsen-photos/db/site_photos.js', '/onsen-photos/db/placeholders.js',
@@ -31,16 +31,16 @@ self.addEventListener('fetch', (e) => {
   if (req.mode === 'navigate') {
     e.respondWith(
       fetch(req)
-        .then((r) => { const cp = r.clone(); caches.open(CACHE).then((c) => c.put('/', cp)); return r; })
+        .then((r) => { if(r.ok){ const cp = r.clone(); caches.open(CACHE).then((c) => c.put('/', cp)); } return r; })
         .catch(() => caches.match('/').then((r) => r || caches.match('/index.html')))
     );
     return;
   }
 
-  /* 同一オリジンの静的アセット: キャッシュ優先・裏で更新 */
+  /* 同一オリジンの静的アセット: キャッシュ優先・裏で更新(正常レスポンスのみ保存) */
   e.respondWith(
     caches.match(req).then((cached) =>
-      cached || fetch(req).then((r) => { const cp = r.clone(); caches.open(CACHE).then((c) => c.put(req, cp)); return r; })
+      cached || fetch(req).then((r) => { if(r.ok){ const cp = r.clone(); caches.open(CACHE).then((c) => c.put(req, cp)); } return r; })
     )
   );
 });
