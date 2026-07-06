@@ -204,6 +204,8 @@ header{
   padding:20px;position:relative;overflow:hidden;
 }
 .map-frame svg{display:block;width:100%;height:auto}
+#lmap{width:100%;height:min(68vh,660px);min-height:420px;border-radius:14px;overflow:hidden;background:#EDEBE6}
+@media(max-width:640px){#lmap{height:60vh;min-height:360px}}
 .jp-dot{fill:#DBDBDF}
 .base-dot{fill:#C4C4CA;cursor:pointer;transition:fill .15s}
 .base-dot:hover{fill:#8E8E96}
@@ -622,8 +624,7 @@ a.rec-btn{display:inline-flex;align-items:center;justify-content:center;text-dec
 <div class="map-wrap" id="map-wrap">
   <div class="chips" id="map-regions" style="margin-bottom:12px"></div>
   <div class="map-frame" id="map-frame">
-    <svg id="jpmap" viewBox="0 0 760 840" role="img" aria-label="Japan map"></svg>
-    <div class="map-tip" id="map-tip"></div>
+    <div id="lmap" role="application" aria-label="World onsen map"></div>
     <div class="map-legend" id="map-legend"></div>
   </div>
 </div>
@@ -1420,69 +1421,129 @@ function mapViewBox(){
   const pad = 26;
   return [x1-pad, y1-pad, (x2-x1)+pad*2, (y2-y1)+pad*2];
 }
+/* ---------------- インタラクティブ世界地図(MapLibre GL + OpenFreeMap 無料タイル) ---------------- */
+let lmap = null, lmapReady = false, lmapLoading = false, lmapRegion = '__init__';
+const JAPAN_FIT = [[127.0,30.0],[146.5,45.8]];
+const WORLD_FIT = [[-165,-45],[178,68]];
+const REGION_FIT = {
+  hokkaido:[[139.3,41.3],[146.0,45.7]], tohoku:[[139.3,36.7],[142.2,41.7]],
+  kanto:[[138.3,34.7],[141.1,37.3]],   chubu:[[135.9,34.4],[139.9,38.6]],
+  kinki:[[134.1,33.2],[136.7,35.9]],   chugoku:[[130.6,33.6],[134.6,35.8]],
+  shikoku:[[132.2,32.5],[135.0,34.6]], kyushu:[[128.5,30.8],[132.2,34.1]],
+  okinawa:[[122.5,23.7],[129.5,27.5]]
+};
+function loadMapLibre(){
+  return new Promise((res,rej)=>{
+    if(window.maplibregl) return res();
+    const l=document.createElement('link'); l.rel='stylesheet';
+    l.href='https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css'; document.head.appendChild(l);
+    const s=document.createElement('script'); s.src='https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js';
+    s.onload=()=>res(); s.onerror=rej; document.head.appendChild(s);
+  });
+}
+function featuredGeojson(){
+  return { type:'FeatureCollection', features: ONSEN.map(o=>({
+    type:'Feature', geometry:{type:'Point',coordinates:[o.lng,o.lat]},
+    properties:{ id:o.id, nameJa:o.ja.name, nameEn:o.en.name, fill:POOL_SVG[o.color][1] }
+  })) };
+}
+function baseGeojson(){
+  const feats=[];
+  for(const b of (window.ONSEN_BASE||[])) feats.push({type:'Feature',geometry:{type:'Point',coordinates:[b.lng,b.lat]},properties:{qid:b.qid,nameJa:b.name,nameEn:b.en||b.name}});
+  for(const w of (window.ONSEN_WORLD||[])) feats.push({type:'Feature',geometry:{type:'Point',coordinates:[w.lng,w.lat]},properties:{qid:w.qid,nameJa:w.name,nameEn:w.en||w.name}});
+  return {type:'FeatureCollection',features:feats};
+}
+async function initLMap(){
+  await loadMapLibre();
+  lmap = new maplibregl.Map({
+    container:'lmap',
+    style:'https://tiles.openfreemap.org/styles/positron',
+    bounds: JAPAN_FIT, fitBoundsOptions:{padding:30},
+    attributionControl:{compact:true}
+  });
+  lmap.addControl(new maplibregl.NavigationControl({showCompass:false}));
+  lmap.on('load', ()=>{
+    lmap.addSource('base',{type:'geojson',data:baseGeojson()});
+    lmap.addLayer({id:'base', type:'circle', source:'base', paint:{
+      'circle-radius':['interpolate',['linear'],['zoom'],3,1.6,7,4,11,7],
+      'circle-color':'#B7B7BE','circle-opacity':.85,
+      'circle-stroke-color':'#FFFFFF','circle-stroke-width':['interpolate',['linear'],['zoom'],3,0,8,1]
+    }});
+    lmap.addSource('featured',{type:'geojson',data:featuredGeojson()});
+    lmap.addLayer({id:'featured', type:'circle', source:'featured', paint:{
+      'circle-radius':['interpolate',['linear'],['zoom'],3,4.5,7,7,11,11],
+      'circle-color':['get','fill'],
+      'circle-stroke-color':'#FFFFFF','circle-stroke-width':1.6
+    }});
+    const pop = new maplibregl.Popup({closeButton:false,closeOnClick:false,offset:10});
+    const nameOf = p => (lang==='ja' ? (p.nameJa||p.nameEn) : (p.nameEn||p.nameJa));
+    for(const layer of ['featured','base']){
+      lmap.on('mouseenter',layer,()=>{ lmap.getCanvas().style.cursor='pointer'; });
+      lmap.on('mouseleave',layer,()=>{ lmap.getCanvas().style.cursor=''; pop.remove(); });
+      lmap.on('mousemove',layer,e=>{ const p=e.features[0]; pop.setLngLat(p.geometry.coordinates).setText(nameOf(p.properties)).addTo(lmap); });
+    }
+    lmap.on('click','featured',e=>{ openDetail(e.features[0].properties.id); });
+    lmap.on('click','base',e=>{
+      const overlapping = lmap.queryRenderedFeatures(e.point,{layers:['featured']});
+      if(overlapping.length) return; /* 特集ドットが上にある時はそちら優先 */
+      openBaseDetail(e.features[0].properties.qid);
+    });
+    lmapReady = true;
+    applyMapState();
+  });
+}
+function applyMapState(){
+  if(!lmapReady) return;
+  /* 特集96湯: 検索条件(matches)を反映 */
+  const ids = ONSEN.filter(matches).map(o=>o.id);
+  lmap.setFilter('featured', ['in',['get','id'],['literal',ids]]);
+  /* ベース層(全国/世界): renderCards と同じ判定で絞る */
+  const q = state.q.toLowerCase();
+  const dataFiltered = state.purpose.size||state.tags.size||state.ind.size||state.color||state.quality.size||state.temp;
+  let qids = null;
+  if(dataFiltered){ qids = []; }
+  else if(q || state.region || (state.origin && state.tmax!==null)){
+    qids = [];
+    for(const b of (window.ONSEN_BASE||[])){
+      if(q && !((b.name+(b.en||'')+(b.pref||'')).toLowerCase().includes(q))) continue;
+      if(state.region && baseRegion(b)!==state.region) continue;
+      if(state.origin && state.tmax!==null && baseEstHours(b)>state.tmax) continue;
+      qids.push(b.qid);
+    }
+    if(!state.region && !state.origin){
+      for(const w of (window.ONSEN_WORLD||[])){
+        if(q && !((w.name+(w.en||'')+(w.country||'')+(w.countryEn||'')).toLowerCase().includes(q))) continue;
+        qids.push(w.qid);
+      }
+    }
+  }
+  lmap.setFilter('base', qids===null ? null : ['in',['get','qid'],['literal',qids]]);
+  /* エリア変更でズーム */
+  const rg = state.region || null;
+  if(rg !== lmapRegion){
+    lmapRegion = rg;
+    lmap.fitBounds(rg ? REGION_FIT[rg] : JAPAN_FIT, {padding:30, duration:700});
+  }
+}
+function lmapWorld(){ if(lmapReady) lmap.fitBounds(WORLD_FIT,{padding:20,duration:900}); }
 function renderMarkers(){
-  const t0 = I18N[lang];
-  /* region bar (search-connected) */
+  const t = I18N[lang];
   document.getElementById('map-regions').innerHTML =
     `<button class="chip ${!state.region?'active':''}" onclick="setRegion(null)">${lang==='ja'?'全国':'All Japan'}</button>` +
-    REGION_KEYS.map(r=>`<button class="chip ${state.region===r?'active':''}" onclick="setRegion(state.region==='${r}'?null:'${r}')">${t0.regions[r]}</button>`).join('');
-  /* zoom */
-  const vb = mapViewBox();
-  document.getElementById('jpmap').setAttribute('viewBox', vb.join(' '));
-  const f = 1016/vb[2];                 /* approx px per viewBox unit */
-  const r = Math.max(3.4, Math.min(11, 11/f));
-  const ts = Math.max(2.4, 12.5/f);
-  const zoomed = !!state.region;
-  const g = document.getElementById('markers');
-  const matched = new Set(ONSEN.filter(matches).map(o=>o.id));
-  /* ベース層(Wikidata全国の湯): 小さな灰色ドット。タップで簡易詳細 */
-  const br = Math.max(1.4, Math.min(3.2, 4.5/f));
-  const baseDots = (window.ONSEN_BASE||[]).map(b=>{
-    const [bx,by]=proj(b.lat,b.lng);
-    return `<circle class="base-dot" data-q="${b.qid}" cx="${bx.toFixed(1)}" cy="${by.toFixed(1)}" r="${br.toFixed(1)}"><title>${b.name}</title></circle>`;
-  }).join('');
-  let li = 0;
-  g.innerHTML = '<g id="base-layer">'+baseDots+'</g>' + ONSEN.map(o=>{
-    const [x,y]=proj(o.lat,o.lng);
-    const dim = matched.has(o.id)?'':'dim';
-    const showLabel = zoomed && !dim;
-    const dy = (li++ % 2) ? -(r+ts*0.5) : (r+ts*1.1);
-    const label = showLabel ? `<text x="0" y="${dy.toFixed(1)}" text-anchor="middle" font-size="${ts.toFixed(1)}" font-weight="600" fill="#1D1D1F" stroke="#FFFFFF" stroke-width="${(ts/4).toFixed(1)}" paint-order="stroke" style="pointer-events:none">${o[lang].name}</text>` : '';
-    return `<g class="onsen-dot ${dim}" data-id="${o.id}" transform="translate(${x.toFixed(1)},${y.toFixed(1)})" tabindex="${dim?-1:0}" role="button" aria-label="${o[lang].name}">
-      <circle class="ring" r="${(r+3.5).toFixed(1)}"/>
-      <circle r="${r.toFixed(1)}" fill="url(#g-${o.color})" stroke="rgba(33,29,24,.35)" stroke-width="${Math.max(.4,1/Math.sqrt(f)).toFixed(2)}"/>
-      ${label}
-    </g>`;
-  }).join('');
-  const bl = document.getElementById('base-layer');
-  if(bl) bl.addEventListener('click', e=>{
-    const q = e.target && e.target.dataset && e.target.dataset.q;
-    if(q) openBaseDetail(q);
-  });
-  g.querySelectorAll('.onsen-dot').forEach(el=>{
-    const id = +el.dataset.id;
-    el.addEventListener('click',()=>openDetail(id));
-    el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openDetail(id);}});
-    el.addEventListener('mouseenter',e=>showTip(id,el));
-    el.addEventListener('mouseleave',hideTip);
-  });
-  /* legend */
-  const t=I18N[lang];
+    REGION_KEYS.map(r=>`<button class="chip ${state.region===r?'active':''}" onclick="setRegion(state.region==='${r}'?null:'${r}')">${t.regions[r]}</button>`).join('') +
+    `<button class="chip" onclick="lmapWorld()">${lang==='ja'?'🌏 世界':'🌏 World'}</button>`;
+  const nBase = ((window.ONSEN_BASE||[]).length) + ((window.ONSEN_WORLD||[]).length);
   document.getElementById('map-legend').innerHTML =
     COLORS.map(c=>`<span><i style="background:radial-gradient(circle at 35% 30%, ${POOL_SVG[c][0]}, ${POOL_SVG[c][1]})"></i>${t.colors[c]}</span>`).join('') +
-    ((window.ONSEN_BASE&&ONSEN_BASE.length)?`<span><i style="background:#C9C9CE"></i>${lang==='ja'?`全国の湯 ${ONSEN_BASE.length}`:`${ONSEN_BASE.length} base springs`}</span>`:'');
+    (nBase?`<span><i style="background:#B7B7BE"></i>${lang==='ja'?`全国・世界の湯 ${nBase.toLocaleString()}`:`${nBase.toLocaleString()} base & world springs`}</span>`:'');
+  if(!lmap && !lmapLoading){
+    lmapLoading = true;
+    initLMap().catch(e=>{ console.warn('map init failed', e); lmapLoading = false; });
+  } else if(lmapReady){
+    lmap.resize();
+    applyMapState();
+  }
 }
-function showTip(id,el){
-  const o = ONSEN.find(o=>o.id===id);
-  const tip = document.getElementById('map-tip');
-  const frame = document.getElementById('map-frame').getBoundingClientRect();
-  const r = el.getBoundingClientRect();
-  tip.textContent = o[lang].name;
-  tip.style.left = (r.left - frame.left + r.width/2)+'px';
-  tip.style.top = (r.top - frame.top)+'px';
-  tip.classList.add('on');
-}
-function hideTip(){ document.getElementById('map-tip').classList.remove('on'); }
 
 /* ---------------- filters UI ---------------- */
 function renderFilters(){
@@ -3784,7 +3845,7 @@ async function savePaste(){
 }
 
 /* ---- init: must run after ALL definitions (PHOTOS/SCENES/cardMedia) ---- */
-buildMapBase();
+/* buildMapBase は MapLibre 移行で不要に(SVG地図は撤去。湯録の温泉地図は自前フォールバックで描画) */
 /* userLoad() は setupAuth() 内で必要時に呼ぶ(Supabaseセッション確認込み) */
 setLang((navigator.language||'ja').toLowerCase().startsWith('ja') ? 'ja' : 'en');
 setView('list');
