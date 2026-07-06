@@ -775,7 +775,8 @@ const I18N = {
     geoTimeout:"位置情報の取得がタイムアウトしました。もう一度お試しください。",
     modes:{transit:"電車・バス",car:"車"},
     fromWord:"から", aboutWord:"約",
-    regions:{hokkaido:"北海道",tohoku:"東北",kanto:"関東",chubu:"中部",kinki:"近畿",chugoku:"中国",shikoku:"四国",kyushu:"九州",okinawa:"沖縄"},
+    regions:{hokkaido:"北海道",tohoku:"東北",kanto:"関東",chubu:"中部",kinki:"近畿",chugoku:"中国",shikoku:"四国",kyushu:"九州",okinawa:"沖縄",
+      w_asia:"アジア",w_europe:"ヨーロッパ",w_namerica:"北米",w_latin:"中南米",w_oceania:"オセアニア",w_meaf:"中東・アフリカ"},
     qualityDesc:{
       simple:"刺激が少なくやさしい万能湯。初めての湯治にも",
       chloride:"塩の膜で湯冷めしにくい「熱の湯」。よく温まる",
@@ -820,7 +821,8 @@ const I18N = {
     geoTimeout:"Location request timed out. Please try again.",
     modes:{transit:"Transit",car:"Car"},
     fromWord:"from", aboutWord:"~",
-    regions:{hokkaido:"Hokkaidō",tohoku:"Tōhoku",kanto:"Kantō",chubu:"Chūbu",kinki:"Kansai",chugoku:"Chūgoku",shikoku:"Shikoku",kyushu:"Kyūshū",okinawa:"Okinawa"},
+    regions:{hokkaido:"Hokkaidō",tohoku:"Tōhoku",kanto:"Kantō",chubu:"Chūbu",kinki:"Kansai",chugoku:"Chūgoku",shikoku:"Shikoku",kyushu:"Kyūshū",okinawa:"Okinawa",
+      w_asia:"Asia",w_europe:"Europe",w_namerica:"N. America",w_latin:"Latin America",w_oceania:"Oceania",w_meaf:"Middle East & Africa"},
     qualityDesc:{
       simple:"Gentle and mild — the all-rounder, ideal for first-timers",
       chloride:"A veil of salt keeps you warm long after — 'the heating bath'",
@@ -1273,6 +1275,27 @@ function baseEstHours(b){
   else { const v = d>350 ? 160 : (d>140 ? 100 : 58); line = 0.5 + d/v; }
   return line + 0.4; /* ラストマイルの目安 */
 }
+/* 世界の湯: 国 → 地域カテゴリ */
+const WREGION_KEYS = ["w_asia","w_europe","w_namerica","w_latin","w_oceania","w_meaf"];
+const COUNTRY2WREGION = {
+  "Taiwan":"w_asia","South Korea":"w_asia","North Korea":"w_asia","People's Republic of China":"w_asia",
+  "India":"w_asia","Indonesia":"w_asia","Malaysia":"w_asia","Mongolia":"w_asia","Thailand":"w_asia",
+  "Myanmar":"w_asia","Singapore":"w_asia","Sri Lanka":"w_asia","Vietnam":"w_asia","Timor-Leste":"w_asia",
+  "Kazakhstan":"w_asia","Tajikistan":"w_asia","Russia":"w_asia","Philippines":"w_asia","Nepal":"w_asia","Laos":"w_asia","Cambodia":"w_asia",
+  "Spain":"w_europe","Iceland":"w_europe","Italy":"w_europe","France":"w_europe","Czech Republic":"w_europe",
+  "Greece":"w_europe","United Kingdom":"w_europe","Germany":"w_europe","Switzerland":"w_europe","Albania":"w_europe",
+  "Austria":"w_europe","Hungary":"w_europe","Portugal":"w_europe","Slovakia":"w_europe","Ukraine":"w_europe",
+  "Greenland":"w_europe","Poland":"w_europe","Romania":"w_europe","Bulgaria":"w_europe","Serbia":"w_europe","Slovenia":"w_europe","Croatia":"w_europe","Norway":"w_europe","Sweden":"w_europe","Finland":"w_europe","Denmark":"w_europe","Ireland":"w_europe","Belgium":"w_europe","Netherlands":"w_europe","Georgia":"w_europe","Armenia":"w_europe","Azerbaijan":"w_europe",
+  "United States":"w_namerica","Canada":"w_namerica",
+  "Chile":"w_latin","Mexico":"w_latin","Peru":"w_latin","Bolivia":"w_latin","Costa Rica":"w_latin","Haiti":"w_latin",
+  "Nicaragua":"w_latin","Uruguay":"w_latin","Argentina":"w_latin","Brazil":"w_latin","Ecuador":"w_latin",
+  "Panama":"w_latin","Saint Lucia":"w_latin","Guatemala":"w_latin","Colombia":"w_latin","Venezuela":"w_latin","Cuba":"w_latin","Dominican Republic":"w_latin","Honduras":"w_latin","El Salvador":"w_latin",
+  "New Zealand":"w_oceania","Australia":"w_oceania","Papua New Guinea":"w_oceania","Fiji":"w_oceania",
+  "Turkey":"w_meaf","Iran":"w_meaf","Jordan":"w_meaf","Oman":"w_meaf","Yemen":"w_meaf","Israel":"w_meaf",
+  "Palestine":"w_meaf","Egypt":"w_meaf","Uganda":"w_meaf","Tanzania":"w_meaf","Zimbabwe":"w_meaf","Benin":"w_meaf",
+  "Chad":"w_meaf","Madagascar":"w_meaf","Rwanda":"w_meaf","South Africa":"w_meaf","Saudi Arabia":"w_meaf","Morocco":"w_meaf","Algeria":"w_meaf","Tunisia":"w_meaf","Ethiopia":"w_meaf","Kenya":"w_meaf"
+};
+function worldRegion(w){ return COUNTRY2WREGION[w.countryEn||''] || null; }
 
 function hav(a,b,c,d){
   const R=6371, toR=x=>x*Math.PI/180;
@@ -1430,7 +1453,11 @@ const REGION_FIT = {
   kanto:[[138.3,34.7],[141.1,37.3]],   chubu:[[135.9,34.4],[139.9,38.6]],
   kinki:[[134.1,33.2],[136.7,35.9]],   chugoku:[[130.6,33.6],[134.6,35.8]],
   shikoku:[[132.2,32.5],[135.0,34.6]], kyushu:[[128.5,30.8],[132.2,34.1]],
-  okinawa:[[122.5,23.7],[129.5,27.5]]
+  okinawa:[[122.5,23.7],[129.5,27.5]],
+  /* 世界地域 */
+  w_asia:[[60,-11],[145,55]], w_europe:[[-25,34],[45,71]],
+  w_namerica:[[-170,15],[-50,72]], w_latin:[[-120,-56],[-33,33]],
+  w_oceania:[[110,-50],[180,0]], w_meaf:[[-20,-36],[63,45]]
 };
 function loadMapLibre(){
   return new Promise((res,rej)=>{
@@ -1500,18 +1527,22 @@ function applyMapState(){
   /* ベース層(全国/世界): renderCards と同じ判定で絞る */
   const q = state.q.toLowerCase();
   const dataFiltered = state.purpose.size||state.tags.size||state.ind.size||state.color||state.quality.size||state.temp;
+  const isWRegion = state.region && state.region.indexOf('w_')===0;
   let qids = null;
   if(dataFiltered){ qids = []; }
   else if(q || state.region || (state.origin && state.tmax!==null)){
     qids = [];
-    for(const b of (window.ONSEN_BASE||[])){
-      if(q && !((b.name+(b.en||'')+(b.pref||'')).toLowerCase().includes(q))) continue;
-      if(state.region && baseRegion(b)!==state.region) continue;
-      if(state.origin && state.tmax!==null && baseEstHours(b)>state.tmax) continue;
-      qids.push(b.qid);
+    if(!isWRegion){
+      for(const b of (window.ONSEN_BASE||[])){
+        if(q && !((b.name+(b.en||'')+(b.pref||'')).toLowerCase().includes(q))) continue;
+        if(state.region && baseRegion(b)!==state.region) continue;
+        if(state.origin && state.tmax!==null && baseEstHours(b)>state.tmax) continue;
+        qids.push(b.qid);
+      }
     }
-    if(!state.region && !state.origin){
+    if(!state.origin && (!state.region || isWRegion)){
       for(const w of (window.ONSEN_WORLD||[])){
+        if(isWRegion && worldRegion(w)!==state.region) continue;
         if(q && !((w.name+(w.en||'')+(w.country||'')+(w.countryEn||'')).toLowerCase().includes(q))) continue;
         qids.push(w.qid);
       }
@@ -1531,6 +1562,7 @@ function renderMarkers(){
   document.getElementById('map-regions').innerHTML =
     `<button class="chip ${!state.region?'active':''}" onclick="setRegion(null)">${lang==='ja'?'全国':'All Japan'}</button>` +
     REGION_KEYS.map(r=>`<button class="chip ${state.region===r?'active':''}" onclick="setRegion(state.region==='${r}'?null:'${r}')">${t.regions[r]}</button>`).join('') +
+    WREGION_KEYS.map(r=>`<button class="chip ${state.region===r?'active':''}" onclick="setRegion(state.region==='${r}'?null:'${r}')">${t.regions[r]}</button>`).join('') +
     `<button class="chip" onclick="lmapWorld()">${lang==='ja'?'🌏 世界':'🌏 World'}</button>`;
   const nBase = ((window.ONSEN_BASE||[]).length) + ((window.ONSEN_WORLD||[]).length);
   document.getElementById('map-legend').innerHTML =
@@ -1559,7 +1591,8 @@ function renderFilters(){
     ['transit','car'].map(m=>`<button class="chip mode ${state.mode===m?'active':''}" onclick="setMode('${m}')">${t.modes[m]}</button>`).join('') +
     TMAXES.map(h=>`<button class="chip ${state.tmax===h?'active':''}" onclick="setTmax(${h})">${lang==='ja'?('〜'+h+'時間'):('≤ '+h+'h')}</button>`).join('');
   document.getElementById('area-chips').innerHTML =
-    REGION_KEYS.map(r=>`<button class="chip ${state.region===r?'active':''}" onclick="setRegion('${r}')">${t.regions[r]}</button>`).join('');
+    REGION_KEYS.map(r=>`<button class="chip ${state.region===r?'active':''}" onclick="setRegion('${r}')">${t.regions[r]}</button>`).join('') +
+    WREGION_KEYS.map(r=>`<button class="chip ${state.region===r?'active':''}" onclick="setRegion('${r}')">🌏 ${t.regions[r]}</button>`).join('');
   document.getElementById('ind-chips').innerHTML =
     IND_KEYS.map(k=>`<button class="chip ${state.ind.has(k)?'active':''}" onclick="toggleInd('${k}')">${t.indLabels[k]}</button>`).join('');
   document.getElementById('color-swatches').innerHTML =
@@ -1641,17 +1674,22 @@ function renderCards(){
     return true;
   });
   if(state.origin) baseHits.sort((a,b)=>baseEstHours(a)-baseEstHours(b));
-  /* 世界の湯: 日本向け条件(エリア/現在地/データ)が無いときだけ対象。名前検索に反応 */
-  const worldHits = (dataFiltered || state.region || state.origin) ? [] : (window.ONSEN_WORLD||[]).filter(w=>
-    !q || (w.name + (w.en||'') + (w.country||'') + (w.countryEn||'')).toLowerCase().includes(q));
+  /* 世界の湯: 名前検索と世界地域(アジア等)に反応。日本のエリア/現在地/データ条件では対象外 */
+  const isWRegion = state.region && state.region.indexOf('w_')===0;
+  const worldHits = (dataFiltered || state.origin || (state.region && !isWRegion)) ? [] : (window.ONSEN_WORLD||[]).filter(w=>{
+    if(isWRegion && worldRegion(w)!==state.region) return false;
+    return !q || (w.name + (w.en||'') + (w.country||'') + (w.countryEn||'')).toLowerCase().includes(q);
+  });
   /* カウントは合計を主役に(特集＋全国＋世界)。データ条件時は特集のみ */
   const cb = document.getElementById('count-base');
   document.getElementById('count-num').textContent = (list.length + baseHits.length + worldHits.length).toLocaleString();
-  if(cb) cb.textContent = (baseHits.length || worldHits.length)
-    ? (lang==='ja'
-        ? `(詳しいデータつき ${list.length}湯 ＋ 全国の湯 ${baseHits.length.toLocaleString()}${worldHits.length?` ＋ 世界の湯 ${worldHits.length.toLocaleString()}`:''})`
-        : `(${list.length} in depth + ${baseHits.length.toLocaleString()} nationwide${worldHits.length?` + ${worldHits.length.toLocaleString()} worldwide`:''})`)
-    : '';
+  if(cb){
+    const parts = [];
+    if(list.length) parts.push(lang==='ja'?`詳しいデータつき ${list.length}湯`:`${list.length} in depth`);
+    if(baseHits.length) parts.push(lang==='ja'?`全国の湯 ${baseHits.length.toLocaleString()}`:`${baseHits.length.toLocaleString()} nationwide`);
+    if(worldHits.length) parts.push(lang==='ja'?`世界の湯 ${worldHits.length.toLocaleString()}`:`${worldHits.length.toLocaleString()} worldwide`);
+    cb.textContent = (parts.length>1 || baseHits.length || worldHits.length) ? `(${parts.join(lang==='ja'?' ＋ ':' + ')})` : '';
+  }
   /* 絞り込みがある時は行リスト表示(最大30)。無い時は地図への誘導のみ */
   const narrowed = q || state.region || (state.origin && state.tmax!==null);
   const shown = narrowed ? baseHits.slice(0,30) : [];
@@ -1661,8 +1699,8 @@ function renderCards(){
       ${shown.map(b=>`<button class="base-row" onclick="openBaseDetail('${b.qid}')"><span>${b.name}</span><span class="br-pref">${[b.pref||'', state.origin?fmtH(baseEstHours(b)):''].filter(Boolean).join(' ・ ')}</span></button>`).join('')}
       ${(!narrowed || more>0) ? `<button class="base-row" onclick="setView('map')" style="justify-content:center;color:var(--ink-soft)">${lang==='ja'?(narrowed?`ほか ${more.toLocaleString()}湯を地図で見る →`:`全国の湯 ${baseHits.length.toLocaleString()} を地図で見る →`):(narrowed?`See ${more.toLocaleString()} more on the map →`:`See all ${baseHits.length.toLocaleString()} on the map →`)}</button>` : ''}
     </div>`;
-  /* 世界の湯: 名前検索時のみ行リスト(最大20) */
-  const wShown = q ? worldHits.slice(0,20) : [];
+  /* 世界の湯: 名前検索または世界地域選択時に行リスト(最大30) */
+  const wShown = (q || isWRegion) ? worldHits.slice(0,30) : [];
   const worldHtml = !wShown.length ? '' : `<div class="base-results">
       <div class="br-head">${lang==='ja'?`世界の湯から ${worldHits.length.toLocaleString()}件`:`${worldHits.length.toLocaleString()} from world springs`}</div>
       ${wShown.map(w=>`<button class="base-row" onclick="openBaseDetail('${w.qid}')"><span>${(lang==='en'&&w.en)?w.en:w.name}</span><span class="br-pref">${lang==='ja'?(w.country||w.countryEn||''):(w.countryEn||w.country||'')}</span></button>`).join('')}
