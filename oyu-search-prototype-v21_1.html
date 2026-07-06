@@ -205,6 +205,13 @@ header{
 .jp-dot{fill:#DBDBDF}
 .base-dot{fill:#C4C4CA;cursor:pointer;transition:fill .15s}
 .base-dot:hover{fill:#8E8E96}
+.name-q{width:100%;max-width:440px;padding:12px 16px;border:1px solid var(--line-strong);border-radius:12px;font-family:inherit;font-size:.95rem;background:var(--card);color:var(--ink)}
+.name-q:focus{outline:2px solid var(--ink);outline-offset:-1px;border-color:var(--ink)}
+.base-results{grid-column:1/-1;margin-top:8px}
+.base-results .br-head{font-size:.68rem;letter-spacing:.2em;color:var(--ink-soft);font-weight:600;margin:14px 0 10px}
+.base-row{display:flex;justify-content:space-between;align-items:center;width:100%;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 18px;margin-bottom:8px;cursor:pointer;font-family:inherit;font-size:.92rem;color:var(--ink);text-align:left}
+.base-row:hover{border-color:var(--line-strong)}
+.base-row .br-pref{font-size:.72rem;color:var(--ink-soft);letter-spacing:.08em;flex-shrink:0;margin-left:12px}
 .onsen-dot{cursor:pointer;transition:opacity .2s}
 .onsen-dot.dim{opacity:.12;pointer-events:none}
 .onsen-dot circle.ring{fill:none;stroke:var(--ink);stroke-width:0;transition:stroke-width .12s}
@@ -605,6 +612,10 @@ a.rec-btn{display:inline-flex;align-items:center;justify-content:center;text-dec
 
 <section class="filters">
   <div class="f-group">
+    <div class="f-label" data-i18n="fName">名前でさがす</div>
+    <input type="search" id="name-q" class="name-q" placeholder="温泉名・地名(例: 草津)" oninput="setQ(this.value)" autocomplete="off">
+  </div>
+  <div class="f-group">
     <div class="f-label" data-i18n="fPurpose">目的</div>
     <div class="chips" id="purpose-chips"></div>
   </div>
@@ -731,6 +742,7 @@ const I18N = {
   ja: {
     heroTitle:"泉質と湯色で、<br>お湯を選ぶ。",
     heroLead:"泉質・湯色・温度・目的——全国のお湯を、お湯そのもののデータで検索できます。湯治の長期滞在から、ふらりと寄る足湯まで。",
+    fName:"名前でさがす", fNamePh:"温泉名・地名(例: 草津)",
     fPurpose:"目的", fTags:"こだわり", fInd:"適応症から", fColor:"湯色", fQuality:"泉質", fTemp:"湯温",
     indCaption:"環境省「泉質別適応症」の区分に基づく参考情報です。効果を保証するものではありません。",
     fFrom:"ここから探す", fArea:"エリア",
@@ -775,6 +787,7 @@ const I18N = {
   en: {
     heroTitle:"Choose by spring quality<br>and water color.",
     heroLead:"Spring quality, water color, temperature, purpose — explore Japan's hot springs through the water itself. From long-stay toji therapy to a quick footbath.",
+    fName:"BY NAME", fNamePh:"Name or place (e.g. Kusatsu)",
     fPurpose:"PURPOSE", fTags:"FEATURES", fInd:"BY INDICATION", fColor:"WATER COLOR", fQuality:"SPRING QUALITY", fTemp:"TEMPERATURE",
     indCaption:"Reference categories from Japan's Ministry of the Environment spring-quality indications. Effects are not guaranteed.",
     fFrom:"FROM HERE", fArea:"REGION",
@@ -1197,7 +1210,8 @@ const ONSEN = [
 ];
 
 /* ---------------- state ---------------- */
-const state = { purpose:new Set(), tags:new Set(), ind:new Set(), color:null, quality:new Set(), temp:null, view:'list', region:null, origin:null, mode:'transit', tmax:null };
+const state = { q:'', purpose:new Set(), tags:new Set(), ind:new Set(), color:null, quality:new Set(), temp:null, view:'list', region:null, origin:null, mode:'transit', tmax:null };
+function setQ(v){ state.q = (v||'').trim(); update(); }
 
 const HUBS = [
   {id:'tokyo', lat:35.681, lng:139.767, n:{ja:"東京",en:"Tokyo"}},
@@ -1491,9 +1505,14 @@ function setGeoOrigin(){
 function setMode(m){ state.mode = m; update(); }
 function setTmax(h){ state.tmax = state.tmax===h?null:h; update(); }
 function setTemp(x){ state.temp = state.temp===x?null:x; update(); }
-function resetAll(){ state.purpose.clear(); state.tags.clear(); state.ind.clear(); state.color=null; state.quality.clear(); state.temp=null; state.region=null; state.origin=null; state.tmax=null; update(); }
+function resetAll(){ state.q=''; const nq=document.getElementById('name-q'); if(nq) nq.value=''; state.purpose.clear(); state.tags.clear(); state.ind.clear(); state.color=null; state.quality.clear(); state.temp=null; state.region=null; state.origin=null; state.tmax=null; update(); }
 
 function matches(o){
+  if(state.q){
+    const q = state.q.toLowerCase();
+    const hay = (o.ja.name + (o.kana||'') + o.en.name + o.ja.area + o.en.area).toLowerCase();
+    if(!hay.includes(q)) return false;
+  }
   for(const p of state.purpose){
     if(p==='castle'){ if(!o.castle) return false; }
     else if(p==='ijin'){ if(!o.yukari) return false; }
@@ -1516,8 +1535,16 @@ function renderCards(){
   if(state.origin) list.sort((a,b)=>estHours(a)-estHours(b));
   document.getElementById('count-num').textContent = list.length;
   const grid = document.getElementById('grid');
+  /* 名前検索時はベース層(全国の湯)も横断ヒットさせる */
+  const q = state.q.toLowerCase();
+  const baseHits = q ? (window.ONSEN_BASE||[]).filter(b =>
+    (b.name + (b.en||'') + (b.pref||'')).toLowerCase().includes(q)).slice(0,30) : [];
+  const baseHtml = baseHits.length ? `<div class="base-results">
+      <div class="br-head">${lang==='ja'?`全国の湯から ${baseHits.length}件`:`${baseHits.length} from base springs`}</div>
+      ${baseHits.map(b=>`<button class="base-row" onclick="openBaseDetail('${b.qid}')"><span>${b.name}</span><span class="br-pref">${b.pref||''}</span></button>`).join('')}
+    </div>` : '';
   if(!list.length){
-    grid.innerHTML = `<div class="empty"><div class="serif">${t.emptyTitle}</div><div>${t.emptyLead}</div></div>`;
+    grid.innerHTML = baseHtml || `<div class="empty"><div class="serif">${t.emptyTitle}</div><div>${t.emptyLead}</div></div>`;
     return;
   }
   grid.innerHTML = list.map(o=>{
@@ -1549,7 +1576,7 @@ function renderCards(){
       <p class="note">${L.note}</p>
       </div>
     </button>`;
-  }).join('');
+  }).join('') + baseHtml;
 }
 
 /* ---------------- detail ---------------- */
@@ -1662,6 +1689,7 @@ function setLang(l){
   if(typeof renderRead==='function') renderRead();
   if(typeof renderYuroku==='function') renderYuroku();
   const lb=document.getElementById('lang-btn'); if(lb) lb.textContent = (l==='ja'?'English':'日本語');
+  const nq=document.getElementById('name-q'); if(nq) nq.placeholder = I18N[l].fNamePh || nq.placeholder;
 }
 function update(){
   renderFilters(); renderCards();
