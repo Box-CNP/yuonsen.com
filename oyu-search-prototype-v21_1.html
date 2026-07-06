@@ -1550,7 +1550,6 @@ function renderCards(){
   const t = I18N[lang];
   const list = ONSEN.filter(matches);
   if(state.origin) list.sort((a,b)=>estHours(a)-estHours(b));
-  document.getElementById('count-num').textContent = list.length;
   const grid = document.getElementById('grid');
   /* ベース層(全国の湯): 名前・エリア・現在地の条件が使える。泉質等のデータ条件が
      かかっている時は判定不能なので数えない(データが無い湯を誤って出さない) */
@@ -1563,9 +1562,12 @@ function renderCards(){
     return true;
   });
   if(state.origin) baseHits.sort((a,b)=>baseEstHours(a)-baseEstHours(b));
-  /* カウント行に全国の湯を併記 */
+  /* カウントは合計を主役に(特集＋全国)。データ条件時は特集のみ */
   const cb = document.getElementById('count-base');
-  if(cb) cb.textContent = baseHits.length ? (lang==='ja' ? `＋ 全国の湯 ${baseHits.length.toLocaleString()}` : `+ ${baseHits.length.toLocaleString()} nationwide`) : '';
+  document.getElementById('count-num').textContent = (list.length + baseHits.length).toLocaleString();
+  if(cb) cb.textContent = baseHits.length
+    ? (lang==='ja' ? `(詳しいデータつき ${list.length}湯 ＋ 全国の湯 ${baseHits.length.toLocaleString()})` : `(${list.length} in depth + ${baseHits.length.toLocaleString()} nationwide)`)
+    : '';
   /* 絞り込みがある時は行リスト表示(最大30)。無い時は地図への誘導のみ */
   const narrowed = q || state.region || (state.origin && state.tmax!==null);
   const shown = narrowed ? baseHits.slice(0,30) : [];
