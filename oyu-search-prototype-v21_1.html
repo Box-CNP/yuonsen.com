@@ -3202,6 +3202,34 @@ async function yuPush(entry){
   try{ await sb.from('yu_logs').insert([cloudRow(entry)]); }
   catch(e){ console.warn('cloud push failed', e); }
 }
+
+/* ---- みんなが灯した湯: チェックイン実数だけの中立ランキング(集計ビュー yu_popular) ---- */
+let popularCache = null, popularFetched = false;
+async function fetchPopular(){
+  if(popularFetched) return popularCache;
+  popularFetched = true;
+  try{
+    if(!sb) return null;
+    const { data, error } = await sb.from('yu_popular')
+      .select('onsen_id,checkins,bathers')
+      .order('bathers',{ascending:false}).order('checkins',{ascending:false}).limit(10);
+    if(!error && data && data.length) popularCache = data;
+  }catch(e){ /* ビュー未作成なら静かに非表示 */ }
+  return popularCache;
+}
+async function renderPopular(){
+  const host = document.getElementById('minna-host'); if(!host) return;
+  const rows = await fetchPopular();
+  const host2 = document.getElementById('minna-host'); /* fetch中に画面が変わっていたら中止 */
+  if(!rows || !host2) return;
+  host2.innerHTML = `<div class="q-head">${lang==='ja'?'み ん な が 灯 し た 湯':'LIT BY REAL BATHERS'}</div>
+    <p class="q-lead">${lang==='ja'?'チェックインの実数だけで並ぶランキング。広告では、順位は動きません。':'Ranked purely by real check-ins. Ads can’t move these numbers.'}</p>` +
+    rows.map((r,i)=>{
+      const o = anyOnsen(r.onsen_id); if(!o) return '';
+      const open = o.base ? `openBaseDetail('Q${r.onsen_id-BASE_OID}')` : `openDetail(${r.onsen_id})`;
+      return `<button class="base-row" onclick="${open}"><span>${i+1}. ${o[lang].name}</span><span class="br-pref">${lang==='ja'?`${r.bathers}人が灯しました`:`lit by ${r.bathers}`}</span></button>`;
+    }).join('');
+}
 async function toggleNews(v){ if(yuUser){ yuUser.news = v; await userSave(); } }
 
 const MITAMA_SHOP_URL = "https://shop.cryptoninja-partners.xyz/products/%E3%81%AC%E3%81%84%E3%81%90%E3%82%8B%E3%81%BF%E3%83%9E%E3%82%B9%E3%82%B3%E3%83%83%E3%83%88-%E3%83%9F%E3%82%BF%E3%83%9E-s?variant=51105643069735";
@@ -3357,7 +3385,9 @@ function renderMood(){
       <a class="plush-cta" href="${MITAMA_SHOP_URL}" target="_blank" rel="noopener">
         <img src="${MITAMA_SRC}" alt="ミタマ">
         <span class="pc-text"><b>${t.plushTitle}</b><span class="pc-sub">${t.plushCta}</span></span>
-      </a>`;
+      </a>
+      <div id="minna-host" style="max-width:680px;margin:0 auto"></div>`;
+    renderPopular();
     return;
   }
   host.innerHTML = `

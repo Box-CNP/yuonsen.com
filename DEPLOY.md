@@ -50,17 +50,14 @@
 
 ---
 
-## 世界の温泉レイヤーの拡張(任意・将来)
+## 追加SQL(1回でOK): みんなが灯した湯 + OSM解放の下準備
 
-現在の世界レイヤーは Wikidata(655湯・67カ国)。OpenStreetMap の名前つき約3,700湯を
-追加するには、OSMのIDが大きすぎて現在の `onsen_id int` に収まらないため、
-Supabase SQL Editor で次の1行を実行してから(安全な拡張。既存データはそのまま):
+[supabase-additions.sql](supabase-additions.sql) を Supabase SQL Editor に貼って Run:
 
-```sql
-ALTER TABLE public.yu_logs ALTER COLUMN onsen_id TYPE bigint;
-```
-
-実行したら Claude に「OSM解放して」と言えば取り込みを実装します。
+1. **yu_popular ビュー** — チェックインの集計だけを公開(個人の記録は見えない)。
+   これで「みんなが灯した湯」ランキングがサイトに現れる。
+2. **onsen_id を bigint に** — OpenStreetMap の約3,700湯(世界)を取り込む下準備。
+   実行後、Claude に「OSM解放して」と言えば取り込みを実装します。
 
 ## 公開後の安全メモ
 - `anon public` key はフロント露出OK(RLSで各ユーザーの行だけに制限)。
