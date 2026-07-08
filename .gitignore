@@ -17,3 +17,6 @@ onsen-photos/db/process-report.json
 
 # local machine-specific Claude settings
 .claude/settings.local.json
+
+# design-system export (22MB reference; extracted source lives in yu-design-system-src/)
+yu-design-system.html

@@ -16,7 +16,8 @@ const copy = (src, dst) => {
   console.log('  + ' + path.relative(ROOT, dst));
 };
 
-fs.rmSync(OUT, { recursive: true, force: true });
+try { fs.rmSync(OUT, { recursive: true, force: true }); }
+catch (e) { console.warn('  (public/ の削除をスキップ: ' + e.code + ' — 上書きコピーで続行)'); }
 fs.mkdirSync(OUT, { recursive: true });
 
 console.log('public/ を組み立て中…');
@@ -34,6 +35,10 @@ copy(path.join(ROOT, 'og-image.png'), path.join(OUT, 'og-image.png'));
 copy(path.join(ROOT, 'manifest.json'), path.join(OUT, 'manifest.json'));
 copy(path.join(ROOT, 'sw.js'), path.join(OUT, 'sw.js'));
 copy(path.join(ROOT, 'icons'), path.join(OUT, 'icons'));
+// ブランドアセット(筆文字ロゴ・ミタマ)
+copy(path.join(ROOT, 'logo-header.png'), path.join(OUT, 'logo-header.png'));
+for (const n of ['01','02','03','04','05','06'])
+  copy(path.join(ROOT, `mitama-${n}.png`), path.join(OUT, `mitama-${n}.png`));
 // ページが <script src> で読む生成物(写真・プレースホルダ)
 copy(path.join(ROOT, 'onsen-photos/db/site_photos.js'), path.join(OUT, 'onsen-photos/db/site_photos.js'));
 copy(path.join(ROOT, 'onsen-photos/db/placeholders.js'), path.join(OUT, 'onsen-photos/db/placeholders.js'));
