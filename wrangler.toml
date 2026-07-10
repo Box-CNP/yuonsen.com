@@ -1,6 +1,6 @@
 # Cloudflare(Workers 静的アセット配信)設定。
 # build-site.mjs が public/ を組み立て、それを静的サイトとして配信する。
-name = "oyu-onsen"
+name = "yuonsen"
 compatibility_date = "2024-11-01"
 
 [assets]
