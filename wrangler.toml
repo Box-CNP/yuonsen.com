@@ -1,6 +1,7 @@
 # Cloudflare(Workers 静的アセット配信)設定。
 # build-site.mjs が public/ を組み立て、それを静的サイトとして配信する。
-name = "oyu-onsen"
+# 本番Worker名は yuonsen(yuatlas.com を配信)。旧 oyu-onsen は廃止済み。
+name = "yuonsen"
 compatibility_date = "2024-11-01"
 
 [assets]
