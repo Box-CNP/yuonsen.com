@@ -39,6 +39,9 @@ copy(path.join(ROOT, 'icons'), path.join(OUT, 'icons'));
 copy(path.join(ROOT, 'logo-header.png'), path.join(OUT, 'logo-header.png'));
 for (const n of ['01','02','03','04','05','06'])
   copy(path.join(ROOT, `mitama-${n}.png`), path.join(OUT, `mitama-${n}.png`));
+// 温泉ミタマ 情景イラスト(ホーム冒頭/読みもの/湯録の空状態 ほか)
+for (const n of ['hero','reads','yuroku','ryokan','ginzan'])
+  copy(path.join(ROOT, `art-${n}.jpg`), path.join(OUT, `art-${n}.jpg`));
 // ページが <script src> で読む生成物(写真・プレースホルダ)
 copy(path.join(ROOT, 'onsen-photos/db/site_photos.js'), path.join(OUT, 'onsen-photos/db/site_photos.js'));
 copy(path.join(ROOT, 'onsen-photos/db/placeholders.js'), path.join(OUT, 'onsen-photos/db/placeholders.js'));

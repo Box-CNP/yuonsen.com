@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="YU — 日本の温泉データベース">
 <meta name="twitter:description" content="気分から、泉質から、現在地から。全国1,457湯の温泉データベース。">
-<meta name="twitter:image" content="https://oyu-onsen.fujino-090.workers.dev/og-image.png">
+<meta name="twitter:image" content="https://yuatlas.com/og-image.png">
 <!-- PWA(ホーム画面に追加) -->
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#FAF8F4">
@@ -29,7 +29,8 @@
 <link rel="apple-touch-icon" href="/icons/icon-180.png">
 <script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){});});}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Shippori+Mincho:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <style>
 :root{
   /* ===== YU Design System (claude.ai/design export) ===== */
@@ -446,8 +447,8 @@ footer{border-top:1px solid var(--line);padding:34px 32px;text-align:center;font
 .yuk-hero__mark{font-family:var(--font-display);font-size:96px;line-height:1;color:var(--ink-0);margin:0;font-weight:500}
 .yuk-hero__title{font-family:var(--font-display);font-weight:500;font-size:clamp(30px,4vw,44px);line-height:1.5;letter-spacing:var(--tracking-display);margin:0;color:var(--ink-0)}
 .yuk-hero__sub{font-family:var(--font-display);font-size:15px;line-height:2.2;color:var(--ink-1);margin:0;max-width:26em}
-.yuk-hero__right{position:relative;min-height:480px;overflow:hidden}
-.yuk-hero__right img.sumie{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.yuk-hero__right{position:relative;min-height:480px;display:flex;align-items:center;justify-content:center;background:var(--paper-0);padding:36px 40px}
+.yuk-hero__right img.sumie{position:static;width:100%;height:auto;max-height:100%;object-fit:contain;border-radius:2px;border:1px solid rgba(28,26,23,.07);box-shadow:0 10px 30px rgba(28,26,23,.11)}
 .yuk-hero__vert{position:absolute;top:48px;right:48px;writing-mode:vertical-rl;font-family:var(--font-display);font-size:22px;letter-spacing:.16em;color:var(--ink-0);margin:0}
 .yuk-max{max-width:1200px;margin:0 auto;padding:0 48px}
 .yuk-cats{display:flex;justify-content:space-between;padding:32px 0;border-bottom:1px solid var(--line-1);flex-wrap:wrap;gap:18px 28px}
@@ -482,8 +483,8 @@ footer{border-top:1px solid var(--line);padding:34px 32px;text-align:center;font
 .main-tabs .nv-en{display:block;font-size:8px;font-weight:500;letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--ink-3);font-family:var(--font-ui);margin-top:1px}
 @media(max-width:840px){
   .yuk-hero{grid-template-columns:1fr}
-  .yuk-hero__right{min-height:300px}
-  .yuk-hero__left{padding:52px 24px}
+  .yuk-hero__right{min-height:auto;padding:8px 24px 30px}
+  .yuk-hero__left{padding:52px 24px 20px}
   .yuk-max{padding:0 24px}
   .yuk-grid4{grid-template-columns:1fr 1fr;gap:14px}
   .yuk-today{grid-template-columns:1fr}
@@ -689,6 +690,144 @@ footer{border-top:1px solid var(--line);padding:34px 32px;text-align:center;font
 .rec-btn.ghost:hover{border-color:var(--ink);background:var(--paper)}
 a.rec-btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none}
 
+/* ============================================================
+   English typography (scoped to :lang(en) only — JA/ZH/KO untouched)
+   Latin faces: Cormorant Garamond (display) + EB Garamond (text).
+   Japanese fonts remain as fallback so mixed strings degrade cleanly.
+   Values tuned for how these Garamond faces render on screen:
+   Latin serifs want tighter tracking + shorter leading than mincho.
+   ============================================================ */
+html[lang="en"]{
+  --font-display:'Cormorant Garamond','Shippori Mincho',Georgia,serif;
+  --font-ui:'EB Garamond','Zen Kaku Gothic New',Georgia,serif;
+  --tracking-display:.004em;   /* Cormorant is roomy; near-zero reads best large */
+  --tracking-label:.15em;      /* letterspaced small caps */
+}
+/* EB Garamond runs small & light on screen — nudge size/leading for comfort */
+html[lang="en"] body{
+  font-size:16.5px; line-height:1.6; letter-spacing:0;
+  font-feature-settings:"kern","liga","calt";
+}
+/* Display headings: kill the mincho tracking, tighten leading, add weight so
+   Cormorant holds up against the paper */
+html[lang="en"] .hero h1,
+html[lang="en"] .yuk-hero__title,
+html[lang="en"] .yuk-today__name,
+html[lang="en"] .yuk-sec__jp,
+html[lang="en"] .pane-title,
+html[lang="en"] .card h3,
+html[lang="en"] .col-card h3,
+html[lang="en"] .d-head h2,
+html[lang="en"] .article h2,
+html[lang="en"] .rec-form h2,
+html[lang="en"] .empty .serif,
+html[lang="en"] .yu-empty b{
+  letter-spacing:0; font-weight:600;
+}
+html[lang="en"] .hero h1{line-height:1.16;font-size:clamp(2.5rem,6vw,3.7rem)}
+html[lang="en"] .yuk-hero__mark{font-weight:600}
+html[lang="en"] .yuk-hero__title{line-height:1.18;font-size:clamp(34px,4.4vw,50px)}
+html[lang="en"] .pane-title{line-height:1.14;font-size:clamp(2rem,4vw,2.6rem)}
+html[lang="en"] .card h3{line-height:1.24;font-size:22px}
+html[lang="en"] .col-card h3{line-height:1.2;font-size:1.5rem}
+html[lang="en"] .d-head h2{line-height:1.14;font-size:1.95rem}
+html[lang="en"] .article h2{line-height:1.16;font-size:2.05rem}
+html[lang="en"] .yuk-today__name{line-height:1.18;font-size:28px}
+html[lang="en"] .yuk-sec__jp{line-height:1.1;font-size:34px}
+html[lang="en"] .rec-form h2{font-size:1.7rem}
+/* Body / reading blocks: EB Garamond, comfortable measure, calm leading */
+html[lang="en"] .hero p{font-family:var(--font-ui);font-size:1.12rem;line-height:1.62;letter-spacing:0;margin-top:22px;max-width:34em}
+html[lang="en"] .yuk-hero__sub{font-family:var(--font-ui);font-size:17px;line-height:1.62;letter-spacing:0;max-width:30em}
+html[lang="en"] .pane-lead{font-family:var(--font-ui);font-size:1.12rem;line-height:1.6;letter-spacing:0;max-width:40em}
+html[lang="en"] .yuk-today__desc{font-family:var(--font-ui);font-size:17px;line-height:1.62;letter-spacing:0}
+html[lang="en"] .note{font-family:var(--font-ui);font-size:1.02rem;line-height:1.66}
+html[lang="en"] .col-card p{font-size:.98rem;line-height:1.55}
+html[lang="en"] .article .body p{font-size:1.12rem;line-height:1.68;margin-bottom:1.15em}
+html[lang="en"] .article .body p:first-of-type::first-letter{font-size:3.1em;font-weight:600;padding:.02em .1em 0 0;line-height:.86}
+html[lang="en"] .q-lead,
+html[lang="en"] .q-desc,
+html[lang="en"] .rec-check .cs,
+html[lang="en"] .f-caption{line-height:1.55}
+/* Small caps labels: letterspaced Garamond caps, a touch more weight for legibility */
+html[lang="en"] .f-label,
+html[lang="en"] .col-tag,
+html[lang="en"] .yuk-cat__en,
+html[lang="en"] .yuk-sec__en,
+html[lang="en"] .data-row .k,
+html[lang="en"] .yu-stats .k,
+html[lang="en"] .rf label,
+html[lang="en"] .main-tabs .nv-en{font-weight:600}
+/* normalize label casing (source strings mix "BY NAME" and "By experience") */
+html[lang="en"] .f-label,
+html[lang="en"] .col-tag{text-transform:uppercase}
+/* UI chrome: buttons/nav/chips read cleaner slightly tighter and a hair heavier */
+html[lang="en"] .top-nav button,
+html[lang="en"] .main-tabs button,
+html[lang="en"] .rec-btn,
+html[lang="en"] .yu-quiet,
+html[lang="en"] .chip,
+html[lang="en"] .swatch span,
+html[lang="en"] .sw span{letter-spacing:.01em;font-weight:600}
+html[lang="en"] .top-nav button{letter-spacing:.06em}
+/* Numbers in stat/data cells: keep them lining + tabular so they align */
+html[lang="en"] .data-row .v,
+html[lang="en"] .yu-stats .v,
+html[lang="en"] #count-num{font-feature-settings:"tnum","lnum";font-weight:600}
+
+/* ---- Signature illustrations (Mitama enjoying onsen) ---- */
+.sig-art{position:relative;width:100%;border-radius:var(--radius-2);overflow:hidden;background:var(--paper-2)}
+.sig-art img{display:block;width:100%;height:100%;object-fit:cover}
+.sig-art::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(28,26,23,.06);border-radius:inherit;pointer-events:none}
+/* Reads pane banner */
+.reads-hero{margin:0 0 40px;aspect-ratio:40/13}
+@media(max-width:640px){.reads-hero{aspect-ratio:3/2;margin-bottom:30px}}
+/* Yuroku empty-state illustration */
+.yu-empty .sig-art{max-width:440px;aspect-ratio:13/9;margin:0 auto 22px;border-radius:14px}
+/* The hero artwork carries its own calligraphy cartouche, so we drop the
+   overlaid tagline; a faint inner edge keeps the washi seated on the paper */
+.yuk-hero__right .yuk-hero__vert{display:none}
+/* In English the nav word is already English — drop the redundant sub-label */
+html[lang="en"] .main-tabs .nv-en{display:none}
+
+/* ---- home: scale stat band (signals depth at a glance) ---- */
+.yuk-stats{display:flex;flex-wrap:wrap;border-top:1px solid var(--line-1);border-bottom:1px solid var(--line-1);margin-bottom:4px}
+.yuk-stat{flex:1;min-width:130px;padding:26px 10px;text-align:center;position:relative}
+.yuk-stat + .yuk-stat::before{content:"";position:absolute;left:0;top:24px;bottom:24px;width:1px;background:var(--line-1)}
+.yuk-stat__n{font-family:var(--font-display);font-weight:600;font-size:36px;line-height:1;color:var(--ink-0);letter-spacing:.01em;font-feature-settings:"tnum","lnum"}
+.yuk-stat__l{display:block;margin-top:10px;font-size:11px;letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--ink-2);font-weight:600}
+@media(max-width:640px){
+  .yuk-stat{min-width:50%;flex:0 0 50%;padding:20px 8px}
+  .yuk-stat:nth-child(odd)::before{display:none}
+  .yuk-stat:nth-child(n+3){border-top:1px solid var(--line-1)}
+}
+/* ---- home: color spectrum (7 waters, one glance) ---- */
+.yuk-lead{color:var(--ink-2);font-size:14px;line-height:1.7;margin:-8px 0 20px;max-width:38em}
+html[lang="en"] .yuk-lead{font-size:15px}
+.yuk-spectrum{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 32px}
+.yuk-sw{display:inline-flex;align-items:center;gap:9px;background:var(--paper-1);border:1px solid var(--line-1);border-radius:999px;padding:7px 16px 7px 8px;cursor:pointer;font-family:inherit;color:var(--ink-1);transition:border-color .15s,background .15s}
+.yuk-sw:hover{border-color:var(--line-2);background:var(--paper-2)}
+.yuk-sw .pool{width:22px;height:22px;border-radius:50%;box-shadow:inset 0 2px 4px rgba(0,0,0,.18),0 0 0 1px rgba(0,0,0,.06)}
+.yuk-sw span{font-size:13px;letter-spacing:.02em;font-weight:500}
+html[lang="en"] .yuk-sw span{font-weight:600}
+/* ---- home: stories grid ---- */
+.yuk-stories{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:840px){.yuk-stories{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.yuk-stories{grid-template-columns:1fr}}
+.yuk-story{background:var(--paper-0);border:1px solid var(--line-1)}
+.yuk-story p{font-size:.84rem;color:var(--ink-soft);line-height:1.75}
+/* ---- home: region / world chips (count = depth) ---- */
+.yuk-chips{display:flex;flex-wrap:wrap;gap:10px}
+.yuk-rchip{display:inline-flex;align-items:baseline;gap:9px;background:var(--paper-1);border:1px solid var(--line-1);border-radius:999px;padding:9px 17px;cursor:pointer;font-family:inherit;color:var(--ink-1);transition:border-color .15s,background .15s}
+.yuk-rchip:hover{border-color:var(--line-2);background:var(--paper-2)}
+.yuk-rchip .nm{font-size:14px;font-weight:500;letter-spacing:.02em}
+html[lang="en"] .yuk-rchip .nm{font-weight:600}
+.yuk-rchip .yuk-rchip__n{font-family:var(--font-display);font-size:13px;color:var(--ink-3);font-weight:600;font-feature-settings:"tnum","lnum"}
+/* world section sits in a soft panel so "beyond Japan" reads as its own place */
+.yuk-world{background:var(--paper-1);border:1px solid var(--line-1);border-radius:var(--radius-2);padding:34px 32px}
+.yuk-world .yuk-sec__head{margin-bottom:18px}
+.yuk-world .yuk-rchip{background:var(--paper-0)}
+@media(max-width:640px){.yuk-world{padding:26px 20px}}
+
 </style>
 </head>
 <body>
@@ -794,6 +933,7 @@ a.rec-btn{display:inline-flex;align-items:center;justify-content:center;text-dec
 <section class="main-pane" id="main-read">
   <h2 class="pane-title" data-i18n="readTitle">読みもの</h2>
   <p class="pane-lead" data-i18n="readLead">お湯の科学、湯治の作法、湯にまつわる人の話。検索の合間に、ゆっくりどうぞ。</p>
+  <div class="sig-art reads-hero"><img src="art-reads.jpg" alt="" loading="lazy" decoding="async"></div>
   <div class="read-genres" id="read-genres"></div>
   <div class="col-grid" id="col-grid"></div>
 </section>
@@ -1839,7 +1979,9 @@ function renderCards(){
   });
   /* カウントは合計を主役に(特集＋全国＋世界)。データ条件時は特集のみ */
   const cb = document.getElementById('count-base');
-  document.getElementById('count-num').textContent = (list.length + baseHits.length + worldHits.length).toLocaleString();
+  const countTotal = list.length + baseHits.length + worldHits.length;
+  document.getElementById('count-num').textContent = countTotal.toLocaleString();
+  if(lang==='en'){ const sfx=document.querySelector('[data-i18n="countSuffix"]'); if(sfx) sfx.textContent = countTotal===1 ? ' spring found' : ' springs found'; }
   if(cb){
     const parts = [];
     if(list.length) parts.push(lang==='ja'?`詳しいデータつき ${list.length}湯`:`${list.length} in depth`);
@@ -2103,6 +2245,13 @@ Object.assign(I18N.ja, {
   plushTitle:"このコ、お迎えできます", plushCta:"ミタマのぬいぐるみを見る →",
   questTitle:"ク エ ス ト", questLead:"ゆかりの湯をめぐって、称号を集めよう。現地でのチェックイン、または湯録で進みます。",
   questShareBtn:"称号を画像でシェア",
+  homeStatSprings:"湯", homeStatPref:"都道府県", homeStatQual:"泉質", homeStatColor:"湯色",
+  homeColorLead:"湯の色は、成分のしるし。七つの色からたどる。",
+  homeStoriesLead:"お湯の科学、湯治の作法、湯にまつわる人の話。",
+  homeRegion:"地方でめぐる", homeRegionEn:"BY REGION",
+  homeRegionLead:"北は北海道から、南は沖縄まで。行き先から湯をたどる。",
+  homeWorld:"世界の湯", homeWorldEn:"WORLD SPRINGS",
+  homeWorldLead:"日本を出ても、湯は湧く。アイスランドからニュージーランドまで。",
   footer:"掲載データは温泉分析書・Wikidata等の公開情報をもとにした参考値です。営業状況・入浴可否・泉質は変わることがあります。おでかけ前に必ず公式情報をご確認ください。掲載内容に基づいて生じた損害について、当サイトは責任を負いかねます。"
 });
 Object.assign(I18N.en, {
@@ -2132,6 +2281,13 @@ Object.assign(I18N.en, {
   plushTitle:"Take this little one home", plushCta:"See the Mitama plush →",
   questTitle:"QUESTS", questLead:"Tour the storied springs and collect badges — progress by on-site check-in or a Yuroku record.",
   questShareBtn:"Share badge as image",
+  homeStatSprings:"springs", homeStatPref:"prefectures", homeStatQual:"spring qualities", homeStatColor:"water colors",
+  homeColorLead:"A spring's color is the signature of its minerals — explore all seven.",
+  homeStoriesLead:"The science of the water, the etiquette of toji, and the people behind the springs.",
+  homeRegion:"By Region", homeRegionEn:"地方でめぐる",
+  homeRegionLead:"From Hokkaidō in the north to Okinawa in the south — find springs by where you're headed.",
+  homeWorld:"World Springs", homeWorldEn:"世界の湯",
+  homeWorldLead:"Hot springs rise far beyond Japan too — from Iceland to New Zealand.",
   footer:"Data are reference values based on public sources (spring analysis sheets, Wikidata, etc.). Opening status, bathability, and water quality may change — always check official information before visiting. This site accepts no liability for damages arising from the listed content."
 });
 
@@ -2785,6 +2941,19 @@ function homeGo(anchor){
   const el=document.getElementById(anchor);
   if(el) setTimeout(()=>el.closest('.f-group')?.scrollIntoView({behavior:'smooth',block:'center'}),60);
 }
+function homeColor(c){
+  setMain('search');
+  state.color = c; update();
+  const el=document.getElementById('color-swatches');
+  if(el) setTimeout(()=>el.closest('.f-group')?.scrollIntoView({behavior:'smooth',block:'center'}),60);
+}
+function homeRegion(r){
+  setMain('search');
+  if(r && r.indexOf('w_')===0) setView('list');
+  state.region = r; update();
+  const el=document.getElementById('area-chips');
+  if(el) setTimeout(()=>el.closest('.f-group')?.scrollIntoView({behavior:'smooth',block:'center'}),60);
+}
 
 /* ---------------- columns render ---------------- */
 /* 記事のジャンル(増えても探しやすいよう絞り込みに使う)*/
@@ -2894,7 +3063,7 @@ function renderYuroku(){
     [...new Set(yuLogs.map(x=>{const o=anyOnsen(x.oid);return o?pref(o):null;}).filter(Boolean))].length;
   const wrap = document.getElementById('yu-stamps');
   if(!yuLogs.length){
-    wrap.innerHTML = `<div class="yu-empty"><img class="mitama-cut m-sleep" src="mitama-03.png" alt=""><b>${t.yuEmptyTitle}</b>${t.yuEmptyLead}</div>`;
+    wrap.innerHTML = `<div class="yu-empty"><div class="sig-art"><img src="art-yuroku.jpg" alt="" loading="lazy" decoding="async"></div><b>${t.yuEmptyTitle}</b>${t.yuEmptyLead}</div>`;
     return;
   }
   const sorted = [...yuLogs].sort((a,b)=>b.date.localeCompare(a.date));
@@ -3055,12 +3224,12 @@ async function questShare(qid){
   const names = q.onsen.map(id=>{const o=ONSEN.find(x=>x.id===id);return o?o[dl()].name:'';}).filter(Boolean).join(' ・ ');
   for(const l of wrapText(cx,names,620)){ cx.fillText(l,96,y); y+=34; }
   cx.fillStyle='#A8A49B'; cx.font='20px "Hiragino Sans",sans-serif';
-  cx.fillText('#YU温泉  ・  oyu-onsen.fujino-090.workers.dev',96,H-42);
+  cx.fillText('#YU温泉  ・  yuatlas.com',96,H-42);
   cv.toBlob(async (blob)=>{
     if(!blob) return;
     const file = new File([blob],'yu-quest.png',{type:'image/png'});
     if(navigator.canShare && navigator.canShare({files:[file]})){
-      try{ await navigator.share({files:[file], text:(ja?`称号「${L.badge}」獲得 ♨ #YU温泉 `:`Earned "${L.badge}" ♨ #YU温泉 `)+'https://oyu-onsen.fujino-090.workers.dev/'}); return; }catch(e){ if(e && e.name==='AbortError') return; }
+      try{ await navigator.share({files:[file], text:(ja?`称号「${L.badge}」獲得 ♨ #YU温泉 `:`Earned "${L.badge}" ♨ #YU温泉 `)+'https://yuatlas.com/'}); return; }catch(e){ if(e && e.name==='AbortError') return; }
     }
     const a=document.createElement('a'); a.download='yu-quest.png'; a.href=cv.toDataURL('image/png'); a.click();
     toast(ja?'画像を保存しました。Xに貼ってシェア♨':'Image saved — attach it to your post ♨');
@@ -3987,13 +4156,13 @@ async function shindanShare(){
   const chips=[o[dl()].area, o.ph?('pH '+o.ph):null].filter(Boolean).join('   ');
   cx.fillText(chips,96,oy+38);
   cx.fillStyle='#A8A49B'; cx.font='20px "Hiragino Sans",sans-serif';
-  cx.fillText('#YU温泉  ・  oyu-onsen.fujino-090.workers.dev',96,H-42);
+  cx.fillText('#YU温泉  ・  yuatlas.com',96,H-42);
   /* 共有(モバイル)or 保存 */
   cv.toBlob(async (blob)=>{
     if(!blob) return;
     const file = new File([blob],'yu-shindan.png',{type:'image/png'});
     if(navigator.canShare && navigator.canShare({files:[file]})){
-      try{ await navigator.share({files:[file], text:(ja?`あなたは「${ty.label}」タイプ ♨ #YU温泉 `:`I'm the ${ty.en} type ♨ #YU温泉 `)+'https://oyu-onsen.fujino-090.workers.dev/'}); return; }catch(e){ if(e && e.name==='AbortError') return; }
+      try{ await navigator.share({files:[file], text:(ja?`あなたは「${ty.label}」タイプ ♨ #YU温泉 `:`I'm the ${ty.en} type ♨ #YU温泉 `)+'https://yuatlas.com/'}); return; }catch(e){ if(e && e.name==='AbortError') return; }
     }
     const a=document.createElement('a'); a.download='yu-shindan.png'; a.href=cv.toDataURL('image/png'); a.click();
     toast(ja?'画像を保存しました。Xに貼ってシェア♨':'Image saved — attach it to your post ♨');
@@ -4380,11 +4549,11 @@ function renderHome(){
   const day=Math.floor(Date.now()/86400000);
   const today=ONSEN[day%ONSEN.length];
   const picks=[]; const seen=new Set([today.color]);
-  for(let i=0;i<ONSEN.length&&picks.length<4;i++){
+  for(let i=0;i<ONSEN.length&&picks.length<8;i++){
     const o=ONSEN[(day*3+i)%ONSEN.length];
     if(o.id!==today.id&&!seen.has(o.color)){picks.push(o);seen.add(o.color);}
   }
-  for(let i=0;picks.length<4&&i<ONSEN.length;i++){
+  for(let i=0;picks.length<8&&i<ONSEN.length;i++){
     const o=ONSEN[(day+i)%ONSEN.length];
     if(o.id!==today.id&&!picks.includes(o))picks.push(o);
   }
@@ -4405,9 +4574,23 @@ function renderHome(){
     {k:'map',go:'map',ic:'pin'},
     {k:'story',go:'read',ic:'book'}
   ];
-  const col=ONSEN.length+ (window.BASE_ONSEN?window.BASE_ONSEN.length:0);
+  const nTotal = ONSEN.length + (window.ONSEN_BASE||[]).length + (window.ONSEN_WORLD||[]).length;
+  const fmt = n => n.toLocaleString(lang==='ja'?'ja-JP':'en-US');
+  const stats = [
+    {n:fmt(nTotal), l:t.homeStatSprings},
+    {n:'47', l:t.homeStatPref},
+    {n:String(QUALITIES.length), l:t.homeStatQual},
+    {n:String(COLORS.length), l:t.homeStatColor}
+  ];
+  const stories = (typeof COLUMNS!=='undefined'?COLUMNS:[]).slice(0,3);
+  /* region / world tallies — real counts signal how much is inside */
+  const regionCount={}; REGION_KEYS.forEach(r=>regionCount[r]=0);
+  ONSEN.forEach(o=>{const r=onsenRegion(o); if(regionCount[r]!=null) regionCount[r]++;});
+  (window.ONSEN_BASE||[]).forEach(b=>{const r=baseRegion(b); if(regionCount[r]!=null) regionCount[r]++;});
+  const worldCount={}; WREGION_KEYS.forEach(r=>worldCount[r]=0);
+  (window.ONSEN_WORLD||[]).forEach(w=>{const r=worldRegion(w); if(worldCount[r]!=null) worldCount[r]++;});
+  const worldTotal=(window.ONSEN_WORLD||[]).length;
   const L=today[dl()];
-  const art=(typeof storyArt==='function')?'':'';
   host.innerHTML=`
   <section class="yuk-hero">
     <div class="yuk-hero__left">
@@ -4416,12 +4599,15 @@ function renderHome(){
       <p class="yuk-hero__sub">${t.homeSub}</p>
       <button class="yu-quiet" onclick="setMain('search')">${t.homeSearch}<span class="chev">›</span></button>
     </div>
-    <div class="yuk-hero__right" id="home-hero-art"><!-- 水墨画差し替えスロット: <img class="sumie" src="art/hero.jpg"> -->
-      ${yuArt({id:day%7+2,color:'cobalt'})}
+    <div class="yuk-hero__right" id="home-hero-art">
+      <img class="sumie" src="art-hero.jpg?v=2" alt="" fetchpriority="high" decoding="async">
       <p class="yuk-hero__vert">${t.homeVert}</p>
     </div>
   </section>
   <div class="yuk-max yuk-home-end">
+    <section class="yuk-stats" aria-label="${t.homeStatSprings}">
+      ${stats.map(s=>`<div class="yuk-stat"><span class="yuk-stat__n">${s.n}</span><span class="yuk-stat__l">${s.l}</span></div>`).join('')}
+    </section>
     <section class="yuk-cats">
       ${cats.map(c=>`<button class="yuk-cat" onclick="homeGo('${c.go}')"><span class="yuk-cat__ic">${catIcon(c.ic)}</span><span class="yuk-cat__jp">${t.homeCats[c.k]}</span><span class="yuk-cat__en">${t.homeCatSub[c.k]}</span></button>`).join('')}
     </section>
@@ -4443,8 +4629,34 @@ function renderHome(){
         <h2 class="yuk-sec__title"><span class="yuk-sec__jp">${t.homeColors}</span><span class="yuk-sec__en">${t.homeColorsEn}</span></h2>
         <button class="yu-quiet yu-quiet--sm" onclick="setMain('search')">${t.homeAll}<span class="chev">›</span></button>
       </div>
+      <p class="yuk-lead">${t.homeColorLead}</p>
+      <div class="yuk-spectrum">
+        ${COLORS.map(c=>`<button class="yuk-sw" onclick="homeColor('${c}')" aria-label="${t.colors[c]}"><span class="pool pool-${c}"></span><span>${t.colors[c]}</span></button>`).join('')}
+      </div>
       <div class="yuk-grid4">
         ${picks.map(o=>`<button class="card" onclick="openDetail(${o.id})"><div class="card-media illus">${yuArt(o)}</div><div class="card-body"><div class="area">${o[dl()].area}</div><h3>${o[dl()].name}</h3></div></button>`).join('')}
+      </div>
+    </section>
+    <section class="yuk-sec">
+      <div class="yuk-sec__head">
+        <h2 class="yuk-sec__title"><span class="yuk-sec__jp">${t.homeRegion}</span><span class="yuk-sec__en">${t.homeRegionEn}</span></h2>
+        <button class="yu-quiet yu-quiet--sm" onclick="homeGo('map')">${t.homeAll}<span class="chev">›</span></button>
+      </div>
+      <p class="yuk-lead">${t.homeRegionLead}</p>
+      <div class="yuk-chips">
+        ${REGION_KEYS.map(r=>`<button class="yuk-rchip" onclick="homeRegion('${r}')"><span class="nm">${t.regions[r]}</span><span class="yuk-rchip__n">${fmt(regionCount[r]||0)}</span></button>`).join('')}
+      </div>
+    </section>
+    <section class="yuk-sec">
+      <div class="yuk-world">
+        <div class="yuk-sec__head">
+          <h2 class="yuk-sec__title"><span class="yuk-sec__jp">${t.homeWorld}</span><span class="yuk-sec__en">${t.homeWorldEn}</span></h2>
+          <span class="yuk-badge">${fmt(worldTotal)}</span>
+        </div>
+        <p class="yuk-lead">${t.homeWorldLead}</p>
+        <div class="yuk-chips">
+          ${WREGION_KEYS.map(r=>`<button class="yuk-rchip" onclick="homeRegion('${r}')"><span class="nm">${t.regions[r]}</span><span class="yuk-rchip__n">${fmt(worldCount[r]||0)}</span></button>`).join('')}
+        </div>
       </div>
     </section>
     <section class="yuk-sec">
@@ -4452,7 +4664,10 @@ function renderHome(){
         <h2 class="yuk-sec__title"><span class="yuk-sec__jp">${t.homeStories}</span><span class="yuk-sec__en">${t.homeStoriesEn}</span></h2>
         <button class="yu-quiet yu-quiet--sm" onclick="setMain('read')">${t.homeAll}<span class="chev">›</span></button>
       </div>
-      ${(typeof COLUMNS!=='undefined'&&COLUMNS[0])?`<button class="col-card" style="max-width:560px;background:var(--paper-0);border:1px solid var(--line-1)" onclick="setMain('read')"><span class="col-tag">${(colL(COLUMNS[0])&&colL(COLUMNS[0]).tag)||''}</span><h3>${(colL(COLUMNS[0])&&colL(COLUMNS[0]).title)||''}</h3></button>`:''}
+      <p class="yuk-lead">${t.homeStoriesLead}</p>
+      <div class="yuk-stories">
+        ${stories.map(c=>{const L=colL(c)||{};const snip=(L.body&&L.body[0]||'').slice(0, lang==='ja'?52:104);return `<button class="col-card yuk-story" onclick="openArticle('${c.id}')"><span class="col-tag">${L.tag||''}</span><h3>${L.title||''}</h3><p>${snip}…</p><span class="col-meta">${t.readBy}</span></button>`;}).join('')}
+      </div>
     </section>
     <div class="yuk-mascot">${(typeof MITAMA_SRC!=='undefined')?`<img src="${MITAMA_SRC}" alt="ミタマ">`:''}<span>${t.homeMascot}</span></div>
   </div>`;
@@ -4482,6 +4697,8 @@ setLang((()=>{
     countSuffix:"處溫泉", reset:"清除條件", vList:"列表", vMap:"地圖",
     fExp:"依體驗搜尋", dWhy:"選這處湯的理由", bookLead:"在這處湯泉旁，住一晚。",
     homeToday:"今日之湯", homeTodayEn:"きょうの湯", homeColors:"湯之色", homeColorsEn:"湯のいろ", homeStories:"讀物", homeStoriesEn:"読みもの",
+    homeStatSprings:"溫泉", homeStatPref:"都道府縣", homeStatQual:"泉質", homeStatColor:"湯色", homeColorLead:"湯色是成分的印記——從七種顏色開始探索。", homeStoriesLead:"溫泉的科學、湯治的作法、與湯有關的人的故事。",
+    homeRegion:"依地區探索", homeRegionEn:"地方でめぐる", homeRegionLead:"從北海道到沖繩——依目的地尋訪溫泉。", homeWorld:"世界之湯", homeWorldEn:"世界の湯", homeWorldLead:"離開日本，湯依然湧出。從冰島到紐西蘭。",
     homeCats:{color:"以湯色探索",mineral:"以泉質探索",exp:"以目的探索",culture:"以文化探索",map:"從地圖探索",story:"讀物"},
     homeCatSub:{color:"湯色で探す",mineral:"泉質で探す",exp:"目的で探す",culture:"文化で探す",map:"地図から探す",story:"読みもの"},
     regions:{hokkaido:"北海道",tohoku:"東北",kanto:"關東",chubu:"中部",kinki:"近畿",chugoku:"中國",shikoku:"四國",kyushu:"九州",okinawa:"沖繩",w_asia:"亞洲",w_europe:"歐洲",w_namerica:"北美",w_latin:"中南美",w_oceania:"大洋洲",w_meaf:"中東・非洲"},
@@ -4506,6 +4723,8 @@ setLang((()=>{
     countSuffix:"곳의 온천", reset:"조건 초기화", vList:"목록", vMap:"지도",
     fExp:"체험으로 찾기", dWhy:"이 온천을 고르는 이유", bookLead:"이 온천 곁에서 하룻밤.",
     homeToday:"오늘의 온천", homeTodayEn:"きょうの湯", homeColors:"온천의 빛깔", homeColorsEn:"湯のいろ", homeStories:"읽을거리", homeStoriesEn:"読みもの",
+    homeStatSprings:"온천", homeStatPref:"도도부현", homeStatQual:"수질", homeStatColor:"물빛", homeColorLead:"물빛은 성분의 사인 — 일곱 빛깔로 탐색해요.", homeStoriesLead:"온천의 과학, 요양의 예법, 온천에 얽힌 사람들의 이야기.",
+    homeRegion:"지역으로 찾기", homeRegionEn:"地方でめぐる", homeRegionLead:"홋카이도부터 오키나와까지 — 목적지로 온천을 찾다.", homeWorld:"세계의 온천", homeWorldEn:"世界の湯", homeWorldLead:"일본 밖에도 온천은 솟는다. 아이슬란드부터 뉴질랜드까지.",
     homeCats:{color:"물빛으로 찾기",mineral:"수질로 찾기",exp:"목적으로 찾기",culture:"문화로 찾기",map:"지도에서 찾기",story:"읽을거리"},
     homeCatSub:{color:"湯色で探す",mineral:"泉質で探す",exp:"目的で探す",culture:"文化で探す",map:"地図から探す",story:"読みもの"},
     regions:{hokkaido:"홋카이도",tohoku:"도호쿠",kanto:"간토",chubu:"주부",kinki:"긴키",chugoku:"주고쿠",shikoku:"시코쿠",kyushu:"규슈",okinawa:"오키나와",w_asia:"아시아",w_europe:"유럽",w_namerica:"북미",w_latin:"중남미",w_oceania:"오세아니아",w_meaf:"중동·아프리카"},
